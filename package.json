@@ -13,7 +13,7 @@
     "url": "https://github.com/fossamagna/vite-plugin-react-router-amplify-hosting/issues"
   },
   "homepage": "https://github.com/fossamagna/vite-plugin-react-router-amplify-hosting/blob/main/README.md",
-  "packageManager": "pnpm@10.6.2",
+  "packageManager": "pnpm@10.6.3",
   "scripts": {
     "release": "pnpm test && pnpm --if-present --recursive build && changeset publish",
     "format": "biome format --write ./src",
