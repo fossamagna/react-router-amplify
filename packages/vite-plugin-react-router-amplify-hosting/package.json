@@ -23,13 +23,13 @@
   "author": "Masahiko Murakami <fossamagna2@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/fossamagna/vite-plugin-react-router-amplify-hosting",
+    "url": "https://github.com/fossamagna/react-router-amplify",
     "directory": "packages/vite-plugin-react-router-amplify-hosting"
   },
   "bugs": {
-    "url": "https://github.com/fossamagna/vite-plugin-react-router-amplify-hosting/issues"
+    "url": "https://github.com/fossamagna/react-router-amplify/issues"
   },
-  "homepage": "https://github.com/fossamagna/vite-plugin-react-router-amplify-hosting/blob/main/README.md",
+  "homepage": "https://github.com/fossamagna/react-router-amplify/blob/main/packages/vite-plugin-react-router-amplify-hosting/README.md",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
