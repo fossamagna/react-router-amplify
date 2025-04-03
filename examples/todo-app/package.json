@@ -1,0 +1,44 @@
+{
+  "name": "amplify-adapter-router-example-todo-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "react-router build",
+    "dev": "react-router dev",
+    "start": "react-router-serve ./build/server/index.js",
+    "typecheck": "react-router typegen && tsc"
+  },
+  "dependencies": {
+    "@aws-amplify/ui-react": "^6.9.5",
+    "@react-router/express": "^7.2.0",
+    "@react-router/node": "^7.4.0",
+    "@react-router/serve": "^7.4.0",
+    "amplify-adapter-react-router": "workspace:*",
+    "aws-amplify": "^6.14.1",
+    "compression": "^1.8.0",
+    "express": "^4.21.2",
+    "isbot": "^5.1.17",
+    "morgan": "^1.10.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-router": "^7.4.0"
+  },
+  "devDependencies": {
+    "@aws-amplify/backend": "1.14.0",
+    "@aws-amplify/backend-cli": "1.5.0",
+    "@react-router/dev": "^7.4.0",
+    "@tailwindcss/vite": "^4.0.0",
+    "@types/node": "^20",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1",
+    "aws-cdk": "^2.1006.0",
+    "aws-cdk-lib": "^2.186.0",
+    "react-router-devtools": "^1.1.0",
+    "tailwindcss": "^4.0.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "vite": "^6.1.11",
+    "vite-plugin-react-router-amplify-hosting": "workspace:*",
+    "vite-tsconfig-paths": "^5.1.4"
+  }
+}
