@@ -5,7 +5,7 @@ const schema = a.schema({
     content: a.string(),
     isDone: a.boolean()
   })
-    .authorization(allow => [allow.publicApiKey()])
+    .authorization(allow => [allow.authenticated()])
 });
 
 export type Schema = ClientSchema<typeof schema>;
