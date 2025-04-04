@@ -8,12 +8,10 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
-import "@aws-amplify/ui-react/styles.css";
 import "./app.css";
 
 import config from "../amplify_outputs.json";
 import { Amplify } from "aws-amplify";
-import { Authenticator, ThemeProvider } from "@aws-amplify/ui-react";
 
 Amplify.configure(config, { ssr: true });
 
@@ -49,13 +47,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return (
-    <ThemeProvider>
-      <Authenticator>
-        <Outlet />
-      </Authenticator>
-    </ThemeProvider>
-  );
+  return <Outlet />
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {

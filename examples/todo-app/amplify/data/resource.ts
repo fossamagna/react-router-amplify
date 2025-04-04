@@ -5,14 +5,14 @@ const schema = a.schema({
     content: a.string(),
     isDone: a.boolean()
   })
-    .authorization(allow => [allow.authenticated()])
+    .authorization(allow => [allow.publicApiKey()])
 });
 
 export type Schema = ClientSchema<typeof schema>;
 export const data = defineData({
   schema,
   authorizationModes: {
-    defaultAuthorizationMode: 'userPool',
+    defaultAuthorizationMode: 'apiKey',
   }
 });
 
