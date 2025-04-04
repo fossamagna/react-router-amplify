@@ -1,0 +1,26 @@
+version: 1
+applications:
+  - backend:
+      phases:
+        build:
+          commands:
+            - pwd
+            - "ls -al"
+            - echo "nodenode-linker=hoisted" > ../../.npmrc
+            - corepack enable
+            - pnpm install --frozen-lockfile
+            - pnpm exec ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
+    frontend:
+      phases:
+        build:
+          commands:
+            - pnpm --workspace-root build
+      artifacts:
+        baseDirectory: examples/todo-app/.amplify-hosting
+        files:
+          - "**/*"
+      cache:
+        paths:
+          - node_modules/**/*
+      buildPath: /
+    appRoot: examples/todo-app
