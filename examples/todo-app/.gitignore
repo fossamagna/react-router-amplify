@@ -8,3 +8,5 @@
 # Amplify
 /.amplify/
 /.amplify-hosting/
+amplify_outputs.json
+
