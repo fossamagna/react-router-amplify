@@ -16,11 +16,11 @@ applications:
           commands:
             - pnpm --workspace-root build
       artifacts:
-        baseDirectory: examples/todo-app/.amplify-hosting
+        baseDirectory: .amplify-hosting
         files:
           - "**/*"
       cache:
         paths:
           - node_modules/**/*
-      buildPath: /
+      buildPath: examples/todo-app
     appRoot: examples/todo-app
