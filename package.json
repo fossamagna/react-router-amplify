@@ -17,8 +17,8 @@
   "scripts": {
     "build": "pnpm --if-present --recursive build",
     "release": "pnpm test && pnpm build && changeset publish",
-    "format": "biome format --write ./src",
-    "lint": "biome check --write ./src",
+    "format": "biome format --write ./packages/*/src",
+    "lint": "biome check --write ./packages/*/src",
     "test": "vitest --run",
     "test:watch": "vitest",
     "test:coverage": "vitest --coverage",

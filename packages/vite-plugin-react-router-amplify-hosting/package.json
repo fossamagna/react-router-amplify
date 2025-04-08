@@ -32,14 +32,7 @@
   "homepage": "https://github.com/fossamagna/react-router-amplify/blob/main/packages/vite-plugin-react-router-amplify-hosting/README.md",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "release": "npm test && npm run build && && changeset tag && npm publish",
-    "format": "biome format --write ./src",
-    "lint": "biome check --write ./src",
-    "test": "vitest --run",
-    "test:watch": "vitest",
-    "test:coverage": "vitest --coverage",
-    "prepare": "husky"
+    "build": "tsc && vite build"
   },
   "devDependencies": {
     "@types/node": "^22.13.4",
