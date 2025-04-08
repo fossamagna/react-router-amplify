@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "prebuild": "./scripts/prebuild.sh",
     "build": "react-router build",
     "dev": "react-router dev",
     "start": "node .amplify-hosting/compute/default/server.mjs",
