@@ -1,6 +1,6 @@
-import type { Plugin, PluginOption, ResolvedConfig } from "vite";
-import { mkdir, cp, writeFile, readFile } from "node:fs/promises";
+import { cp, mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import type { Plugin, PluginOption, ResolvedConfig } from "vite";
 import { generateDeployManifest } from "./generateDeployManifest";
 
 const AMPLITY_HOSTING_DIR = ".amplify-hosting";
@@ -108,7 +108,10 @@ export function amplifyHosting(): Plugin {
         const dir = options.dir ?? "";
         await cp(dir, computeDefaultDir, { recursive: true });
         // write deploy-manifest.json
-        const reactRouterVersion = await getPackageVersion("react-router", "0.0.0");
+        const reactRouterVersion = await getPackageVersion(
+          "react-router",
+          "0.0.0",
+        );
         const amplifyHostingDir = join(
           resolvedConfig.root,
           AMPLITY_HOSTING_DIR,
@@ -132,7 +135,12 @@ async function getPackageVersion(packageName: string, version?: string) {
   } catch (error) {
     // Fallback to reading from node_modules
     try {
-      const packageJson = JSON.parse(await readFile(join(process.cwd(), 'node_modules', packageName, 'package.json'), "utf8"));
+      const packageJson = JSON.parse(
+        await readFile(
+          join(process.cwd(), "node_modules", packageName, "package.json"),
+          "utf8",
+        ),
+      );
       return packageJson.version;
     } catch (error) {
       console.error(`Failed to get version of ${packageName}:`, error);

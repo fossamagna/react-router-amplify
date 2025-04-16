@@ -1,0 +1,54 @@
+{
+  "name": "amplify-adapter-react-router",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/es/index.mjs",
+      "require": "./dist/cjs/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./adapter": {
+      "import": "./dist/es/adapter.mjs",
+      "require": "./dist/cjs/adapter.cjs",
+      "types": "./dist/adapter.d.ts"
+    }
+  },
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/es/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "react-router",
+    "amplify"
+  ],
+  "license": "MIT",
+  "author": "Masahiko Murakami <fossamagna2@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fossamagna/react-router-amplify",
+    "directory": "packages/amplify-adapter-react-router"
+  },
+  "bugs": {
+    "url": "https://github.com/fossamagna/react-router-amplify/issues"
+  },
+  "homepage": "https://github.com/fossamagna/react-router-amplify/blob/main/packages/amplify-adapter-react-router/README.md",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build"
+  },
+  "devDependencies": {
+    "@aws-amplify/core": "^6.10.5",
+    "@types/node": "^22.13.4",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.1",
+    "vite-plugin-dts": "^4.5.0"
+  },
+  "peerDependencies": {
+    "@aws-amplify/core": "^6.10.5",
+    "aws-amplify": "^6.14.1",
+    "cookie": "^1.0.2"
+  }
+}
