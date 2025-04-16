@@ -5,7 +5,12 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useNavigate,
 } from "react-router";
+import { useEffect } from "react";
+import { Hub } from "aws-amplify/utils";
+import { Authenticator, ThemeProvider } from "@aws-amplify/ui-react";
+import "@aws-amplify/ui-react/styles.css";
 
 import type { Route } from "./+types/root";
 import "./app.css";
@@ -38,7 +43,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <Authenticator.Provider>
+          <ThemeProvider>
+            {children}
+          </ThemeProvider>
+        </Authenticator.Provider>
         <ScrollRestoration />
         <Scripts />
       </body>
@@ -47,7 +56,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />
+  const navigate = useNavigate();
+  useEffect(() => {
+    Hub.listen("auth", (data) => {
+      const { payload } = data;
+      if (payload.event === "signedIn") {
+        navigate("/");
+      }
+    });
+  }, [navigate]);
+  return <Outlet />;
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
