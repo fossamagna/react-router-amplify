@@ -1,6 +1,6 @@
 # AWS Amplify React Router Adapter
 
-This package is the AWS Amplify React Router Adapter.
+This package contains the AWS Amplify React Router Adapter.
 
 ## Install
 
