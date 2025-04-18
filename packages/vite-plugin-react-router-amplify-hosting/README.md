@@ -4,7 +4,7 @@ This package is vite plugin for React Router SSR on Amplify Hosting.
 
 ## Features
 
-- Generate `deply-manifest.json`.
+- Generate `deploy-manifest.json`.
 - Generate and bundle a `server.mjs` as compute entrypoint file.
 - Build the folder structure that Amplify expects for the deployment bundle.
 
