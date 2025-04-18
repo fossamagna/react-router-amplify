@@ -10,6 +10,7 @@
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
+    "@aws-amplify/ui-react": "^6.11.0",
     "@react-router/express": "^7.2.0",
     "@react-router/node": "^7.4.0",
     "@react-router/serve": "^7.4.0",
