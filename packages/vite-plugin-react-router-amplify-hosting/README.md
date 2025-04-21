@@ -13,7 +13,8 @@ This package is vite plugin for React Router SSR on Amplify Hosting.
 ### Install
 
 ```shell
-npm install vite-plugin-react-router-amplify-hosting
+npm add -D vite-plugin-react-router-amplify-hosting
+npm add compression express isbot morgan
 ```
 
 ## Usage
