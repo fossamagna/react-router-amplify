@@ -2,6 +2,11 @@ version: 1
 applications:
   - backend:
       phases:
+        preBuild:
+          commands:
+            - nvm install 22
+            - nvm use 22
+            - node -v
         build:
           commands:
             - pwd
@@ -12,13 +17,9 @@ applications:
             - pnpm exec ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
     frontend:
       phases:
-        preBuild:
-          commands:
-            - nvm install 22
-            - nvm use 22
-            - node -v
         build:
           commands:
+            - node -v
             - pnpm --workspace-root build
       artifacts:
         baseDirectory: .amplify-hosting
