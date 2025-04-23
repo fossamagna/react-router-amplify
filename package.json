@@ -14,6 +14,9 @@
   },
   "homepage": "https://github.com/fossamagna/react-router-amplify/blob/main/README.md",
   "packageManager": "pnpm@10.9.0",
+  "engines": {
+    "node": "^20.0.0 || >=22.0.0"
+  },
   "scripts": {
     "build": "pnpm --if-present --recursive build",
     "release": "pnpm test && pnpm build && changeset publish",

@@ -30,6 +30,9 @@
     "url": "https://github.com/fossamagna/react-router-amplify/issues"
   },
   "homepage": "https://github.com/fossamagna/react-router-amplify/blob/main/packages/vite-plugin-react-router-amplify-hosting/README.md",
+  "engines": {
+    "node": "^20.0.0 || >=22.0.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build"
