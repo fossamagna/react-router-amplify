@@ -43,6 +43,9 @@ frontend:
   phases:
     preBuild:
       commands:
+        # vite-plugin-react-router-amplify-hosting requre Node.js v20 or later
+        - nvm install 20
+        - nvm use 20
         - "npm ci --cache .npm --prefer-offline"
     build:
       commands:
@@ -55,6 +58,11 @@ frontend:
     paths:
       - ".npm/**/*"
 ```
+
+This plugin require Node.js v20 or later.
+You need to install Node.js v20 or later using nvm in `amplify.yml` or specify 20 for the Node.js version in the Amplify Hosting build image settings as shown below.
+
+![the Node.js version in the Amplify Hosting build image settings](./docs/build-settings-node-version.png)
 
 ## License
 
