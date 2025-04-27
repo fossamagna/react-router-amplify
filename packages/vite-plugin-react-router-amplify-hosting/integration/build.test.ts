@@ -9,7 +9,8 @@ describe("build test", () => {
 
   test("vite 5", {timeout: 60_000}, async () => {
     cwd = await createProject({}, "vite-5-template");
-    await npmInstall({ cwd });
+    const installReturns = await npmInstall({ cwd });
+    console.log(installReturns.stderr.toString());
     const returns = await build({
       cwd,
     });
