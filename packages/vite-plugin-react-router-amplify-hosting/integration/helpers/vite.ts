@@ -6,7 +6,7 @@ import stripIndent from "strip-indent";
 import dedent from "dedent";
 import type { Config } from "@react-router/dev/config";
 
-const reactRouterBin = "node_modules/.bin/react-router";
+const reactRouterBin = "node_modules/@react-router/dev/bin.js";
 const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 const root = path.resolve(__dirname, "../..");
 const TMP_DIR = path.join(root, ".tmp/integration");
