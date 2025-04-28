@@ -1,1 +1,1 @@
-npm test -- --project unit
+pnpm test --project '*-unit'
