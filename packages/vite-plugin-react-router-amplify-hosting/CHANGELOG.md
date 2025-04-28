@@ -1,5 +1,11 @@
 # vite-plugin-react-router-amplify-hosting
 
+## 0.2.0
+
+### Minor Changes
+
+- [#69](https://github.com/fossamagna/react-router-amplify/pull/69) [`aea2695`](https://github.com/fossamagna/react-router-amplify/commit/aea2695b3f9cbf4f508f961b9a523a216cf40320) Thanks [@fossamagna](https://github.com/fossamagna)! - feat: support `unstable_viteEnvironmentApi` flag
+
 ## 0.1.2
 
 ### Patch Changes
