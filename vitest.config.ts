@@ -2,7 +2,30 @@ import { defineConfig } from "vitest/config";
 
 export default defineConfig({
   test: {
-    workspace: ["packages/*"],
+    workspace: [
+      "packages/*",
+      {
+        extends: true,
+        test: {
+          name: "unit",
+          include: ["**/*.test.ts"],
+          exclude: ["**/integration/**"],
+        },
+      },
+      {
+        extends: true,
+        test: {
+          name: "integration",
+          exclude: ["**/!integration/*.test.ts"],
+          include: ["**/integration/**/*.test.ts"],
+        },
+      },
+    ],
+    exclude: [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/examples/**",
+    ],
     coverage: {
       exclude: [
         "coverage/**",
