@@ -200,6 +200,7 @@ export const npmInstall = ({
 
   return spawnSync("npm", ["install"], {
     cwd,
+    shell: true,
     env: {
       ...process.env,
       ...colorEnv,
