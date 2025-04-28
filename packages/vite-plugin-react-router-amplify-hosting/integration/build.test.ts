@@ -7,7 +7,7 @@ import { build, createProject, npmInstall, reactRouterConfig } from "./helpers/v
 describe("build test", () => {
   let cwd: string;
 
-  test("vite 5", {timeout: 60_000}, async () => {
+  test("vite 5", async () => {
     cwd = await createProject({}, "vite-5-template");
     const installReturns = await npmInstall({ cwd });
     console.log(installReturns.stderr.toString());
@@ -20,7 +20,7 @@ describe("build test", () => {
     expect((await stat(join(cwd, ".amplify-hosting", "static", "assets"))).isDirectory()).toBe(true);
   });
 
-  test("vite 6", {timeout: 60_000}, async () => {
+  test("vite 6", async () => {
     cwd = await createProject({}, "vite-6-template");
     await npmInstall({ cwd });
     const returns = await build({
@@ -32,7 +32,7 @@ describe("build test", () => {
     expect((await stat(join(cwd, ".amplify-hosting", "static", "assets"))).isDirectory()).toBe(true);
   });
 
-  test("vite 6 with unstable_viteEnvironmentApi future flag", {timeout: 60_000}, async () => {
+  test("vite 6 with unstable_viteEnvironmentApi future flag", async () => {
     cwd = await createProject({
       "react-router.config.ts": reactRouterConfig({
         viteEnvironmentApi: true,

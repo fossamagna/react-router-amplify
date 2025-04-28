@@ -19,7 +19,7 @@
   },
   "scripts": {
     "build": "pnpm --if-present --recursive build",
-    "release": "pnpm test && pnpm build && changeset publish",
+    "release": "pnpm build && pnpm test && changeset publish",
     "format": "biome format --write ./packages/*/src",
     "lint": "biome check --write ./packages/*/src",
     "test": "vitest --run",
