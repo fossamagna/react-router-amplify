@@ -22,3 +22,5 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+
+.tmp/
