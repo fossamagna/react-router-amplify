@@ -14,6 +14,19 @@ import {
 import { parseAmplifyConfig } from "aws-amplify/utils";
 import cookie from "cookie";
 
+/**
+ * Ensures the cookie names are encoded in order to look up the cookie store
+ * that is manipulated by js-cookie on the client side.
+ *
+ * see: https://github.com/aws-amplify/amplify-js/blob/main/packages/adapter-nextjs/src/utils/cookie/ensureEncodedForJSCookie.ts
+ */
+function ensureEncodedForJSCookie(name: string) {
+  return encodeURIComponent(name).replace(
+    /%(2[346B]|5E|60|7C)/g,
+    decodeURIComponent,
+  );
+}
+
 export type ReactRouterServerContext = {
   request: Request;
   responseHeaders: Headers;
@@ -72,10 +85,10 @@ export function createServerRunner({
                   name,
                   value,
                 })),
-              get: (name: string): CookieStorage.Cookie | undefined => ({
-                name,
-                value: cookies[name],
-              }),
+              get: (name: string): CookieStorage.Cookie | undefined => {
+                const encodedName = ensureEncodedForJSCookie(name);
+                return { name: encodedName, value: cookies[encodedName] };
+              },
               set: (
                 name: string,
                 value: string,
@@ -83,13 +96,19 @@ export function createServerRunner({
               ): void => {
                 responseHeaders.append(
                   "Set-Cookie",
-                  cookie.serialize(name, value, options),
+                  cookie.serialize(
+                    ensureEncodedForJSCookie(name),
+                    value,
+                    options,
+                  ),
                 );
               },
               delete: (name: string): void => {
                 responseHeaders.append(
                   "Set-Cookie",
-                  cookie.serialize(name, "", { expires: new Date(0) }),
+                  cookie.serialize(ensureEncodedForJSCookie(name), "", {
+                    expires: new Date(0),
+                  }),
                 );
               },
             });
