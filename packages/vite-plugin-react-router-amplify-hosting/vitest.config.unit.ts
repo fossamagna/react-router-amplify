@@ -5,6 +5,6 @@ export default defineProject({
   test: {
     name: `${pkg.name}-unit`,
     include: ["**/*.test.ts"],
-    exclude: ["integration/**"],
+    exclude: ["integration/**", "node_modules/**", ".tmp/**"],
   },
 });
