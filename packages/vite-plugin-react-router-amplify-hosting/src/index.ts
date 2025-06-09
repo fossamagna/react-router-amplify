@@ -1,4 +1,4 @@
-import { cp, mkdir, readFile, writeFile } from "node:fs/promises";
+import { copyFile, cp, mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import type {
   BuildEnvironmentOptions,
@@ -112,7 +112,14 @@ export function amplifyHosting(): Plugin {
       if (!pluginConfig) {
         return;
       }
-      if (!pluginConfig.isSsrBuild) {
+      const isClientBuild = pluginConfig.future.unstable_viteEnvironmentApi
+        ? this.environment.name === "client"
+        : !pluginConfig.isSsrBuild;
+      const isServerBuild = pluginConfig.future.unstable_viteEnvironmentApi
+        ? this.environment.name === "ssr"
+        : pluginConfig.isSsrBuild;
+
+      if (isClientBuild) {
         const staticDir = path.join(
           resolvedConfig.root,
           AMPLITY_HOSTING_STATIC_DIR,
@@ -120,18 +127,18 @@ export function amplifyHosting(): Plugin {
         await mkdir(staticDir, { recursive: true });
         const dir = options.dir ?? "";
         await cp(dir, staticDir, { recursive: true });
-      }
-      if (
-        pluginConfig.isSsrBuild ||
-        pluginConfig.future.unstable_viteEnvironmentApi
-      ) {
+      } else if (isServerBuild) {
+        // copy server.mjs to the compute default directory
         const computeDefaultDir = path.join(
           resolvedConfig.root,
           AMPLITY_HOSTING_COMPUTE_DEFAULT_DIR,
         );
         await mkdir(computeDefaultDir, { recursive: true });
         const dir = options.dir ?? "";
-        await cp(dir, computeDefaultDir, { recursive: true });
+        await copyFile(
+          path.join(dir, "server.mjs"),
+          path.join(computeDefaultDir, "server.mjs"),
+        );
         // write deploy-manifest.json
         const reactRouterVersion = await getPackageVersion(
           "react-router",
