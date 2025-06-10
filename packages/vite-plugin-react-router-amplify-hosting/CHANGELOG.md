@@ -1,5 +1,14 @@
 # vite-plugin-react-router-amplify-hosting
 
+## 0.2.1
+
+### Patch Changes
+
+- [#94](https://github.com/fossamagna/react-router-amplify/pull/94) [`33572d5`](https://github.com/fossamagna/react-router-amplify/commit/33572d55013e33dc8591c2905ef054e32ba35158) Thanks [@fossamagna](https://github.com/fossamagna)! - fix: Resolve SSR build failure related to [fossamagna/react-router-amplify#93](https://github.com/fossamagna/react-router-amplify/issues/93).
+
+  - Revised the asset copy behavior during SSR build.
+  - Fixed handling of the `unstable_viteEnvironmentApi` flag in `@react-router/dev`.
+
 ## 0.2.0
 
 ### Minor Changes
