@@ -1,5 +1,11 @@
 # amplify-adapter-react-router
 
+## 0.1.2
+
+### Patch Changes
+
+- [#92](https://github.com/fossamagna/react-router-amplify/pull/92) [`270a0af`](https://github.com/fossamagna/react-router-amplify/commit/270a0af8f3d38ac89310f3d0f0bea02b349a1413) Thanks [@ikoamu](https://github.com/ikoamu)! - fix: ensure cookie names are encoded for js-cookie compatibility
+
 ## 0.1.1
 
 ### Patch Changes
