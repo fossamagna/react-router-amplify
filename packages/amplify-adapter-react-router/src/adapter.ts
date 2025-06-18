@@ -1,7 +1,6 @@
 import type {
   KeyValueStorageInterface,
   LibraryOptions,
-  ResourcesConfig,
 } from "@aws-amplify/core";
 import {
   type AmplifyServer,

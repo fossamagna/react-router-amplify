@@ -1,9 +1,12 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import type {
+  CredentialsAndIdentityIdProvider,
+  TokenProvider,
+} from "@aws-amplify/core";
 import type { ResourcesConfig } from "aws-amplify";
-import type { CredentialsAndIdentityIdProvider, TokenProvider } from "@aws-amplify/core";
-import { createServerRunner } from "./adapter";
 import * as adapterCore from "aws-amplify/adapter-core";
 import cookie from "cookie";
+import { beforeEach, describe, expect, it, vi } from "vitest";
+import { createServerRunner } from "./adapter";
 
 vi.mock("aws-amplify/adapter-core", () => ({
   createUserPoolsTokenProvider: vi.fn(),
@@ -38,7 +41,7 @@ describe("createServerRunner", () => {
         userPoolClientId: "def",
       },
     },
-  }
+  };
   const mockParsedConfig = mockAmplifyConfig;
   const mockOperation = vi.fn();
   const mockResponse = { data: "test-response" };
@@ -86,7 +89,6 @@ describe("createServerRunner", () => {
   });
 
   it("handles Auth config with no cookies", async () => {
-
     const { runWithAmplifyServerContext } = createServerRunner({
       config: mockAuthConfig,
     });
@@ -123,7 +125,9 @@ describe("createServerRunner", () => {
     );
     vi.mocked(
       adapterCore.createAWSCredentialsAndIdentityIdProvider,
-    ).mockReturnValue(mockCredentialsProvider as unknown as CredentialsAndIdentityIdProvider);
+    ).mockReturnValue(
+      mockCredentialsProvider as unknown as CredentialsAndIdentityIdProvider,
+    );
 
     const mockRequestWithCookies = new Request("https://example.com", {
       headers: { Cookie: "auth-cookie=value" },

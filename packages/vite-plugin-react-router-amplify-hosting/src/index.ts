@@ -1,6 +1,10 @@
 import { copyFile, cp, mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import type {
+  BuildManifest,
+  Config as ReactRouterConfig,
+} from "@react-router/dev/config";
+import type {
   BuildEnvironmentOptions,
   EnvironmentOptions,
   Plugin,
@@ -8,8 +12,6 @@ import type {
   ResolvedConfig,
   UserConfig,
 } from "vite";
-import type { BuildManifest } from "@react-router/dev/config";
-import type { Config as ReactRouterConfig } from "@react-router/dev/config";
 import { generateDeployManifest } from "./generateDeployManifest";
 
 const AMPLITY_HOSTING_DIR = ".amplify-hosting";
@@ -226,7 +228,7 @@ async function getPackageVersion(packageName: string, version?: string) {
     ).pathname;
     const packageJson = JSON.parse(await readFile(packageJsonPath, "utf8"));
     return packageJson.version;
-  } catch (error) {
+  } catch (_error) {
     // Fallback to reading from node_modules
     try {
       const packageJson = JSON.parse(
