@@ -127,10 +127,12 @@ type ViteConfigArgs = (
 export type TemplateName =
   | "vite-5-template"
   | "vite-6-template"
+  | "vite-7-template";
 
 export const viteMajorTemplates = [
   { templateName: "vite-5-template", templateDisplayName: "Vite 5" },
   { templateName: "vite-6-template", templateDisplayName: "Vite 6" },
+  { templateName: "vite-7-template", templateDisplayName: "Vite 7" },
 ] as const satisfies Array<{
   templateName: TemplateName;
   templateDisplayName: string;
