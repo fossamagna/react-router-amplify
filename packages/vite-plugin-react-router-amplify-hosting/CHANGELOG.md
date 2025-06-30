@@ -1,5 +1,11 @@
 # vite-plugin-react-router-amplify-hosting
 
+## 0.3.0
+
+### Minor Changes
+
+- [#111](https://github.com/fossamagna/react-router-amplify/pull/111) [`5fdfe97`](https://github.com/fossamagna/react-router-amplify/commit/5fdfe9703f813832775cafde44d31060d994eb47) Thanks [@fossamagna](https://github.com/fossamagna)! - feat: add Vite 7 support
+
 ## 0.2.1
 
 ### Patch Changes
