@@ -1,5 +1,13 @@
 # vite-plugin-react-router-amplify-hosting
 
+## 0.3.1
+
+### Patch Changes
+
+- [#113](https://github.com/fossamagna/react-router-amplify/pull/113) [`37b3bf4`](https://github.com/fossamagna/react-router-amplify/commit/37b3bf421d9b394e1df48968db89c13f8cc67cda) Thanks [@fossamagna](https://github.com/fossamagna)! - docs: add @react-router/express to install dependency
+
+- [`26534ab`](https://github.com/fossamagna/react-router-amplify/commit/26534ab235feb1db942e5625d19ff654d618fe81) Thanks [@fossamagna](https://github.com/fossamagna)! - fix: add vite@7 to peerDependencies
+
 ## 0.3.0
 
 ### Minor Changes
