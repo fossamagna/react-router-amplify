@@ -38,7 +38,7 @@
     "build": "tsc && vite build"
   },
   "devDependencies": {
-    "@types/node": "^22.13.4",
+    "@types/node": "^20.19.0",
     "dedent": "^1.5.3",
     "strip-indent": "^4.0.0",
     "typescript": "^5.7.3",
