@@ -187,7 +187,7 @@ importers:
     devDependencies:
       '@aws-amplify/core':
         specifier: ^6.10.5
-        version: 6.12.3
+        version: 6.13.0
       '@types/node':
         specifier: ^20.0.0
         version: 20.19.0
@@ -366,8 +366,8 @@ packages:
   '@aws-amplify/core@6.12.0':
     resolution: {integrity: sha512-/QyfEmHdYtGI6AETvuYyFZ9ZCFVBin2X1Jbim6BaVd9S2HH5U9AqUrKMSJbSPoswmYfJTWxPFeW7KrBeuUUz7Q==}
 
-  '@aws-amplify/core@6.12.3':
-    resolution: {integrity: sha512-n5cFIANzlFMNZoe6F386UVhmxg65QK6XvcKERow2KeJHnVKPvXKJ1uZeJeaInxtI+xw3qbbBP60NYWUny+nWnQ==}
+  '@aws-amplify/core@6.13.0':
+    resolution: {integrity: sha512-sdCsK6sitOdjUX0VjX7+CapYybDk2pU2icrBN9hkSytTwWUQ0CvkXaCFL/adOwL146Mi4ohHYq5FksPUIXFBBA==}
 
   '@aws-amplify/data-construct@1.15.1':
     resolution: {integrity: sha512-po8Q1yStA1Dx4vzx1SEMUgZq5VHlt6wxmh+GtROErnnYYpNdkJc+60Pc6l713J2xD+bST5Z1EpfNa8+kpzsHgQ==}
@@ -8318,7 +8318,7 @@ snapshots:
       tslib: 2.8.1
       uuid: 9.0.1
 
-  '@aws-amplify/core@6.12.3':
+  '@aws-amplify/core@6.13.0':
     dependencies:
       '@aws-crypto/sha256-js': 5.2.0
       '@aws-sdk/types': 3.398.0
