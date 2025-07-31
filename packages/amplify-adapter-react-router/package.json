@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@aws-amplify/core": "^6.10.5",
-    "@types/node": "^20.19.0",
+    "@types/node": "^22.0.0",
     "typescript": "^5.7.3",
     "vite": "^6.3.0",
     "vite-plugin-dts": "^4.5.3"
