@@ -38,7 +38,7 @@
   },
   "pnpm": {
     "overrides": {
-      "@types/node": "^20.0.0"
+      "@types/node": "^22.0.0"
     }
   },
   "lint-staged": {
