@@ -1,5 +1,11 @@
 # vite-plugin-react-router-amplify-hosting
 
+## 0.4.0
+
+### Minor Changes
+
+- [#150](https://github.com/fossamagna/react-router-amplify/pull/150) [`d55cde6`](https://github.com/fossamagna/react-router-amplify/commit/d55cde6276880abb878bf7ce9192690aed5069a2) Thanks [@fossamagna](https://github.com/fossamagna)! - feat: add support express v5
+
 ## 0.3.1
 
 ### Patch Changes
