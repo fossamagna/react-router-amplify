@@ -5,5 +5,5 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import { amplifyHosting } from "vite-plugin-react-router-amplify-hosting";
 
 export default defineConfig({
-  plugins: [tailwindcss(), reactRouter(), amplifyHosting(), tsconfigPaths()],
+  plugins: [tailwindcss(), reactRouter(), amplifyHosting({ expressVersion: "5" }), tsconfigPaths()],
 });

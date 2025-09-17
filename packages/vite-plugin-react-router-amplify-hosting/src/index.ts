@@ -12,6 +12,7 @@ import type {
   ResolvedConfig,
   UserConfig,
 } from "vite";
+import semver from "semver";
 import { generateDeployManifest } from "./generateDeployManifest";
 
 const AMPLITY_HOSTING_DIR = ".amplify-hosting";
@@ -26,7 +27,7 @@ const FUNCTION_HANDLER_MODULE_ID = "virtual:react-router-amplify-hosting";
 const RESOLVED_FUNCTION_HANDLER_MODULE_ID = `\0${FUNCTION_HANDLER_MODULE_ID}`;
 
 // The virtual module that is the compiled Vite SSR entrypoint
-const FUNCTION_HANDLER = /* js */ `
+const FUNCTION_HANDLER_V4 = /* js */ `
 import { createRequestHandler } from "@react-router/express";
 import express from "express";
 import compression from "compression";
@@ -49,10 +50,38 @@ app.listen(3000, () => {
 });
 `;
 
+const FUNCTION_HANDLER_V5 = /* js */ `
+import { createRequestHandler } from "@react-router/express";
+import express from "express";
+import compression from "compression";
+import morgan from "morgan";
+import * as build from "virtual:react-router/server-build";
+
+const app = express();
+app.disable("x-powered-by");
+app.use(compression());
+app.use(express.static("build/client"));
+app.use(morgan("tiny"));
+
+app.all("*splat", createRequestHandler({
+  build,
+  getLoadContext: async (_req, ctx) => ctx,
+}));
+
+app.listen(3000, () => {
+  console.log("App listening on http://localhost:3000");
+});
+`;
+
 export type { PluginOption };
-export function amplifyHosting(): Plugin {
+
+export type PluginOptions = {
+  expressVersion?: "5" | "4";
+};
+export function amplifyHosting(opts?: PluginOptions): Plugin {
   let resolvedConfig: ResolvedConfig;
   let pluginConfig: ReturnType<typeof resolvePluginConfig>;
+  let pluginOptions: PluginOptions = opts ?? {};
 
   return {
     name: "react-router-amplify-hosting",
@@ -98,9 +127,20 @@ export function amplifyHosting(): Plugin {
       return;
     },
 
-    load(id) {
+    async load(id) {
       if (id === RESOLVED_FUNCTION_HANDLER_MODULE_ID) {
-        return FUNCTION_HANDLER;
+        let expressVersion: string | undefined;
+        if (pluginOptions.expressVersion) {
+          expressVersion = pluginOptions.expressVersion;
+          console.log(`Using configured express version: ${expressVersion}`);
+        } else {
+          expressVersion = pluginOptions.expressVersion ?? await getPackageVersion("express");
+          console.log(`Detected express version: ${expressVersion}`);
+        }
+        if (expressVersion && semver.gte(semver.coerce(expressVersion)!, "5.0.0")) {
+          return FUNCTION_HANDLER_V5;
+        }
+        return FUNCTION_HANDLER_V4;
       }
       return;
     },
@@ -221,7 +261,9 @@ function resolvePluginConfig(config: UserConfig) {
   };
 }
 
-async function getPackageVersion(packageName: string, version?: string) {
+async function getPackageVersion(packageName: string): Promise<string | undefined>;
+async function getPackageVersion(packageName: string, version: string): Promise<string>;
+async function getPackageVersion(packageName: string, version?: string): Promise<string | undefined> {
   try {
     const packageJsonPath = new URL(
       await import.meta.resolve(`${packageName}/package.json`),
