@@ -129,8 +129,14 @@ export function amplifyHosting(opts?: PluginOptions): Plugin {
 
     async load(id) {
       if (id === RESOLVED_FUNCTION_HANDLER_MODULE_ID) {
-        const expressVersion = pluginOptions.expressVersion ?? await getPackageVersion("express");
-        console.log(`Detected express version: ${expressVersion}`);
+        let expressVersion: string | undefined;
+        if (pluginOptions.expressVersion) {
+          expressVersion = pluginOptions.expressVersion;
+          console.log(`Using configured express version: ${expressVersion}`);
+        } else {
+          expressVersion = pluginOptions.expressVersion ?? await getPackageVersion("express");
+          console.log(`Detected express version: ${expressVersion}`);
+        }
         if (expressVersion && semver.gte(semver.coerce(expressVersion)!, "5.0.0")) {
           return FUNCTION_HANDLER_V5;
         }
@@ -255,12 +261,13 @@ function resolvePluginConfig(config: UserConfig) {
   };
 }
 
-async function getPackageVersion(packageName: string, version?: string) {
+async function getPackageVersion(packageName: string): Promise<string | undefined>;
+async function getPackageVersion(packageName: string, version: string): Promise<string>;
+async function getPackageVersion(packageName: string, version?: string): Promise<string | undefined> {
   try {
     const packageJsonPath = new URL(
       await import.meta.resolve(`${packageName}/package.json`),
     ).pathname;
-    console.log(`Resolved ${packageName} to ${packageJsonPath}`);
     const packageJson = JSON.parse(await readFile(packageJsonPath, "utf8"));
     return packageJson.version;
   } catch (_error) {
@@ -271,9 +278,6 @@ async function getPackageVersion(packageName: string, version?: string) {
           path.join(process.cwd(), "node_modules", packageName, "package.json"),
           "utf8",
         ),
-      );
-      console.log(
-        `Resolved ${packageName} to node_modules/${packageName}/package.json`,
       );
       return packageJson.version;
     } catch (error) {
