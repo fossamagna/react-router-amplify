@@ -74,9 +74,14 @@ app.listen(3000, () => {
 `;
 
 export type { PluginOption };
-export function amplifyHosting(): Plugin {
+
+export type PluginOptions = {
+  expressVersion?: "5" | "4";
+};
+export function amplifyHosting(opts?: PluginOptions): Plugin {
   let resolvedConfig: ResolvedConfig;
   let pluginConfig: ReturnType<typeof resolvePluginConfig>;
+  let pluginOptions: PluginOptions = opts ?? {};
 
   return {
     name: "react-router-amplify-hosting",
@@ -124,7 +129,8 @@ export function amplifyHosting(): Plugin {
 
     async load(id) {
       if (id === RESOLVED_FUNCTION_HANDLER_MODULE_ID) {
-        const expressVersion = await getPackageVersion("express");
+        const expressVersion = pluginOptions.expressVersion ?? await getPackageVersion("express");
+        console.log(`Detected express version: ${expressVersion}`);
         if (expressVersion && semver.gte(semver.coerce(expressVersion)!, "5.0.0")) {
           return FUNCTION_HANDLER_V5;
         }
@@ -254,6 +260,7 @@ async function getPackageVersion(packageName: string, version?: string) {
     const packageJsonPath = new URL(
       await import.meta.resolve(`${packageName}/package.json`),
     ).pathname;
+    console.log(`Resolved ${packageName} to ${packageJsonPath}`);
     const packageJson = JSON.parse(await readFile(packageJsonPath, "utf8"));
     return packageJson.version;
   } catch (_error) {
@@ -264,6 +271,9 @@ async function getPackageVersion(packageName: string, version?: string) {
           path.join(process.cwd(), "node_modules", packageName, "package.json"),
           "utf8",
         ),
+      );
+      console.log(
+        `Resolved ${packageName} to node_modules/${packageName}/package.json`,
       );
       return packageJson.version;
     } catch (error) {
