@@ -19,10 +19,10 @@ importers:
         version: 0.5.1
       '@changesets/cli':
         specifier: ^2.27.5
-        version: 2.29.7(@types/node@20.19.23)
+        version: 2.29.7(@types/node@20.19.24)
       '@vitest/coverage-v8':
         specifier: ^4.0.0
-        version: 4.0.5(vitest@4.0.5(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))
+        version: 4.0.5(vitest@4.0.5(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -31,13 +31,13 @@ importers:
         version: 16.2.6
       vitest:
         specifier: ^4.0.0
-        version: 4.0.5(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
+        version: 4.0.5(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
 
   examples/hello-world:
     dependencies:
       '@react-router/dev':
         specifier: ^7.2.0
-        version: 7.8.2(@react-router/serve@7.8.2(react-router@7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(typescript@5.9.3))(@types/node@20.19.23)(babel-plugin-macros@3.1.0)(jiti@2.6.1)(lightningcss@1.30.1)(react-dom@19.1.1(react@19.1.1))(react-router@7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)(tsx@4.20.5)(typescript@5.9.3)(vite@6.4.1(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))(yaml@2.8.1)
+        version: 7.8.2(@react-router/serve@7.8.2(react-router@7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(typescript@5.9.3))(@types/node@20.19.24)(babel-plugin-macros@3.1.0)(jiti@2.6.1)(lightningcss@1.30.1)(react-dom@19.1.1(react@19.1.1))(react-router@7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)(tsx@4.20.5)(typescript@5.9.3)(vite@6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))(yaml@2.8.1)
       '@react-router/express':
         specifier: ^7.2.0
         version: 7.8.2(express@4.21.2)(react-router@7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(typescript@5.9.3)
@@ -68,7 +68,7 @@ importers:
     devDependencies:
       '@types/node':
         specifier: ^20.0.0
-        version: 20.19.23
+        version: 20.19.24
       '@types/react':
         specifier: ^19.0.10
         version: 19.2.2
@@ -80,7 +80,7 @@ importers:
         version: 5.9.3
       vite:
         specifier: ^6.3.0
-        version: 6.4.1(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
+        version: 6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
       vite-plugin-react-router-amplify-hosting:
         specifier: workspace:*
         version: link:../../packages/vite-plugin-react-router-amplify-hosting
@@ -132,16 +132,16 @@ importers:
         version: 1.16.1(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/client-cloudformation@3.902.0)(@aws-sdk/client-s3@3.901.0)(@aws-sdk/types@3.901.0)(aws-cdk-lib@2.203.1(constructs@10.4.2))(constructs@10.4.2)(zod@3.25.76)
       '@aws-amplify/backend-cli':
         specifier: 1.5.0
-        version: 1.5.0(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/types@3.901.0)(@types/node@20.19.23)(aws-cdk-lib@2.203.1(constructs@10.4.2))(aws-cdk@2.1020.0)(constructs@10.4.2)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.9.3)
+        version: 1.5.0(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/types@3.901.0)(@types/node@20.19.24)(aws-cdk-lib@2.203.1(constructs@10.4.2))(aws-cdk@2.1020.0)(constructs@10.4.2)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.9.3)
       '@react-router/dev':
         specifier: ^7.4.0
-        version: 7.8.2(@react-router/serve@7.8.2(react-router@7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(typescript@5.9.3))(@types/node@20.19.23)(babel-plugin-macros@3.1.0)(jiti@2.6.1)(lightningcss@1.30.1)(react-dom@19.1.1(react@19.1.1))(react-router@7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)(tsx@4.20.5)(typescript@5.9.3)(vite@6.4.1(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))(yaml@2.8.1)
+        version: 7.8.2(@react-router/serve@7.8.2(react-router@7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(typescript@5.9.3))(@types/node@20.19.24)(babel-plugin-macros@3.1.0)(jiti@2.6.1)(lightningcss@1.30.1)(react-dom@19.1.1(react@19.1.1))(react-router@7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)(tsx@4.20.5)(typescript@5.9.3)(vite@6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))(yaml@2.8.1)
       '@tailwindcss/vite':
         specifier: ^4.0.0
-        version: 4.1.14(vite@6.4.1(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))
+        version: 4.1.14(vite@6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))
       '@types/node':
         specifier: ^20.0.0
-        version: 20.19.23
+        version: 20.19.24
       '@types/react':
         specifier: ^19.0.1
         version: 19.2.2
@@ -156,7 +156,7 @@ importers:
         version: 2.203.1(constructs@10.4.2)
       react-router-devtools:
         specifier: ^1.1.0
-        version: 1.1.10(@types/react-dom@19.2.1(@types/react@19.2.2))(@types/react@19.2.2)(react-dom@19.1.1(react@19.1.1))(react-router@7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)(vite@6.4.1(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))
+        version: 1.1.10(@types/react-dom@19.2.1(@types/react@19.2.2))(@types/react@19.2.2)(react-dom@19.1.1(react@19.1.1))(react-router@7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)(vite@6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))
       tailwindcss:
         specifier: ^4.0.0
         version: 4.1.14
@@ -168,13 +168,13 @@ importers:
         version: 5.9.3
       vite:
         specifier: ^6.3.0
-        version: 6.4.1(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
+        version: 6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
       vite-plugin-react-router-amplify-hosting:
         specifier: workspace:*
         version: link:../../packages/vite-plugin-react-router-amplify-hosting
       vite-tsconfig-paths:
         specifier: ^5.1.4
-        version: 5.1.4(typescript@5.9.3)(vite@6.4.1(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))
+        version: 5.1.4(typescript@5.9.3)(vite@6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))
 
   packages/amplify-adapter-react-router:
     dependencies:
@@ -190,16 +190,16 @@ importers:
         version: 6.13.3
       '@types/node':
         specifier: ^20.0.0
-        version: 20.19.23
+        version: 20.19.24
       typescript:
         specifier: ^5.7.3
         version: 5.9.3
       vite:
         specifier: ^6.3.0
-        version: 6.4.1(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
+        version: 6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
       vite-plugin-dts:
         specifier: ^4.5.3
-        version: 4.5.4(@types/node@20.19.23)(rollup@4.52.5)(typescript@5.9.3)(vite@6.4.1(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))
+        version: 4.5.4(@types/node@20.19.24)(rollup@4.52.5)(typescript@5.9.3)(vite@6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))
 
   packages/vite-plugin-react-router-amplify-hosting:
     dependencies:
@@ -212,7 +212,7 @@ importers:
     devDependencies:
       '@types/node':
         specifier: ^20.0.0
-        version: 20.19.23
+        version: 20.19.24
       '@types/semver':
         specifier: ^7.7.1
         version: 7.7.1
@@ -227,10 +227,10 @@ importers:
         version: 5.9.3
       vite:
         specifier: ^6.3.0
-        version: 6.4.1(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
+        version: 6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
       vite-plugin-dts:
         specifier: ^4.5.3
-        version: 4.5.4(@types/node@20.19.23)(rollup@4.52.5)(typescript@5.9.3)(vite@6.4.1(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))
+        version: 4.5.4(@types/node@20.19.24)(rollup@4.52.5)(typescript@5.9.3)(vite@6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))
 
 packages:
 
@@ -3844,6 +3844,9 @@ packages:
 
   '@types/node@20.19.23':
     resolution: {integrity: sha512-yIdlVVVHXpmqRhtyovZAcSy0MiPcYWGkoO4CGe/+jpP0hmNuihm4XhHbADpK++MsiLHP5MVlv+bcgdF99kSiFQ==}
+
+  '@types/node@20.19.24':
+    resolution: {integrity: sha512-FE5u0ezmi6y9OZEzlJfg37mqqf6ZDSF2V/NLjUyGrR9uTZ7Sb9F7bLNZ03S4XVUNRWGA7Ck4c1kK+YnuWjl+DA==}
 
   '@types/parse-json@4.0.2':
     resolution: {integrity: sha512-dISoDXWWQwUquiKsyZ4Ng+HX2KsPL7LyHKHQwgGFEA3IaKac4Obd+h2a/a6waisAoepJlBcx9paWqjA8/HVjCw==}
@@ -7848,19 +7851,19 @@ snapshots:
       - react-native-b4a
       - zod
 
-  '@aws-amplify/backend-cli@1.5.0(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/types@3.901.0)(@types/node@20.19.23)(aws-cdk-lib@2.203.1(constructs@10.4.2))(aws-cdk@2.1020.0)(constructs@10.4.2)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.9.3)':
+  '@aws-amplify/backend-cli@1.5.0(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/types@3.901.0)(@types/node@20.19.24)(aws-cdk-lib@2.203.1(constructs@10.4.2))(aws-cdk@2.1020.0)(constructs@10.4.2)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(typescript@5.9.3)':
     dependencies:
       '@aws-amplify/backend-deployer': 1.1.20(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/types@3.901.0)(aws-cdk-lib@2.203.1(constructs@10.4.2))(aws-cdk@2.1020.0)(constructs@10.4.2)(typescript@5.9.3)
       '@aws-amplify/backend-output-schemas': 1.7.0(zod@3.25.76)
       '@aws-amplify/backend-secret': 1.4.0(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/types@3.901.0)(aws-cdk-lib@2.203.1(constructs@10.4.2))(constructs@10.4.2)
-      '@aws-amplify/cli-core': 1.4.1(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/types@3.901.0)(@types/node@20.19.23)(aws-cdk-lib@2.203.1(constructs@10.4.2))(constructs@10.4.2)
+      '@aws-amplify/cli-core': 1.4.1(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/types@3.901.0)(@types/node@20.19.24)(aws-cdk-lib@2.203.1(constructs@10.4.2))(constructs@10.4.2)
       '@aws-amplify/client-config': 1.8.0(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/client-amplify@3.901.0)(@aws-sdk/client-cloudformation@3.902.0)(@aws-sdk/client-s3@3.901.0)(@aws-sdk/types@3.901.0)(aws-cdk-lib@2.203.1(constructs@10.4.2))(constructs@10.4.2)
       '@aws-amplify/deployed-backend-client': 1.8.0(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/client-amplify@3.901.0)(@aws-sdk/client-cloudformation@3.902.0)(@aws-sdk/client-s3@3.901.0)(@aws-sdk/types@3.901.0)(aws-cdk-lib@2.203.1(constructs@10.4.2))(constructs@10.4.2)
       '@aws-amplify/form-generator': 1.2.4(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@aws-amplify/model-generator': 1.2.0(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/client-amplify@3.901.0)(@aws-sdk/client-cloudformation@3.902.0)(aws-cdk-lib@2.203.1(constructs@10.4.2))(constructs@10.4.2)(zod@3.25.76)
       '@aws-amplify/platform-core': 1.10.0(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/types@3.901.0)(aws-cdk-lib@2.203.1(constructs@10.4.2))(constructs@10.4.2)
       '@aws-amplify/plugin-types': 1.11.0(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/types@3.901.0)(aws-cdk-lib@2.203.1(constructs@10.4.2))(constructs@10.4.2)
-      '@aws-amplify/sandbox': 1.2.12(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/client-amplify@3.901.0)(@aws-sdk/client-cloudformation@3.902.0)(@aws-sdk/client-s3@3.901.0)(@types/node@20.19.23)(aws-cdk-lib@2.203.1(constructs@10.4.2))(aws-cdk@2.1020.0)(constructs@10.4.2)(typescript@5.9.3)
+      '@aws-amplify/sandbox': 1.2.12(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/client-amplify@3.901.0)(@aws-sdk/client-cloudformation@3.902.0)(@aws-sdk/client-s3@3.901.0)(@types/node@20.19.24)(aws-cdk-lib@2.203.1(constructs@10.4.2))(aws-cdk@2.1020.0)(constructs@10.4.2)(typescript@5.9.3)
       '@aws-amplify/schema-generator': 1.4.0(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/types@3.901.0)(aws-cdk-lib@2.203.1(constructs@10.4.2))(constructs@10.4.2)
       '@aws-sdk/client-amplify': 3.901.0
       '@aws-sdk/client-cloudformation': 3.902.0
@@ -8055,10 +8058,10 @@ snapshots:
       - supports-color
       - zod
 
-  '@aws-amplify/cli-core@1.4.1(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/types@3.862.0)(@types/node@20.19.23)(aws-cdk-lib@2.203.1(constructs@10.4.2))(constructs@10.4.2)':
+  '@aws-amplify/cli-core@1.4.1(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/types@3.862.0)(@types/node@20.19.24)(aws-cdk-lib@2.203.1(constructs@10.4.2))(constructs@10.4.2)':
     dependencies:
       '@aws-amplify/platform-core': 1.10.0(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/types@3.862.0)(aws-cdk-lib@2.203.1(constructs@10.4.2))(constructs@10.4.2)
-      '@inquirer/prompts': 7.8.6(@types/node@20.19.23)
+      '@inquirer/prompts': 7.8.6(@types/node@20.19.24)
       execa: 9.6.0
       kleur: 4.1.5
       ora: 8.2.0
@@ -8073,10 +8076,10 @@ snapshots:
       - constructs
       - react-native-b4a
 
-  '@aws-amplify/cli-core@1.4.1(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/types@3.901.0)(@types/node@20.19.23)(aws-cdk-lib@2.203.1(constructs@10.4.2))(constructs@10.4.2)':
+  '@aws-amplify/cli-core@1.4.1(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/types@3.901.0)(@types/node@20.19.24)(aws-cdk-lib@2.203.1(constructs@10.4.2))(constructs@10.4.2)':
     dependencies:
       '@aws-amplify/platform-core': 1.10.0(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/types@3.901.0)(aws-cdk-lib@2.203.1(constructs@10.4.2))(constructs@10.4.2)
-      '@inquirer/prompts': 7.8.6(@types/node@20.19.23)
+      '@inquirer/prompts': 7.8.6(@types/node@20.19.24)
       execa: 9.6.0
       kleur: 4.1.5
       ora: 8.2.0
@@ -8481,11 +8484,11 @@ snapshots:
       - aws-crt
       - react-native-b4a
 
-  '@aws-amplify/sandbox@1.2.12(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/client-amplify@3.901.0)(@aws-sdk/client-cloudformation@3.902.0)(@aws-sdk/client-s3@3.901.0)(@types/node@20.19.23)(aws-cdk-lib@2.203.1(constructs@10.4.2))(aws-cdk@2.1020.0)(constructs@10.4.2)(typescript@5.9.3)':
+  '@aws-amplify/sandbox@1.2.12(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/client-amplify@3.901.0)(@aws-sdk/client-cloudformation@3.902.0)(@aws-sdk/client-s3@3.901.0)(@types/node@20.19.24)(aws-cdk-lib@2.203.1(constructs@10.4.2))(aws-cdk@2.1020.0)(constructs@10.4.2)(typescript@5.9.3)':
     dependencies:
       '@aws-amplify/backend-deployer': 1.1.20(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/types@3.862.0)(aws-cdk-lib@2.203.1(constructs@10.4.2))(aws-cdk@2.1020.0)(constructs@10.4.2)(typescript@5.9.3)
       '@aws-amplify/backend-secret': 1.4.0(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/types@3.862.0)(aws-cdk-lib@2.203.1(constructs@10.4.2))(constructs@10.4.2)
-      '@aws-amplify/cli-core': 1.4.1(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/types@3.862.0)(@types/node@20.19.23)(aws-cdk-lib@2.203.1(constructs@10.4.2))(constructs@10.4.2)
+      '@aws-amplify/cli-core': 1.4.1(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/types@3.862.0)(@types/node@20.19.24)(aws-cdk-lib@2.203.1(constructs@10.4.2))(constructs@10.4.2)
       '@aws-amplify/client-config': 1.8.0(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/client-amplify@3.901.0)(@aws-sdk/client-cloudformation@3.902.0)(@aws-sdk/client-s3@3.901.0)(@aws-sdk/types@3.862.0)(aws-cdk-lib@2.203.1(constructs@10.4.2))(constructs@10.4.2)
       '@aws-amplify/deployed-backend-client': 1.8.0(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/client-amplify@3.901.0)(@aws-sdk/client-cloudformation@3.902.0)(@aws-sdk/client-s3@3.901.0)(@aws-sdk/types@3.862.0)(aws-cdk-lib@2.203.1(constructs@10.4.2))(constructs@10.4.2)
       '@aws-amplify/platform-core': 1.10.0(@aws-cdk/cli-plugin-contract@2.181.1)(@aws-sdk/types@3.862.0)(aws-cdk-lib@2.203.1(constructs@10.4.2))(constructs@10.4.2)
@@ -11875,7 +11878,7 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@changesets/cli@2.29.7(@types/node@20.19.23)':
+  '@changesets/cli@2.29.7(@types/node@20.19.24)':
     dependencies:
       '@changesets/apply-release-plan': 7.0.13
       '@changesets/assemble-release-plan': 6.0.9
@@ -11891,7 +11894,7 @@ snapshots:
       '@changesets/should-skip-package': 0.1.2
       '@changesets/types': 6.1.0
       '@changesets/write': 0.4.0
-      '@inquirer/external-editor': 1.0.1(@types/node@20.19.23)
+      '@inquirer/external-editor': 1.0.1(@types/node@20.19.24)
       '@manypkg/get-packages': 1.1.3
       ansi-colors: 4.1.3
       ci-info: 3.9.0
@@ -12420,135 +12423,135 @@ snapshots:
 
   '@inquirer/ansi@1.0.0': {}
 
-  '@inquirer/checkbox@4.2.4(@types/node@20.19.23)':
+  '@inquirer/checkbox@4.2.4(@types/node@20.19.24)':
     dependencies:
       '@inquirer/ansi': 1.0.0
-      '@inquirer/core': 10.2.2(@types/node@20.19.23)
+      '@inquirer/core': 10.2.2(@types/node@20.19.24)
       '@inquirer/figures': 1.0.13
-      '@inquirer/type': 3.0.8(@types/node@20.19.23)
+      '@inquirer/type': 3.0.8(@types/node@20.19.24)
       yoctocolors-cjs: 2.1.3
     optionalDependencies:
-      '@types/node': 20.19.23
+      '@types/node': 20.19.24
 
-  '@inquirer/confirm@5.1.18(@types/node@20.19.23)':
+  '@inquirer/confirm@5.1.18(@types/node@20.19.24)':
     dependencies:
-      '@inquirer/core': 10.2.2(@types/node@20.19.23)
-      '@inquirer/type': 3.0.8(@types/node@20.19.23)
+      '@inquirer/core': 10.2.2(@types/node@20.19.24)
+      '@inquirer/type': 3.0.8(@types/node@20.19.24)
     optionalDependencies:
-      '@types/node': 20.19.23
+      '@types/node': 20.19.24
 
-  '@inquirer/core@10.2.2(@types/node@20.19.23)':
+  '@inquirer/core@10.2.2(@types/node@20.19.24)':
     dependencies:
       '@inquirer/ansi': 1.0.0
       '@inquirer/figures': 1.0.13
-      '@inquirer/type': 3.0.8(@types/node@20.19.23)
+      '@inquirer/type': 3.0.8(@types/node@20.19.24)
       cli-width: 4.1.0
       mute-stream: 2.0.0
       signal-exit: 4.1.0
       wrap-ansi: 6.2.0
       yoctocolors-cjs: 2.1.3
     optionalDependencies:
-      '@types/node': 20.19.23
+      '@types/node': 20.19.24
 
-  '@inquirer/editor@4.2.20(@types/node@20.19.23)':
+  '@inquirer/editor@4.2.20(@types/node@20.19.24)':
     dependencies:
-      '@inquirer/core': 10.2.2(@types/node@20.19.23)
-      '@inquirer/external-editor': 1.0.2(@types/node@20.19.23)
-      '@inquirer/type': 3.0.8(@types/node@20.19.23)
+      '@inquirer/core': 10.2.2(@types/node@20.19.24)
+      '@inquirer/external-editor': 1.0.2(@types/node@20.19.24)
+      '@inquirer/type': 3.0.8(@types/node@20.19.24)
     optionalDependencies:
-      '@types/node': 20.19.23
+      '@types/node': 20.19.24
 
-  '@inquirer/expand@4.0.20(@types/node@20.19.23)':
+  '@inquirer/expand@4.0.20(@types/node@20.19.24)':
     dependencies:
-      '@inquirer/core': 10.2.2(@types/node@20.19.23)
-      '@inquirer/type': 3.0.8(@types/node@20.19.23)
+      '@inquirer/core': 10.2.2(@types/node@20.19.24)
+      '@inquirer/type': 3.0.8(@types/node@20.19.24)
       yoctocolors-cjs: 2.1.3
     optionalDependencies:
-      '@types/node': 20.19.23
+      '@types/node': 20.19.24
 
-  '@inquirer/external-editor@1.0.1(@types/node@20.19.23)':
+  '@inquirer/external-editor@1.0.1(@types/node@20.19.24)':
     dependencies:
       chardet: 2.1.0
       iconv-lite: 0.6.3
     optionalDependencies:
-      '@types/node': 20.19.23
+      '@types/node': 20.19.24
 
-  '@inquirer/external-editor@1.0.2(@types/node@20.19.23)':
+  '@inquirer/external-editor@1.0.2(@types/node@20.19.24)':
     dependencies:
       chardet: 2.1.0
       iconv-lite: 0.7.0
     optionalDependencies:
-      '@types/node': 20.19.23
+      '@types/node': 20.19.24
 
   '@inquirer/figures@1.0.13': {}
 
-  '@inquirer/input@4.2.4(@types/node@20.19.23)':
+  '@inquirer/input@4.2.4(@types/node@20.19.24)':
     dependencies:
-      '@inquirer/core': 10.2.2(@types/node@20.19.23)
-      '@inquirer/type': 3.0.8(@types/node@20.19.23)
+      '@inquirer/core': 10.2.2(@types/node@20.19.24)
+      '@inquirer/type': 3.0.8(@types/node@20.19.24)
     optionalDependencies:
-      '@types/node': 20.19.23
+      '@types/node': 20.19.24
 
-  '@inquirer/number@3.0.20(@types/node@20.19.23)':
+  '@inquirer/number@3.0.20(@types/node@20.19.24)':
     dependencies:
-      '@inquirer/core': 10.2.2(@types/node@20.19.23)
-      '@inquirer/type': 3.0.8(@types/node@20.19.23)
+      '@inquirer/core': 10.2.2(@types/node@20.19.24)
+      '@inquirer/type': 3.0.8(@types/node@20.19.24)
     optionalDependencies:
-      '@types/node': 20.19.23
+      '@types/node': 20.19.24
 
-  '@inquirer/password@4.0.20(@types/node@20.19.23)':
-    dependencies:
-      '@inquirer/ansi': 1.0.0
-      '@inquirer/core': 10.2.2(@types/node@20.19.23)
-      '@inquirer/type': 3.0.8(@types/node@20.19.23)
-    optionalDependencies:
-      '@types/node': 20.19.23
-
-  '@inquirer/prompts@7.8.6(@types/node@20.19.23)':
-    dependencies:
-      '@inquirer/checkbox': 4.2.4(@types/node@20.19.23)
-      '@inquirer/confirm': 5.1.18(@types/node@20.19.23)
-      '@inquirer/editor': 4.2.20(@types/node@20.19.23)
-      '@inquirer/expand': 4.0.20(@types/node@20.19.23)
-      '@inquirer/input': 4.2.4(@types/node@20.19.23)
-      '@inquirer/number': 3.0.20(@types/node@20.19.23)
-      '@inquirer/password': 4.0.20(@types/node@20.19.23)
-      '@inquirer/rawlist': 4.1.8(@types/node@20.19.23)
-      '@inquirer/search': 3.1.3(@types/node@20.19.23)
-      '@inquirer/select': 4.3.4(@types/node@20.19.23)
-    optionalDependencies:
-      '@types/node': 20.19.23
-
-  '@inquirer/rawlist@4.1.8(@types/node@20.19.23)':
-    dependencies:
-      '@inquirer/core': 10.2.2(@types/node@20.19.23)
-      '@inquirer/type': 3.0.8(@types/node@20.19.23)
-      yoctocolors-cjs: 2.1.3
-    optionalDependencies:
-      '@types/node': 20.19.23
-
-  '@inquirer/search@3.1.3(@types/node@20.19.23)':
-    dependencies:
-      '@inquirer/core': 10.2.2(@types/node@20.19.23)
-      '@inquirer/figures': 1.0.13
-      '@inquirer/type': 3.0.8(@types/node@20.19.23)
-      yoctocolors-cjs: 2.1.3
-    optionalDependencies:
-      '@types/node': 20.19.23
-
-  '@inquirer/select@4.3.4(@types/node@20.19.23)':
+  '@inquirer/password@4.0.20(@types/node@20.19.24)':
     dependencies:
       '@inquirer/ansi': 1.0.0
-      '@inquirer/core': 10.2.2(@types/node@20.19.23)
-      '@inquirer/figures': 1.0.13
-      '@inquirer/type': 3.0.8(@types/node@20.19.23)
+      '@inquirer/core': 10.2.2(@types/node@20.19.24)
+      '@inquirer/type': 3.0.8(@types/node@20.19.24)
+    optionalDependencies:
+      '@types/node': 20.19.24
+
+  '@inquirer/prompts@7.8.6(@types/node@20.19.24)':
+    dependencies:
+      '@inquirer/checkbox': 4.2.4(@types/node@20.19.24)
+      '@inquirer/confirm': 5.1.18(@types/node@20.19.24)
+      '@inquirer/editor': 4.2.20(@types/node@20.19.24)
+      '@inquirer/expand': 4.0.20(@types/node@20.19.24)
+      '@inquirer/input': 4.2.4(@types/node@20.19.24)
+      '@inquirer/number': 3.0.20(@types/node@20.19.24)
+      '@inquirer/password': 4.0.20(@types/node@20.19.24)
+      '@inquirer/rawlist': 4.1.8(@types/node@20.19.24)
+      '@inquirer/search': 3.1.3(@types/node@20.19.24)
+      '@inquirer/select': 4.3.4(@types/node@20.19.24)
+    optionalDependencies:
+      '@types/node': 20.19.24
+
+  '@inquirer/rawlist@4.1.8(@types/node@20.19.24)':
+    dependencies:
+      '@inquirer/core': 10.2.2(@types/node@20.19.24)
+      '@inquirer/type': 3.0.8(@types/node@20.19.24)
       yoctocolors-cjs: 2.1.3
     optionalDependencies:
-      '@types/node': 20.19.23
+      '@types/node': 20.19.24
 
-  '@inquirer/type@3.0.8(@types/node@20.19.23)':
+  '@inquirer/search@3.1.3(@types/node@20.19.24)':
+    dependencies:
+      '@inquirer/core': 10.2.2(@types/node@20.19.24)
+      '@inquirer/figures': 1.0.13
+      '@inquirer/type': 3.0.8(@types/node@20.19.24)
+      yoctocolors-cjs: 2.1.3
     optionalDependencies:
-      '@types/node': 20.19.23
+      '@types/node': 20.19.24
+
+  '@inquirer/select@4.3.4(@types/node@20.19.24)':
+    dependencies:
+      '@inquirer/ansi': 1.0.0
+      '@inquirer/core': 10.2.2(@types/node@20.19.24)
+      '@inquirer/figures': 1.0.13
+      '@inquirer/type': 3.0.8(@types/node@20.19.24)
+      yoctocolors-cjs: 2.1.3
+    optionalDependencies:
+      '@types/node': 20.19.24
+
+  '@inquirer/type@3.0.8(@types/node@20.19.24)':
+    optionalDependencies:
+      '@types/node': 20.19.24
 
   '@isaacs/balanced-match@4.0.1': {}
 
@@ -12596,7 +12599,7 @@ snapshots:
   '@manypkg/find-root@1.1.0':
     dependencies:
       '@babel/runtime': 7.28.4
-      '@types/node': 20.19.23
+      '@types/node': 20.19.24
       find-up: 4.1.0
       fs-extra: 8.1.0
 
@@ -12609,23 +12612,23 @@ snapshots:
       globby: 11.1.0
       read-yaml-file: 1.1.0
 
-  '@microsoft/api-extractor-model@7.30.7(@types/node@20.19.23)':
+  '@microsoft/api-extractor-model@7.30.7(@types/node@20.19.24)':
     dependencies:
       '@microsoft/tsdoc': 0.15.1
       '@microsoft/tsdoc-config': 0.17.1
-      '@rushstack/node-core-library': 5.14.0(@types/node@20.19.23)
+      '@rushstack/node-core-library': 5.14.0(@types/node@20.19.24)
     transitivePeerDependencies:
       - '@types/node'
 
-  '@microsoft/api-extractor@7.52.11(@types/node@20.19.23)':
+  '@microsoft/api-extractor@7.52.11(@types/node@20.19.24)':
     dependencies:
-      '@microsoft/api-extractor-model': 7.30.7(@types/node@20.19.23)
+      '@microsoft/api-extractor-model': 7.30.7(@types/node@20.19.24)
       '@microsoft/tsdoc': 0.15.1
       '@microsoft/tsdoc-config': 0.17.1
-      '@rushstack/node-core-library': 5.14.0(@types/node@20.19.23)
+      '@rushstack/node-core-library': 5.14.0(@types/node@20.19.24)
       '@rushstack/rig-package': 0.5.3
-      '@rushstack/terminal': 0.15.4(@types/node@20.19.23)
-      '@rushstack/ts-command-line': 5.0.2(@types/node@20.19.23)
+      '@rushstack/terminal': 0.15.4(@types/node@20.19.24)
+      '@rushstack/ts-command-line': 5.0.2(@types/node@20.19.24)
       lodash: 4.17.21
       minimatch: 10.0.3
       resolve: 1.22.10
@@ -13167,6 +13170,59 @@ snapshots:
       - tsx
       - yaml
 
+  '@react-router/dev@7.8.2(@react-router/serve@7.8.2(react-router@7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(typescript@5.9.3))(@types/node@20.19.24)(babel-plugin-macros@3.1.0)(jiti@2.6.1)(lightningcss@1.30.1)(react-dom@19.1.1(react@19.1.1))(react-router@7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)(tsx@4.20.5)(typescript@5.9.3)(vite@6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))(yaml@2.8.1)':
+    dependencies:
+      '@babel/core': 7.28.3
+      '@babel/generator': 7.28.3
+      '@babel/parser': 7.28.3
+      '@babel/plugin-syntax-jsx': 7.27.1(@babel/core@7.28.3)
+      '@babel/preset-typescript': 7.27.1(@babel/core@7.28.3)
+      '@babel/traverse': 7.28.3
+      '@babel/types': 7.28.2
+      '@npmcli/package-json': 4.0.1
+      '@react-router/node': 7.8.2(react-router@7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(typescript@5.9.3)
+      '@vitejs/plugin-rsc': 0.4.11(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(vite@6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))
+      arg: 5.0.2
+      babel-dead-code-elimination: 1.0.10
+      chokidar: 4.0.3
+      dedent: 1.7.0(babel-plugin-macros@3.1.0)
+      es-module-lexer: 1.7.0
+      exit-hook: 2.2.1
+      isbot: 5.1.30
+      jsesc: 3.0.2
+      lodash: 4.17.21
+      pathe: 1.1.2
+      picocolors: 1.1.1
+      prettier: 3.6.2
+      react-refresh: 0.14.2
+      react-router: 7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+      semver: 7.7.2
+      set-cookie-parser: 2.7.1
+      tinyglobby: 0.2.14
+      valibot: 0.41.0(typescript@5.9.3)
+      vite: 6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
+      vite-node: 3.2.4(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
+    optionalDependencies:
+      '@react-router/serve': 7.8.2(react-router@7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(typescript@5.9.3)
+      typescript: 5.9.3
+    transitivePeerDependencies:
+      - '@types/node'
+      - babel-plugin-macros
+      - bluebird
+      - jiti
+      - less
+      - lightningcss
+      - react
+      - react-dom
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - tsx
+      - yaml
+
   '@react-router/express@7.8.2(express@4.21.2)(react-router@7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(typescript@5.9.3)':
     dependencies:
       '@react-router/node': 7.8.2(react-router@7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(typescript@5.9.3)
@@ -13284,7 +13340,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.52.5':
     optional: true
 
-  '@rushstack/node-core-library@5.14.0(@types/node@20.19.23)':
+  '@rushstack/node-core-library@5.14.0(@types/node@20.19.24)':
     dependencies:
       ajv: 8.13.0
       ajv-draft-04: 1.0.0(ajv@8.13.0)
@@ -13295,23 +13351,23 @@ snapshots:
       resolve: 1.22.10
       semver: 7.5.4
     optionalDependencies:
-      '@types/node': 20.19.23
+      '@types/node': 20.19.24
 
   '@rushstack/rig-package@0.5.3':
     dependencies:
       resolve: 1.22.10
       strip-json-comments: 3.1.1
 
-  '@rushstack/terminal@0.15.4(@types/node@20.19.23)':
+  '@rushstack/terminal@0.15.4(@types/node@20.19.24)':
     dependencies:
-      '@rushstack/node-core-library': 5.14.0(@types/node@20.19.23)
+      '@rushstack/node-core-library': 5.14.0(@types/node@20.19.24)
       supports-color: 8.1.1
     optionalDependencies:
-      '@types/node': 20.19.23
+      '@types/node': 20.19.24
 
-  '@rushstack/ts-command-line@5.0.2(@types/node@20.19.23)':
+  '@rushstack/ts-command-line@5.0.2(@types/node@20.19.24)':
     dependencies:
-      '@rushstack/terminal': 0.15.4(@types/node@20.19.23)
+      '@rushstack/terminal': 0.15.4(@types/node@20.19.24)
       '@types/argparse': 1.0.38
       argparse: 1.0.10
       string-argv: 0.3.2
@@ -14321,12 +14377,12 @@ snapshots:
       '@tailwindcss/oxide-win32-arm64-msvc': 4.1.14
       '@tailwindcss/oxide-win32-x64-msvc': 4.1.14
 
-  '@tailwindcss/vite@4.1.14(vite@6.4.1(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))':
+  '@tailwindcss/vite@4.1.14(vite@6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))':
     dependencies:
       '@tailwindcss/node': 4.1.14
       '@tailwindcss/oxide': 4.1.14
       tailwindcss: 4.1.14
-      vite: 6.4.1(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
+      vite: 6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
 
   '@types/argparse@1.0.38': {}
 
@@ -14348,6 +14404,11 @@ snapshots:
   '@types/lodash@4.17.20': {}
 
   '@types/node@20.19.23':
+    dependencies:
+      undici-types: 6.21.0
+    optional: true
+
+  '@types/node@20.19.24':
     dependencies:
       undici-types: 6.21.0
 
@@ -14388,7 +14449,20 @@ snapshots:
       vite: 6.4.1(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
       vitefu: 1.1.1(vite@6.4.1(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))
 
-  '@vitest/coverage-v8@4.0.5(vitest@4.0.5(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))':
+  '@vitejs/plugin-rsc@0.4.11(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(vite@6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))':
+    dependencies:
+      '@mjackson/node-fetch-server': 0.7.0
+      es-module-lexer: 1.7.0
+      estree-walker: 3.0.3
+      magic-string: 0.30.21
+      periscopic: 4.0.2
+      react: 19.1.1
+      react-dom: 19.1.1(react@19.1.1)
+      turbo-stream: 3.1.0
+      vite: 6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
+      vitefu: 1.1.1(vite@6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))
+
+  '@vitest/coverage-v8@4.0.5(vitest@4.0.5(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))':
     dependencies:
       '@bcoe/v8-coverage': 1.0.2
       '@vitest/utils': 4.0.5
@@ -14401,7 +14475,7 @@ snapshots:
       magicast: 0.3.5
       std-env: 3.10.0
       tinyrainbow: 3.0.3
-      vitest: 4.0.5(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
+      vitest: 4.0.5(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -14414,13 +14488,13 @@ snapshots:
       chai: 6.2.0
       tinyrainbow: 3.0.3
 
-  '@vitest/mocker@4.0.5(vite@7.1.12(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))':
+  '@vitest/mocker@4.0.5(vite@7.1.12(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))':
     dependencies:
       '@vitest/spy': 4.0.5
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 7.1.12(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
+      vite: 7.1.12(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
 
   '@vitest/pretty-format@4.0.5':
     dependencies:
@@ -17272,7 +17346,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.2.2
 
-  react-router-devtools@1.1.10(@types/react-dom@19.2.1(@types/react@19.2.2))(@types/react@19.2.2)(react-dom@19.1.1(react@19.1.1))(react-router@7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)(vite@6.4.1(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)):
+  react-router-devtools@1.1.10(@types/react-dom@19.2.1(@types/react@19.2.2))(@types/react@19.2.2)(react-dom@19.1.1(react@19.1.1))(react-router@7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(react@19.1.1)(vite@6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)):
     dependencies:
       '@babel/core': 7.28.3
       '@babel/generator': 7.28.3
@@ -17294,7 +17368,7 @@ snapshots:
       react-hotkeys-hook: 4.6.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       react-router: 7.8.2(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       react-tooltip: 5.29.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      vite: 6.4.1(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
+      vite: 6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
     optionalDependencies:
       '@biomejs/cli-darwin-arm64': 1.9.4
       '@rollup/rollup-darwin-arm64': 4.50.1
@@ -18146,9 +18220,30 @@ snapshots:
       - tsx
       - yaml
 
-  vite-plugin-dts@4.5.4(@types/node@20.19.23)(rollup@4.52.5)(typescript@5.9.3)(vite@6.4.1(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)):
+  vite-node@3.2.4(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1):
     dependencies:
-      '@microsoft/api-extractor': 7.52.11(@types/node@20.19.23)
+      cac: 6.7.14
+      debug: 4.4.3
+      es-module-lexer: 1.7.0
+      pathe: 2.0.3
+      vite: 6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
+    transitivePeerDependencies:
+      - '@types/node'
+      - jiti
+      - less
+      - lightningcss
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - tsx
+      - yaml
+
+  vite-plugin-dts@4.5.4(@types/node@20.19.24)(rollup@4.52.5)(typescript@5.9.3)(vite@6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)):
+    dependencies:
+      '@microsoft/api-extractor': 7.52.11(@types/node@20.19.24)
       '@rollup/pluginutils': 5.3.0(rollup@4.52.5)
       '@volar/typescript': 2.4.23
       '@vue/language-core': 2.2.0(typescript@5.9.3)
@@ -18159,19 +18254,19 @@ snapshots:
       magic-string: 0.30.18
       typescript: 5.9.3
     optionalDependencies:
-      vite: 6.4.1(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
+      vite: 6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
     transitivePeerDependencies:
       - '@types/node'
       - rollup
       - supports-color
 
-  vite-tsconfig-paths@5.1.4(typescript@5.9.3)(vite@6.4.1(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)):
+  vite-tsconfig-paths@5.1.4(typescript@5.9.3)(vite@6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)):
     dependencies:
       debug: 4.4.1
       globrex: 0.1.2
       tsconfck: 3.1.6(typescript@5.9.3)
     optionalDependencies:
-      vite: 6.4.1(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
+      vite: 6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -18192,7 +18287,7 @@ snapshots:
       tsx: 4.20.5
       yaml: 2.8.1
 
-  vite@7.1.12(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1):
+  vite@6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1):
     dependencies:
       esbuild: 0.25.11
       fdir: 6.5.0(picomatch@4.0.3)
@@ -18201,7 +18296,23 @@ snapshots:
       rollup: 4.52.5
       tinyglobby: 0.2.15
     optionalDependencies:
-      '@types/node': 20.19.23
+      '@types/node': 20.19.24
+      fsevents: 2.3.3
+      jiti: 2.6.1
+      lightningcss: 1.30.1
+      tsx: 4.20.5
+      yaml: 2.8.1
+
+  vite@7.1.12(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1):
+    dependencies:
+      esbuild: 0.25.11
+      fdir: 6.5.0(picomatch@4.0.3)
+      picomatch: 4.0.3
+      postcss: 8.5.6
+      rollup: 4.52.5
+      tinyglobby: 0.2.15
+    optionalDependencies:
+      '@types/node': 20.19.24
       fsevents: 2.3.3
       jiti: 2.6.1
       lightningcss: 1.30.1
@@ -18212,10 +18323,14 @@ snapshots:
     optionalDependencies:
       vite: 6.4.1(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
 
-  vitest@4.0.5(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1):
+  vitefu@1.1.1(vite@6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)):
+    optionalDependencies:
+      vite: 6.4.1(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
+
+  vitest@4.0.5(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1):
     dependencies:
       '@vitest/expect': 4.0.5
-      '@vitest/mocker': 4.0.5(vite@7.1.12(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))
+      '@vitest/mocker': 4.0.5(vite@7.1.12(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1))
       '@vitest/pretty-format': 4.0.5
       '@vitest/runner': 4.0.5
       '@vitest/snapshot': 4.0.5
@@ -18232,10 +18347,10 @@ snapshots:
       tinyexec: 0.3.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.0.3
-      vite: 7.1.12(@types/node@20.19.23)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
+      vite: 7.1.12(@types/node@20.19.24)(jiti@2.6.1)(lightningcss@1.30.1)(tsx@4.20.5)(yaml@2.8.1)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@types/node': 20.19.23
+      '@types/node': 20.19.24
     transitivePeerDependencies:
       - jiti
       - less
