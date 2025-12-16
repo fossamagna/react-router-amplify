@@ -100,7 +100,7 @@ export function amplifyHosting(opts?: PluginOptions): Plugin {
         config.ssr.noExternal = true;
       }
 
-      if (pluginConfig.future.unstable_viteEnvironmentApi) {
+      if (pluginConfig.future.v8_viteEnvironmentApi) {
         return {
           ...config,
           ssr: {
@@ -154,10 +154,10 @@ export function amplifyHosting(opts?: PluginOptions): Plugin {
       if (!pluginConfig) {
         return;
       }
-      const isClientBuild = pluginConfig.future.unstable_viteEnvironmentApi
+      const isClientBuild = pluginConfig.future.v8_viteEnvironmentApi
         ? this.environment.name === "client"
         : !pluginConfig.isSsrBuild;
-      const isServerBuild = pluginConfig.future.unstable_viteEnvironmentApi
+      const isServerBuild = pluginConfig.future.v8_viteEnvironmentApi
         ? this.environment.name === "ssr"
         : pluginConfig.isSsrBuild;
 

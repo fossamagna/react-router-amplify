@@ -26,7 +26,7 @@ export const reactRouterConfig = ({
   appDirectory?: string;
   splitRouteModules?: NonNullable<
     Config["future"]
-  >["unstable_splitRouteModules"];
+  >["v8_splitRouteModules"];
   viteEnvironmentApi?: boolean;
   middleware?: boolean;
 }) => {
@@ -36,9 +36,9 @@ export const reactRouterConfig = ({
     prerender,
     appDirectory,
     future: {
-      unstable_splitRouteModules: splitRouteModules,
-      unstable_viteEnvironmentApi: viteEnvironmentApi,
-      unstable_middleware: middleware,
+      v8_splitRouteModules: splitRouteModules,
+      v8_viteEnvironmentApi: viteEnvironmentApi,
+      v8_middleware: middleware,
     },
   };
 

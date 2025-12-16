@@ -65,7 +65,7 @@ describe("build test", () => {
     ).toBe(true);
   });
 
-  test("vite 6 with unstable_viteEnvironmentApi future flag", async () => {
+  test("vite 6 with v8_viteEnvironmentApi future flag", async () => {
     cwd = await createProject(
       {
         "react-router.config.ts": reactRouterConfig({
@@ -125,7 +125,7 @@ describe("build test", () => {
     ).toBe(true);
   });
 
-  test("vite 7 with unstable_viteEnvironmentApi future flag", async () => {
+  test("vite 7 with v8_viteEnvironmentApi future flag", async () => {
     cwd = await createProject(
       {
         "react-router.config.ts": reactRouterConfig({
