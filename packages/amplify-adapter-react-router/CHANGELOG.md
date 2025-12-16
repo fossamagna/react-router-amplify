@@ -1,5 +1,11 @@
 # amplify-adapter-react-router
 
+## 0.2.0
+
+### Minor Changes
+
+- [`c41b582`](https://github.com/fossamagna/react-router-amplify/commit/c41b58244bc9b16ae884ab43ba037a93fe7481ad) Thanks [@fossamagna](https://github.com/fossamagna)! - feat: support react-router v7.10.0 stabilized future flags
+
 ## 0.1.2
 
 ### Patch Changes
