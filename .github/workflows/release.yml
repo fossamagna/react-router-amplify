@@ -7,6 +7,12 @@ on:
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
+permissions:
+  contents: write # to create release (changesets/action)
+  issues: write # to post issue comments (changesets/action)
+  pull-requests: write # to create pull request (changesets/action) required for OIDC
+  id-token: write # to use OpenID Connect token for provenance (changesets/action)
+
 jobs:
   release:
     name: Release
@@ -19,7 +25,12 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version: 20
+          registry-url: "https://registry.npmjs.org"
           cache: "pnpm"
+
+      - name: Upgrade npm for OIDC support
+        run: npm install -g npm@latest
+
       - name: Install Dependencies
         run: pnpm install -frozen-lockfile
 
@@ -30,4 +41,3 @@ jobs:
           publish: pnpm release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
