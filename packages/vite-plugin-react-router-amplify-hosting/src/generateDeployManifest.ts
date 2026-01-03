@@ -1,4 +1,12 @@
-export function generateDeployManifest(reactRouterVersion: string): string {
+export type ComputeRuntime = "nodejs20.x" | "nodejs22.x";
+
+export function generateDeployManifest({
+  reactRouterVersion,
+  runtimeVersion,
+}: {
+  reactRouterVersion: string;
+  runtimeVersion?: ComputeRuntime;
+}): string {
   const manifest = {
     version: 1,
     framework: {
@@ -33,7 +41,7 @@ export function generateDeployManifest(reactRouterVersion: string): string {
     computeResources: [
       {
         name: "default",
-        runtime: "nodejs20.x",
+        runtime: runtimeVersion ?? "nodejs20.x",
         entrypoint: "server.mjs",
       },
     ],

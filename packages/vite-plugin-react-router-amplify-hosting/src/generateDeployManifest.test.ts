@@ -3,6 +3,8 @@ import { generateDeployManifest } from "./generateDeployManifest";
 
 describe("generateDeployManifest", () => {
   test("should generate a deploy manifest", () => {
-    expect(generateDeployManifest("7.2.0")).toMatchSnapshot();
+    expect(
+      generateDeployManifest({ reactRouterVersion: "7.2.0" }),
+    ).toMatchSnapshot();
   });
 });

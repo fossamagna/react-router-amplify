@@ -4,6 +4,7 @@ import type {
   BuildManifest,
   Config as ReactRouterConfig,
 } from "@react-router/dev/config";
+import semver from "semver";
 import type {
   BuildEnvironmentOptions,
   EnvironmentOptions,
@@ -12,7 +13,7 @@ import type {
   ResolvedConfig,
   UserConfig,
 } from "vite";
-import semver from "semver";
+import { determineRuntimeVersion } from "./determineRuntimeVersion";
 import { generateDeployManifest } from "./generateDeployManifest";
 
 const AMPLITY_HOSTING_DIR = ".amplify-hosting";
@@ -77,11 +78,12 @@ export type { PluginOption };
 
 export type PluginOptions = {
   expressVersion?: "5" | "4";
+  computeRuntime?: "nodejs20.x" | "nodejs22.x";
 };
 export function amplifyHosting(opts?: PluginOptions): Plugin {
   let resolvedConfig: ResolvedConfig;
   let pluginConfig: ReturnType<typeof resolvePluginConfig>;
-  let pluginOptions: PluginOptions = opts ?? {};
+  const pluginOptions: PluginOptions = opts ?? {};
 
   return {
     name: "react-router-amplify-hosting",
@@ -134,10 +136,15 @@ export function amplifyHosting(opts?: PluginOptions): Plugin {
           expressVersion = pluginOptions.expressVersion;
           console.log(`Using configured express version: ${expressVersion}`);
         } else {
-          expressVersion = pluginOptions.expressVersion ?? await getPackageVersion("express");
+          expressVersion =
+            pluginOptions.expressVersion ??
+            (await getPackageVersion("express"));
           console.log(`Detected express version: ${expressVersion}`);
         }
-        if (expressVersion && semver.gte(semver.coerce(expressVersion)!, "5.0.0")) {
+        const semverExpressVersion = expressVersion
+          ? semver.coerce(expressVersion)
+          : null;
+        if (semverExpressVersion && semver.gte(semverExpressVersion, "5.0.0")) {
           return FUNCTION_HANDLER_V5;
         }
         return FUNCTION_HANDLER_V4;
@@ -186,13 +193,18 @@ export function amplifyHosting(opts?: PluginOptions): Plugin {
           "react-router",
           "0.0.0",
         );
+        const { computeRuntime } = pluginOptions;
+        const runtimeVersion =
+          computeRuntime ??
+          (await determineRuntimeVersion(resolvedConfig.root));
+        console.log(`Using compute runtime: ${runtimeVersion}`);
         const amplifyHostingDir = path.join(
           resolvedConfig.root,
           AMPLITY_HOSTING_DIR,
         );
         await writeFile(
           path.join(amplifyHostingDir, DEPLOY_MANIFEST),
-          generateDeployManifest(reactRouterVersion),
+          generateDeployManifest({ reactRouterVersion, runtimeVersion }),
         );
       }
     },
@@ -261,9 +273,17 @@ function resolvePluginConfig(config: UserConfig) {
   };
 }
 
-async function getPackageVersion(packageName: string): Promise<string | undefined>;
-async function getPackageVersion(packageName: string, version: string): Promise<string>;
-async function getPackageVersion(packageName: string, version?: string): Promise<string | undefined> {
+async function getPackageVersion(
+  packageName: string,
+): Promise<string | undefined>;
+async function getPackageVersion(
+  packageName: string,
+  version: string,
+): Promise<string>;
+async function getPackageVersion(
+  packageName: string,
+  version?: string,
+): Promise<string | undefined> {
   try {
     const packageJsonPath = new URL(
       await import.meta.resolve(`${packageName}/package.json`),
