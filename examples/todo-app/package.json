@@ -2,6 +2,9 @@
   "name": "amplify-adapter-router-example-todo-app",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "prebuild": "tsx ./scripts/prebuild.ts",
     "build": "react-router build",
