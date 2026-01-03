@@ -1,5 +1,11 @@
 # vite-plugin-react-router-amplify-hosting
 
+## 0.6.0
+
+### Minor Changes
+
+- [#226](https://github.com/fossamagna/react-router-amplify/pull/226) [`f21d7b3`](https://github.com/fossamagna/react-router-amplify/commit/f21d7b353119b2a89fc5ff0d15f3ac31c80f128b) Thanks [@fossamagna](https://github.com/fossamagna)! - feat: add support for automatic detection or manual specification of ComputeResource.runtime in manifest.json from engines.node in package.json
+
 ## 0.5.0
 
 ### Minor Changes
