@@ -13,7 +13,7 @@
     "url": "https://github.com/fossamagna/react-router-amplify/issues"
   },
   "homepage": "https://github.com/fossamagna/react-router-amplify/blob/main/README.md",
-  "packageManager": "pnpm@10.28.2",
+  "packageManager": "pnpm@10.29.1",
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
   },
