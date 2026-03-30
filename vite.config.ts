@@ -1,21 +1,21 @@
-import { defineConfig } from 'vite-plus';
+import { defineConfig } from "vite-plus";
 
 export default defineConfig({
   lint: {
     options: {
       typeAware: true,
-      typeCheck: true
-    }
+      typeCheck: true,
+    },
   },
   staged: {
-    "*.ts": "pnpm lint"
+    "*.ts": "vite check",
   },
   run: {
     tasks: {
       pack: {
         command: "vp run -r pack",
-      }
-    }
+      },
+    },
   },
   test: {
     projects: ["./packages/*/vite.config.{unit,integration}.ts", "./packages/*/vite.config.ts"],
