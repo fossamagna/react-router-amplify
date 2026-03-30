@@ -1,4 +1,4 @@
-import { defineProject } from "vitest/config";
+import { defineProject } from "vite-plus";
 import pkg from "./package.json";
 
 export default defineProject({

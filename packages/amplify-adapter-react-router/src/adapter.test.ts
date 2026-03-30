@@ -5,7 +5,7 @@ import type {
 import type { ResourcesConfig } from "aws-amplify";
 import * as adapterCore from "aws-amplify/adapter-core";
 import cookie from "cookie";
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vite-plus/test";
 import { createServerRunner } from "./adapter";
 
 vi.mock("aws-amplify/adapter-core", () => ({

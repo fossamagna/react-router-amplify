@@ -22,26 +22,23 @@
     "release": "pnpm build && pnpm test && changeset publish",
     "format": "biome format --write ./packages/*/src",
     "lint": "biome check --write ./packages/*/src",
-    "test": "vitest --run",
-    "test:watch": "vitest",
-    "test:coverage": "vitest --coverage",
-    "prepare": "husky"
+    "test": "vp test --run",
+    "test:watch": "vp test",
+    "test:coverage": "vp test --coverage",
+    "prepare": "vp config"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.8",
     "@changesets/changelog-github": "^0.6.0",
     "@changesets/cli": "^2.27.5",
     "@vitest/coverage-v8": "^4.0.0",
-    "husky": "^9.1.7",
-    "lint-staged": "^16.0.0",
-    "vitest": "^4.0.0"
+    "vite": "catalog:",
+    "vitest": "catalog:",
+    "vite-plus": "catalog:"
   },
   "pnpm": {
     "overrides": {
       "@types/node": "^20.0.0"
     }
-  },
-  "lint-staged": {
-    "*.ts": "pnpm lint"
   }
 }

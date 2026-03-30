@@ -1,35 +1,16 @@
-import { defineConfig } from "vite";
-import dts from "vite-plugin-dts";
-import path from "node:path";
+import { defineConfig } from "vite-plus";
+import pkg from "./package.json";
 
 export default defineConfig({
-  build: {
-    minify: false,
-    lib: {
-      entry: "src/index.ts",
-      formats: ["es", "cjs"],
-    },
-    rollupOptions: {
-      external: (id) => !id.startsWith('.') && !path.isAbsolute(id),
-      output: [
-        {
-          format: 'es',
-          preserveModules: true,
-          preserveModulesRoot: 'src',
-          sourcemap: true,
-          dir: 'dist/es',
-          entryFileNames: '[name].mjs',
-        },
-        {
-          format: 'cjs',
-          preserveModules: true,
-          preserveModulesRoot: 'src',
-          sourcemap: true,
-          dir: 'dist/cjs',
-          entryFileNames: '[name].cjs',
-        }
-      ],
-    },
+  pack: {
+    unbundle: true,
+    dts: true,
+    format: ['esm', 'cjs'],
+    sourcemap: true,
   },
-  plugins: [dts({ rollupTypes: false })],
+  test: {
+    name: `${pkg.name}-unit`,
+    include: ["**/*.test.ts"],
+    exclude: ["integration/**"],
+  },
 });

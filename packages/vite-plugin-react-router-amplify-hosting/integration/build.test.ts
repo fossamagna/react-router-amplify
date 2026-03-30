@@ -1,4 +1,4 @@
-import { afterEach, describe, expect, test } from "vitest";
+import { afterEach, describe, expect, test } from "vite-plus/test";
 import { join } from "node:path";
 import { stat, rm } from "node:fs/promises";
 

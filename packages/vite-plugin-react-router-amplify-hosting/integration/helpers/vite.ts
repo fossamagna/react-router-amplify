@@ -10,6 +10,9 @@ const reactRouterBin = "node_modules/@react-router/dev/bin.js";
 const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 const root = path.resolve(__dirname, "../..");
 const TMP_DIR = path.join(root, ".tmp/integration");
+const DIST_ENTRY = path.join(root, "dist", "index.js");
+
+let buildPackagePromise: Promise<void> | undefined;
 
 export const reactRouterConfig = ({
   ssr,
@@ -193,13 +196,11 @@ export const build = ({
   });
 };
 
-export const npmInstall = ({
+const npmInstallSync = ({
   cwd
 }: {
   cwd: string
 }) => {
-  const nodeBin = process.argv[0];
-
   return spawnSync("npm", ["install"], {
     cwd,
     shell: true,
@@ -211,6 +212,43 @@ export const npmInstall = ({
       ROLLDOWN_OPTIONS_VALIDATION: "loose",
     },
   });
+};
+
+async function ensureLocalPackageBuild() {
+  if (!buildPackagePromise) {
+    buildPackagePromise = (async () => {
+      try {
+        await fs.stat(DIST_ENTRY);
+        return;
+      } catch {
+        // Build the local package once so file dependencies expose the dist entry.
+      }
+
+      const result = spawnSync("vp", ["pack"], {
+        cwd: root,
+        env: {
+          ...process.env,
+          ...colorEnv,
+          ROLLDOWN_OPTIONS_VALIDATION: "loose",
+        },
+      });
+
+      if (result.status !== 0) {
+        throw new Error(result.stderr.toString() || result.stdout.toString() || "Failed to build local package");
+      }
+    })();
+  }
+
+  return buildPackagePromise;
+}
+
+export const npmInstall = async ({
+  cwd,
+}: {
+  cwd: string;
+}) => {
+  await ensureLocalPackageBuild();
+  return npmInstallSync({ cwd });
 };
 
 export type Files = (args: { port: number }) => Promise<Record<string, string>>;

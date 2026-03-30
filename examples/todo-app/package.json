@@ -41,8 +41,9 @@
     "tailwindcss": "^4.0.0",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2",
-    "vite": "^6.3.0",
+    "vite": "catalog:",
     "vite-plugin-react-router-amplify-hosting": "workspace:*",
-    "vite-tsconfig-paths": "^5.1.4"
+    "vite-tsconfig-paths": "^5.1.4",
+    "vite-plus": "catalog:"
   }
 }
