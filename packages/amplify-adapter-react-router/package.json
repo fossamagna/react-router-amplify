@@ -1,7 +1,28 @@
 {
   "name": "amplify-adapter-react-router",
   "version": "0.2.0",
+  "keywords": [
+    "amplify",
+    "react-router"
+  ],
+  "homepage": "https://github.com/fossamagna/react-router-amplify/blob/main/packages/amplify-adapter-react-router/README.md",
+  "bugs": {
+    "url": "https://github.com/fossamagna/react-router-amplify/issues"
+  },
+  "license": "MIT",
+  "author": "Masahiko Murakami <fossamagna2@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fossamagna/react-router-amplify",
+    "directory": "packages/amplify-adapter-react-router"
+  },
+  "files": [
+    "dist"
+  ],
   "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
@@ -14,27 +35,6 @@
       "types": "./dist/adapter.d.ts"
     }
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.mts",
-  "files": [
-    "dist"
-  ],
-  "keywords": [
-    "react-router",
-    "amplify"
-  ],
-  "license": "MIT",
-  "author": "Masahiko Murakami <fossamagna2@gmail.com>",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/fossamagna/react-router-amplify",
-    "directory": "packages/amplify-adapter-react-router"
-  },
-  "bugs": {
-    "url": "https://github.com/fossamagna/react-router-amplify/issues"
-  },
-  "homepage": "https://github.com/fossamagna/react-router-amplify/blob/main/packages/amplify-adapter-react-router/README.md",
   "scripts": {
     "dev": "vp dev",
     "pack": "vp pack",

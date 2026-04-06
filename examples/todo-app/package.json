@@ -2,9 +2,6 @@
   "name": "amplify-adapter-router-example-todo-app",
   "private": true,
   "type": "module",
-  "engines": {
-    "node": ">=22"
-  },
   "scripts": {
     "prebuild": "tsx ./scripts/prebuild.ts",
     "build": "react-router build",
@@ -43,7 +40,10 @@
     "typescript": "^5.8.2",
     "vite": "catalog:",
     "vite-plugin-react-router-amplify-hosting": "workspace:*",
-    "vite-tsconfig-paths": "^5.1.4",
-    "vite-plus": "catalog:"
+    "vite-plus": "catalog:",
+    "vite-tsconfig-paths": "^5.1.4"
+  },
+  "engines": {
+    "node": ">=22"
   }
 }

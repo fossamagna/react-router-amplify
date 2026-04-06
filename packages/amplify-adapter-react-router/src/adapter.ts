@@ -1,7 +1,4 @@
-import type {
-  KeyValueStorageInterface,
-  LibraryOptions,
-} from "@aws-amplify/core";
+import type { KeyValueStorageInterface, LibraryOptions } from "@aws-amplify/core";
 import {
   type AmplifyServer,
   type CookieStorage,
@@ -20,10 +17,7 @@ import cookie from "cookie";
  * see: https://github.com/aws-amplify/amplify-js/blob/main/packages/adapter-nextjs/src/utils/cookie/ensureEncodedForJSCookie.ts
  */
 function ensureEncodedForJSCookie(name: string) {
-  return encodeURIComponent(name).replace(
-    /%(2[346B]|5E|60|7C)/g,
-    decodeURIComponent,
-  );
+  return encodeURIComponent(name).replace(/%(2[346B]|5E|60|7C)/g, decodeURIComponent);
 }
 
 export type ReactRouterServerContext = {
@@ -33,9 +27,7 @@ export type ReactRouterServerContext = {
 
 export type RunWithContextInput<OperationResult> = {
   serverContext: ReactRouterServerContext;
-  operation(
-    contextSpec: AmplifyServer.ContextSpec,
-  ): OperationResult | Promise<OperationResult>;
+  operation: (contextSpec: AmplifyServer.ContextSpec) => OperationResult | Promise<OperationResult>;
 };
 
 export type RunOperationWithContext = <OperationResult>(
@@ -95,11 +87,7 @@ export function createServerRunner({
               ): void => {
                 responseHeaders.append(
                   "Set-Cookie",
-                  cookie.serialize(
-                    ensureEncodedForJSCookie(name),
-                    value,
-                    options,
-                  ),
+                  cookie.serialize(ensureEncodedForJSCookie(name), value, options),
                 );
               },
               delete: (name: string): void => {
@@ -112,10 +100,7 @@ export function createServerRunner({
               },
             });
 
-          const tokenProvider = createUserPoolsTokenProvider(
-            amplifyConfig.Auth,
-            keyValueStorage,
-          );
+          const tokenProvider = createUserPoolsTokenProvider(amplifyConfig.Auth, keyValueStorage);
 
           const credentialsProvider = createAWSCredentialsAndIdentityIdProvider(
             amplifyConfig.Auth,
@@ -125,11 +110,7 @@ export function createServerRunner({
         }
       }
 
-      return runWithAmplifyServerContextCore(
-        amplifyConfig,
-        libraryOptions,
-        operation,
-      );
+      return runWithAmplifyServerContextCore(amplifyConfig, libraryOptions, operation);
     },
   };
 }

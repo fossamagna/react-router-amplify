@@ -27,9 +27,7 @@ export const reactRouterConfig = ({
   basename?: string;
   prerender?: boolean | string[];
   appDirectory?: string;
-  splitRouteModules?: NonNullable<
-    Config["future"]
-  >["v8_splitRouteModules"];
+  splitRouteModules?: NonNullable<Config["future"]>["v8_splitRouteModules"];
   viteEnvironmentApi?: boolean;
   middleware?: boolean;
 }) => {
@@ -66,10 +64,7 @@ type ViteConfigBaseArgs = {
   envDir?: string;
 };
 
-type ViteConfigArgs = (
-  | ViteConfigServerArgs
-  | { [K in keyof ViteConfigServerArgs]?: never }
-) &
+type ViteConfigArgs = (ViteConfigServerArgs | { [K in keyof ViteConfigServerArgs]?: never }) &
   ViteConfigBuildArgs &
   ViteConfigBaseArgs;
 
@@ -127,10 +122,7 @@ type ViteConfigArgs = (
 //   },
 // };
 
-export type TemplateName =
-  | "vite-5-template"
-  | "vite-6-template"
-  | "vite-7-template";
+export type TemplateName = "vite-5-template" | "vite-6-template" | "vite-7-template";
 
 export const viteMajorTemplates = [
   { templateName: "vite-5-template", templateDisplayName: "Vite 5" },
@@ -143,12 +135,12 @@ export const viteMajorTemplates = [
 
 export async function createProject(
   files: Record<string, string> = {},
-  templateName: TemplateName = "vite-5-template"
+  templateName: TemplateName = "vite-5-template",
 ) {
   const projectName = `rr-${Math.random().toString(32).slice(2)}`;
   const projectDir = path.join(TMP_DIR, projectName);
 
-  await fs.mkdir(projectDir, { recursive: true});
+  await fs.mkdir(projectDir, { recursive: true });
 
   // base template
   const templateDir = path.resolve(__dirname, templateName);
@@ -160,7 +152,7 @@ export async function createProject(
       const filepath = path.join(projectDir, filename);
       await fs.mkdir(path.dirname(filepath), { recursive: true });
       await fs.writeFile(filepath, stripIndent(contents));
-    })
+    }),
   );
 
   return projectDir;
@@ -174,13 +166,7 @@ const colorEnv = {
   NO_COLOR: "1",
 } as const;
 
-export const build = ({
-  cwd,
-  env = {},
-}: {
-  cwd: string;
-  env?: Record<string, string>;
-}) => {
+export const build = ({ cwd, env = {} }: { cwd: string; env?: Record<string, string> }) => {
   const nodeBin = process.argv[0];
 
   return spawnSync(nodeBin, [reactRouterBin, "build"], {
@@ -196,11 +182,7 @@ export const build = ({
   });
 };
 
-const npmInstallSync = ({
-  cwd
-}: {
-  cwd: string
-}) => {
+const npmInstallSync = ({ cwd }: { cwd: string }) => {
   return spawnSync("npm", ["install"], {
     cwd,
     shell: true,
@@ -234,7 +216,9 @@ async function ensureLocalPackageBuild() {
       });
 
       if (result.status !== 0) {
-        throw new Error(result.stderr.toString() || result.stdout.toString() || "Failed to build local package");
+        throw new Error(
+          result.stderr.toString() || result.stdout.toString() || "Failed to build local package",
+        );
       }
     })();
   }
@@ -242,11 +226,7 @@ async function ensureLocalPackageBuild() {
   return buildPackagePromise;
 }
 
-export const npmInstall = async ({
-  cwd,
-}: {
-  cwd: string;
-}) => {
+export const npmInstall = async ({ cwd }: { cwd: string }) => {
   await ensureLocalPackageBuild();
   return npmInstallSync({ cwd });
 };

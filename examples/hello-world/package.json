@@ -2,6 +2,12 @@
   "name": "react-router-amplify-hosting-example-hello-world",
   "private": true,
   "type": "module",
+  "scripts": {
+    "prebuild": "pnpm clean && pnpm typecheck",
+    "build": "react-router build",
+    "typecheck": "react-router typegen && tsc",
+    "clean": "rm -rf build && rm -rf .react-router && rm -rf .amplify-hosting"
+  },
   "dependencies": {
     "@react-router/dev": "^7.10.0",
     "@react-router/express": "^7.10.0",
@@ -22,11 +28,5 @@
     "vite": "catalog:",
     "vite-plugin-react-router-amplify-hosting": "workspace:*",
     "vite-plus": "catalog:"
-  },
-  "scripts": {
-    "prebuild": "pnpm clean && pnpm typecheck",
-    "build": "react-router build",
-    "typecheck": "react-router typegen && tsc",
-    "clean": "rm -rf build && rm -rf .react-router && rm -rf .amplify-hosting"
   }
 }

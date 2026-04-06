@@ -4,7 +4,7 @@ import pkg from "./package.json";
 export default defineConfig({
   pack: {
     dts: true,
-    format: ['esm', 'cjs'],
+    format: ["esm", "cjs"],
     sourcemap: true,
   },
   test: {

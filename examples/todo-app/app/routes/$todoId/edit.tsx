@@ -4,10 +4,7 @@ import { runWithAmplifyServerContext } from "~/lib/amplifyServerUtils";
 import { client } from "~/lib/amplify-ssr-client";
 
 export function meta() {
-  return [
-    { title: "React Router Todo App" },
-    { name: "description", content: "Add New Todo" },
-  ];
+  return [{ title: "React Router Todo App" }, { name: "description", content: "Add New Todo" }];
 }
 
 export async function loader({ request, params }: Route.LoaderArgs) {
@@ -30,7 +27,7 @@ export async function loader({ request, params }: Route.LoaderArgs) {
 
 export async function action({ request }: Route.ActionArgs) {
   const formData = await request.formData();
-  const id = formData.get("id") as string;;
+  const id = formData.get("id") as string;
   const content = formData.get("content");
   const isDone = formData.get("isDone") === "true";
   if (typeof content !== "string") {

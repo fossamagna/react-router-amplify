@@ -5,7 +5,7 @@ export default defineConfig({
   pack: {
     unbundle: true,
     dts: true,
-    format: ['esm', 'cjs'],
+    format: ["esm", "cjs"],
     sourcemap: true,
   },
   test: {

@@ -1,7 +1,7 @@
 name: Question
 description: Further information is requested
-title: '[QUESTION] <title>'
-labels: ['question']
+title: "[QUESTION] <title>"
+labels: ["question"]
 
 body:
   - type: textarea

@@ -2,26 +2,21 @@
   "name": "react-router-amplify",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
+  "homepage": "https://github.com/fossamagna/react-router-amplify/blob/main/README.md",
+  "bugs": {
+    "url": "https://github.com/fossamagna/react-router-amplify/issues"
+  },
   "license": "MIT",
   "author": "Masahiko Murakami <fossamagna2@gmail.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/fossamagna/react-router-amplify"
   },
-  "bugs": {
-    "url": "https://github.com/fossamagna/react-router-amplify/issues"
-  },
-  "homepage": "https://github.com/fossamagna/react-router-amplify/blob/main/README.md",
-  "packageManager": "pnpm@10.32.1",
-  "engines": {
-    "node": "^20.19.0 || >=22.12.0"
-  },
+  "type": "module",
   "scripts": {
-    "build": "pnpm --if-present --recursive build",
-    "release": "pnpm build && pnpm test && changeset publish",
-    "format": "biome format --write ./packages/*/src",
-    "lint": "biome check --write ./packages/*/src",
+    "release": "vp run pack && changeset publish",
+    "format": "vp fmt",
+    "lint": "vp lint",
     "test": "vp test --run",
     "test:watch": "vp test",
     "test:coverage": "vp test --coverage",
@@ -33,9 +28,13 @@
     "@changesets/cli": "^2.27.5",
     "@vitest/coverage-v8": "^4.0.0",
     "vite": "catalog:",
-    "vitest": "catalog:",
-    "vite-plus": "catalog:"
+    "vite-plus": "catalog:",
+    "vitest": "catalog:"
   },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "packageManager": "pnpm@10.32.1",
   "pnpm": {
     "overrides": {
       "@types/node": "^20.0.0"

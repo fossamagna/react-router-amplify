@@ -1,7 +1,7 @@
 name: Feature Request
 description: Suggest an idea for future development
-title: '[FEATURE_REQUEST] <title>'
-labels: ['feature request']
+title: "[FEATURE_REQUEST] <title>"
+labels: ["feature request"]
 
 body:
   - type: textarea
@@ -38,8 +38,8 @@ body:
       label: Is this something you would be keen to implement
       description: Are you raising this ticket in order to get an issue number for your PR?
       options:
-        - 'No'
-        - 'Maybe'
-        - 'Yes!'
+        - "No"
+        - "Maybe"
+        - "Yes!"
     validations:
       required: false

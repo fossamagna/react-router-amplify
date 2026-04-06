@@ -67,10 +67,7 @@ describe("readPackageJson", () => {
       },
     };
 
-    await writeFile(
-      path.join(testDir, "package.json"),
-      JSON.stringify(packageJson, null, 2),
-    );
+    await writeFile(path.join(testDir, "package.json"), JSON.stringify(packageJson, null, 2));
 
     const result = await readPackageJson(testDir);
     expect(result).toEqual(packageJson);

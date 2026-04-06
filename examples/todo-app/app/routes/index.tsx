@@ -6,10 +6,7 @@ import { client } from "~/lib/amplify-ssr-client";
 import { signOut } from "aws-amplify/auth";
 
 export function meta() {
-  return [
-    { title: "React Router Todo App" },
-    { name: "description", content: "Todo List" },
-  ];
+  return [{ title: "React Router Todo App" }, { name: "description", content: "Todo List" }];
 }
 
 export async function loader({ request }: Route.LoaderArgs) {

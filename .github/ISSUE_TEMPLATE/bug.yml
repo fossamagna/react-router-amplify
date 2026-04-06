@@ -1,7 +1,7 @@
 name: Bug
 description: Something isn't working
-title: '[BUG] <title>'
-labels: ['bug']
+title: "[BUG] <title>"
+labels: ["bug"]
 
 body:
   - type: input

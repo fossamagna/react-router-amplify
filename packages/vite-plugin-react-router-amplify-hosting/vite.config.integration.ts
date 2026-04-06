@@ -6,9 +6,6 @@ export default defineProject({
     name: `${pkg.name}-integration`,
     include: ["integration/**/*.test.ts"],
     testTimeout: 180_000,
-    exclude: [
-      "**/node_modules/**",
-      "**/dist/**",
-    ],
+    exclude: ["**/node_modules/**", "**/dist/**"],
   },
 });

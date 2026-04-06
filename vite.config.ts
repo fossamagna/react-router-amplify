@@ -2,13 +2,18 @@ import { defineConfig } from "vite-plus";
 
 export default defineConfig({
   lint: {
+    ignorePatterns: [
+      "dist/**",
+      "examples/**",
+      "packages/vite-plugin-react-router-amplify-hosting/integration/helpers/**",
+    ],
     options: {
       typeAware: true,
       typeCheck: true,
     },
   },
   staged: {
-    "*.ts": "vite check",
+    "*.ts": "vp check",
   },
   run: {
     tasks: {

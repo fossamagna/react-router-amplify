@@ -1,7 +1,4 @@
-import type {
-  CredentialsAndIdentityIdProvider,
-  TokenProvider,
-} from "@aws-amplify/core";
+import type { CredentialsAndIdentityIdProvider, TokenProvider } from "@aws-amplify/core";
 import type { ResourcesConfig } from "aws-amplify";
 import * as adapterCore from "aws-amplify/adapter-core";
 import cookie from "cookie";
@@ -52,9 +49,7 @@ describe("createServerRunner", () => {
     vi.resetAllMocks();
     mockRequest = new Request("https://example.com");
     mockResponseHeaders = new Headers();
-    vi.mocked(adapterCore.runWithAmplifyServerContext).mockResolvedValue(
-      mockResponse,
-    );
+    vi.mocked(adapterCore.runWithAmplifyServerContext).mockResolvedValue(mockResponse);
     vi.mocked(cookie.parse).mockReturnValue({});
     vi.mocked(cookie.serialize).mockReturnValue("cookie=value");
   });
@@ -102,9 +97,7 @@ describe("createServerRunner", () => {
     });
 
     expect(adapterCore.createUserPoolsTokenProvider).not.toHaveBeenCalled();
-    expect(
-      adapterCore.createAWSCredentialsAndIdentityIdProvider,
-    ).not.toHaveBeenCalled();
+    expect(adapterCore.createAWSCredentialsAndIdentityIdProvider).not.toHaveBeenCalled();
     expect(adapterCore.runWithAmplifyServerContext).toHaveBeenCalledWith(
       mockAuthConfig,
       {},
@@ -123,9 +116,7 @@ describe("createServerRunner", () => {
     vi.mocked(adapterCore.createUserPoolsTokenProvider).mockReturnValue(
       mockTokenProvider as unknown as TokenProvider,
     );
-    vi.mocked(
-      adapterCore.createAWSCredentialsAndIdentityIdProvider,
-    ).mockReturnValue(
+    vi.mocked(adapterCore.createAWSCredentialsAndIdentityIdProvider).mockReturnValue(
       mockCredentialsProvider as unknown as CredentialsAndIdentityIdProvider,
     );
 
@@ -147,9 +138,7 @@ describe("createServerRunner", () => {
 
     expect(cookie.parse).toHaveBeenCalledWith("auth-cookie=value");
     expect(adapterCore.createUserPoolsTokenProvider).toHaveBeenCalled();
-    expect(
-      adapterCore.createAWSCredentialsAndIdentityIdProvider,
-    ).toHaveBeenCalled();
+    expect(adapterCore.createAWSCredentialsAndIdentityIdProvider).toHaveBeenCalled();
 
     expect(adapterCore.runWithAmplifyServerContext).toHaveBeenCalledWith(
       mockAuthConfig,

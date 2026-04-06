@@ -4,10 +4,7 @@ import { runWithAmplifyServerContext } from "~/lib/amplifyServerUtils";
 import { client } from "~/lib/amplify-ssr-client";
 
 export function meta() {
-  return [
-    { title: "React Router Todo App" },
-    { name: "description", content: "Add New Todo" },
-  ];
+  return [{ title: "React Router Todo App" }, { name: "description", content: "Add New Todo" }];
 }
 
 export async function action({ request }: Route.ActionArgs) {
