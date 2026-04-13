@@ -44,9 +44,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <Authenticator.Provider>
-          <ThemeProvider>
-            {children}
-          </ThemeProvider>
+          <ThemeProvider>{children}</ThemeProvider>
         </Authenticator.Provider>
         <ScrollRestoration />
         <Scripts />
@@ -58,10 +56,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   const navigate = useNavigate();
   useEffect(() => {
-    Hub.listen("auth", (data) => {
+    Hub.listen("auth", async (data) => {
       const { payload } = data;
       if (payload.event === "signedIn") {
-        navigate("/");
+        await navigate("/");
       }
     });
   }, [navigate]);
@@ -76,9 +74,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   if (isRouteErrorResponse(error)) {
     message = error.status === 404 ? "404" : "Error";
     details =
-      error.status === 404
-        ? "The requested page could not be found."
-        : error.statusText || details;
+      error.status === 404 ? "The requested page could not be found." : error.statusText || details;
   } else if (import.meta.env.DEV && error && error instanceof Error) {
     details = error.message;
     stack = error.stack;

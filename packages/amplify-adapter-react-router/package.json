@@ -1,29 +1,14 @@
 {
   "name": "amplify-adapter-react-router",
   "version": "0.2.0",
-  "type": "module",
-  "exports": {
-    ".": {
-      "import": "./dist/es/index.mjs",
-      "require": "./dist/cjs/index.cjs",
-      "types": "./dist/index.d.ts"
-    },
-    "./adapter": {
-      "import": "./dist/es/adapter.mjs",
-      "require": "./dist/cjs/adapter.cjs",
-      "types": "./dist/adapter.d.ts"
-    }
-  },
-  "main": "./dist/cjs/index.cjs",
-  "module": "./dist/es/index.mjs",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "keywords": [
-    "react-router",
-    "amplify"
+    "amplify",
+    "react-router"
   ],
+  "homepage": "https://github.com/fossamagna/react-router-amplify/blob/main/packages/amplify-adapter-react-router/README.md",
+  "bugs": {
+    "url": "https://github.com/fossamagna/react-router-amplify/issues"
+  },
   "license": "MIT",
   "author": "Masahiko Murakami <fossamagna2@gmail.com>",
   "repository": {
@@ -31,20 +16,37 @@
     "url": "https://github.com/fossamagna/react-router-amplify",
     "directory": "packages/amplify-adapter-react-router"
   },
-  "bugs": {
-    "url": "https://github.com/fossamagna/react-router-amplify/issues"
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.mts"
+    },
+    "./adapter": {
+      "import": "./dist/adapter.mjs",
+      "require": "./dist/adapter.cjs",
+      "types": "./dist/adapter.d.ts"
+    }
   },
-  "homepage": "https://github.com/fossamagna/react-router-amplify/blob/main/packages/amplify-adapter-react-router/README.md",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build"
+    "dev": "vp dev",
+    "pack": "vp pack",
+    "build": "tsc && vp build"
   },
   "devDependencies": {
     "@aws-amplify/core": "^6.10.5",
     "@types/node": "^20.19.0",
     "typescript": "^5.7.3",
-    "vite": "^6.3.0",
-    "vite-plugin-dts": "^4.5.3"
+    "vite": "catalog:",
+    "vite-plugin-dts": "^4.5.3",
+    "vite-plus": "catalog:"
   },
   "peerDependencies": {
     "@aws-amplify/core": "^6.10.5",

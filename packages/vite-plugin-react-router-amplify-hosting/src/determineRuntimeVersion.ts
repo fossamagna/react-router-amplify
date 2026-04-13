@@ -2,9 +2,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import type { ComputeRuntime } from "./generateDeployManifest";
 
-export async function determineRuntimeVersion(
-  rootDir: string,
-): Promise<ComputeRuntime> {
+export async function determineRuntimeVersion(rootDir: string): Promise<ComputeRuntime> {
   const packageJson = await readPackageJson(rootDir);
   if (!packageJson) {
     return "nodejs20.x";
@@ -48,8 +46,6 @@ export function parseNodeVersion(nodeVersionSpec?: string): ComputeRuntime {
     return "nodejs20.x";
   }
   // For older versions, default to nodejs20.x
-  console.warn(
-    `Node.js version ${nodeVersionSpec} is not supported. Defaulting to nodejs20.x`,
-  );
+  console.warn(`Node.js version ${nodeVersionSpec} is not supported. Defaulting to nodejs20.x`);
   return "nodejs20.x";
 }

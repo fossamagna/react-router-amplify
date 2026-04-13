@@ -22,11 +22,6 @@ jobs:
     steps:
       - run: git config --global core.autocrlf false
       - uses: actions/checkout@v6
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v6
-        with:
-          node-version: 20
-          cache: "pnpm"
-      - run: pnpm install -frozen-lockfile
-      - run: pnpm --if-present --recursive build
-      - run: pnpm test
+      - uses: voidzero-dev/setup-vp@v1
+      - run: vp run pack
+      - run: vp run test

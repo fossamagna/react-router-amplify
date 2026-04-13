@@ -5,11 +5,8 @@ import { redirect } from "react-router";
 import type { Route } from "./+types/login";
 
 export const meta: Route.MetaFunction = () => {
-  return [
-    { title: "Login - Todo App" },
-    { name: "description", content: "Login to Todo App" },
-  ];
-}
+  return [{ title: "Login - Todo App" }, { name: "description", content: "Login to Todo App" }];
+};
 
 export const clientLoader = async ({ request }: Route.ClientLoaderArgs) => {
   try {
@@ -22,7 +19,7 @@ export const clientLoader = async ({ request }: Route.ClientLoaderArgs) => {
     // ignore error - user not logged in
   }
   return {};
-}
+};
 
 export default function Login() {
   return (

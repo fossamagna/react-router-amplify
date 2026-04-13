@@ -8,21 +8,21 @@ In the interest of fostering an open and welcoming environment, we as contributo
 
 Examples of behavior that contributes to creating a positive environment include:
 
-* Using welcoming and inclusive language - please read the [inclusive language guidance](https://www.uua.org/lgbtq/welcoming/ways/200008.shtml) from the UUA
-* Being respectful of differing viewpoints and experiences
-* Showing empathy towards other community members
-* Gracefully accepting constructive criticism
-* Exercising consideration and respect in your speech and actions
-* Attempting collaboration before conflict or criticism
+- Using welcoming and inclusive language - please read the [inclusive language guidance](https://www.uua.org/lgbtq/welcoming/ways/200008.shtml) from the UUA
+- Being respectful of differing viewpoints and experiences
+- Showing empathy towards other community members
+- Gracefully accepting constructive criticism
+- Exercising consideration and respect in your speech and actions
+- Attempting collaboration before conflict or criticism
 
 Examples of unacceptable behavior by participants include:
 
-* The use of sexualized language or imagery and unwelcome sexual attention or advances
-* Trolling, spamming, intentionally disrupting conversations, making insulting/derogatory comments, and personal or political attacks
-* Public or private harassment
-* Publishing or threatening to publish others' private information, such as a physical or electronic address, without explicit permission
-* Advocating for, or encouraging, any of the above behavior
-* Other conduct which could reasonably be considered inappropriate in a professional setting
+- The use of sexualized language or imagery and unwelcome sexual attention or advances
+- Trolling, spamming, intentionally disrupting conversations, making insulting/derogatory comments, and personal or political attacks
+- Public or private harassment
+- Publishing or threatening to publish others' private information, such as a physical or electronic address, without explicit permission
+- Advocating for, or encouraging, any of the above behavior
+- Other conduct which could reasonably be considered inappropriate in a professional setting
 
 ## Our Responsibilities
 

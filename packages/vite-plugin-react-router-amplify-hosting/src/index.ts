@@ -1,9 +1,6 @@
 import { copyFile, cp, mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
-import type {
-  BuildManifest,
-  Config as ReactRouterConfig,
-} from "@react-router/dev/config";
+import type { BuildManifest, Config as ReactRouterConfig } from "@react-router/dev/config";
 import semver from "semver";
 import type {
   BuildEnvironmentOptions,
@@ -136,14 +133,10 @@ export function amplifyHosting(opts?: PluginOptions): Plugin {
           expressVersion = pluginOptions.expressVersion;
           console.log(`Using configured express version: ${expressVersion}`);
         } else {
-          expressVersion =
-            pluginOptions.expressVersion ??
-            (await getPackageVersion("express"));
+          expressVersion = pluginOptions.expressVersion ?? (await getPackageVersion("express"));
           console.log(`Detected express version: ${expressVersion}`);
         }
-        const semverExpressVersion = expressVersion
-          ? semver.coerce(expressVersion)
-          : null;
+        const semverExpressVersion = expressVersion ? semver.coerce(expressVersion) : null;
         if (semverExpressVersion && semver.gte(semverExpressVersion, "5.0.0")) {
           return FUNCTION_HANDLER_V5;
         }
@@ -169,10 +162,7 @@ export function amplifyHosting(opts?: PluginOptions): Plugin {
         : pluginConfig.isSsrBuild;
 
       if (isClientBuild) {
-        const staticDir = path.join(
-          resolvedConfig.root,
-          AMPLITY_HOSTING_STATIC_DIR,
-        );
+        const staticDir = path.join(resolvedConfig.root, AMPLITY_HOSTING_STATIC_DIR);
         await mkdir(staticDir, { recursive: true });
         const dir = options.dir ?? "";
         await cp(dir, staticDir, { recursive: true });
@@ -184,24 +174,14 @@ export function amplifyHosting(opts?: PluginOptions): Plugin {
         );
         await mkdir(computeDefaultDir, { recursive: true });
         const dir = options.dir ?? "";
-        await copyFile(
-          path.join(dir, "server.mjs"),
-          path.join(computeDefaultDir, "server.mjs"),
-        );
+        await copyFile(path.join(dir, "server.mjs"), path.join(computeDefaultDir, "server.mjs"));
         // write deploy-manifest.json
-        const reactRouterVersion = await getPackageVersion(
-          "react-router",
-          "0.0.0",
-        );
+        const reactRouterVersion = await getPackageVersion("react-router", "0.0.0");
         const { computeRuntime } = pluginOptions;
         const runtimeVersion =
-          computeRuntime ??
-          (await determineRuntimeVersion(resolvedConfig.root));
+          computeRuntime ?? (await determineRuntimeVersion(resolvedConfig.root));
         console.log(`Using compute runtime: ${runtimeVersion}`);
-        const amplifyHostingDir = path.join(
-          resolvedConfig.root,
-          AMPLITY_HOSTING_DIR,
-        );
+        const amplifyHostingDir = path.join(resolvedConfig.root, AMPLITY_HOSTING_DIR);
         await writeFile(
           path.join(amplifyHostingDir, DEPLOY_MANIFEST),
           generateDeployManifest({ reactRouterVersion, runtimeVersion }),
@@ -253,14 +233,8 @@ function resolvePluginConfig(config: UserConfig) {
   const { reactRouterConfig, environmentBuildContext, rootDirectory } = config[
     "__reactRouterPluginContext" as keyof typeof config
   ] as ReactRouterPluginContext;
-  const buildDirectory = path.relative(
-    rootDirectory,
-    reactRouterConfig.buildDirectory,
-  );
-  const appDirectory = path.relative(
-    rootDirectory,
-    reactRouterConfig.appDirectory,
-  );
+  const buildDirectory = path.relative(rootDirectory, reactRouterConfig.buildDirectory);
+  const appDirectory = path.relative(rootDirectory, reactRouterConfig.appDirectory);
   const isSsrBuild = environmentBuildContext?.name === "ssr";
   const future = reactRouterConfig.future;
 
@@ -273,24 +247,17 @@ function resolvePluginConfig(config: UserConfig) {
   };
 }
 
-async function getPackageVersion(
-  packageName: string,
-): Promise<string | undefined>;
-async function getPackageVersion(
-  packageName: string,
-  version: string,
-): Promise<string>;
+async function getPackageVersion(packageName: string): Promise<string | undefined>;
+async function getPackageVersion(packageName: string, version: string): Promise<string>;
 async function getPackageVersion(
   packageName: string,
   version?: string,
 ): Promise<string | undefined> {
   try {
-    const packageJsonPath = new URL(
-      await import.meta.resolve(`${packageName}/package.json`),
-    ).pathname;
+    const packageJsonPath = new URL(import.meta.resolve(`${packageName}/package.json`)).pathname;
     const packageJson = JSON.parse(await readFile(packageJsonPath, "utf8"));
     return packageJson.version;
-  } catch (_error) {
+  } catch {
     // Fallback to reading from node_modules
     try {
       const packageJson = JSON.parse(

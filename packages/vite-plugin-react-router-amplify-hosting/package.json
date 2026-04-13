@@ -1,24 +1,15 @@
 {
   "name": "vite-plugin-react-router-amplify-hosting",
   "version": "0.6.0",
-  "type": "module",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    }
-  },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "keywords": [
+    "amplify",
     "react-router",
-    "vite-plugin",
-    "amplify"
+    "vite-plugin"
   ],
+  "homepage": "https://github.com/fossamagna/react-router-amplify/blob/main/packages/vite-plugin-react-router-amplify-hosting/README.md",
+  "bugs": {
+    "url": "https://github.com/fossamagna/react-router-amplify/issues"
+  },
   "license": "MIT",
   "author": "Masahiko Murakami <fossamagna2@gmail.com>",
   "repository": {
@@ -26,16 +17,27 @@
     "url": "https://github.com/fossamagna/react-router-amplify",
     "directory": "packages/vite-plugin-react-router-amplify-hosting"
   },
-  "bugs": {
-    "url": "https://github.com/fossamagna/react-router-amplify/issues"
-  },
-  "homepage": "https://github.com/fossamagna/react-router-amplify/blob/main/packages/vite-plugin-react-router-amplify-hosting/README.md",
-  "engines": {
-    "node": "^20.0.0 || >=22.0.0"
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
   },
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build"
+    "dev": "vp dev",
+    "pack": "vp pack",
+    "build": "tsc && vp build"
+  },
+  "dependencies": {
+    "semver": "^7.7.2"
   },
   "devDependencies": {
     "@types/node": "^20.19.0",
@@ -43,14 +45,15 @@
     "dedent": "^1.5.3",
     "strip-indent": "^4.0.0",
     "typescript": "^5.7.3",
-    "vite": "^6.3.0",
-    "vite-plugin-dts": "^4.5.3"
+    "vite": "catalog:",
+    "vite-plugin-dts": "^4.5.3",
+    "vite-plus": "catalog:"
   },
   "peerDependencies": {
     "@react-router/dev": "^7.10.0",
     "vite": "^5.1.0 || ^6.0.0 || ^7.0.0"
   },
-  "dependencies": {
-    "semver": "^7.7.2"
+  "engines": {
+    "node": "^20.0.0 || >=22.0.0"
   }
 }

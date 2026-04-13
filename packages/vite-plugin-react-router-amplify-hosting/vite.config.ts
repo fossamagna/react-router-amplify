@@ -1,17 +1,15 @@
 import { defineConfig } from "vite";
-import dts from "vite-plugin-dts";
-import { isBuiltin } from "node:module";
+import pkg from "./package.json";
 
 export default defineConfig({
-  build: {
-    lib: {
-      entry: "src/index.ts",
-      formats: ["es", "cjs"],
-      fileName: 'index',
-    },
-    rollupOptions: {
-      external: (id) => isBuiltin(id),
-    },
+  pack: {
+    dts: true,
+    format: ["esm", "cjs"],
+    sourcemap: true,
   },
-  plugins: [dts({ rollupTypes: true })],
+  test: {
+    name: `${pkg.name}-unit`,
+    include: ["**/*.test.ts"],
+    exclude: ["integration/**", "node_modules/**", ".tmp/**"],
+  },
 });

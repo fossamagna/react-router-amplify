@@ -1,8 +1,29 @@
-import { defineConfig } from "vitest/config";
+import { defineConfig } from "vite-plus";
 
 export default defineConfig({
+  lint: {
+    ignorePatterns: [
+      "dist/**",
+      "examples/**",
+      "packages/vite-plugin-react-router-amplify-hosting/integration/helpers/**",
+    ],
+    options: {
+      typeAware: true,
+      typeCheck: true,
+    },
+  },
+  staged: {
+    "*.ts": "vp check",
+  },
+  run: {
+    tasks: {
+      pack: {
+        command: "vp run -r pack",
+      },
+    },
+  },
   test: {
-    projects: ["packages/*/vitest.config.{unit,integration}.ts"],
+    projects: ["./packages/*/vite.config.{unit,integration}.ts", "./packages/*/vite.config.ts"],
     coverage: {
       exclude: [
         "coverage/**",

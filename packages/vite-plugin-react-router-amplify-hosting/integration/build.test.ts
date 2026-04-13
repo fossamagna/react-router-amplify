@@ -1,13 +1,8 @@
-import { afterEach, describe, expect, test } from "vitest";
+import { afterEach, describe, expect, test } from "vite-plus/test";
 import { join } from "node:path";
 import { stat, rm } from "node:fs/promises";
 
-import {
-  build,
-  createProject,
-  npmInstall,
-  reactRouterConfig,
-} from "./helpers/vite";
+import { build, createProject, npmInstall, reactRouterConfig } from "./helpers/vite";
 
 describe("build test", () => {
   let cwd: string;
@@ -16,53 +11,33 @@ describe("build test", () => {
     cwd = await createProject({}, "vite-5-template");
     const installReturns = await npmInstall({ cwd });
     console.log(installReturns.stderr.toString());
-    const returns = await build({
+    const returns = build({
       cwd,
     });
     console.log(returns.stderr.toString());
+    expect((await stat(join(cwd, ".amplify-hosting", "deploy-manifest.json"))).isFile()).toBe(true);
     expect(
-      (
-        await stat(join(cwd, ".amplify-hosting", "deploy-manifest.json"))
-      ).isFile(),
+      (await stat(join(cwd, ".amplify-hosting", "compute", "default", "server.mjs"))).isFile(),
     ).toBe(true);
-    expect(
-      (
-        await stat(
-          join(cwd, ".amplify-hosting", "compute", "default", "server.mjs"),
-        )
-      ).isFile(),
-    ).toBe(true);
-    expect(
-      (
-        await stat(join(cwd, ".amplify-hosting", "static", "assets"))
-      ).isDirectory(),
-    ).toBe(true);
+    expect((await stat(join(cwd, ".amplify-hosting", "static", "assets"))).isDirectory()).toBe(
+      true,
+    );
   });
 
   test("vite 6", async () => {
     cwd = await createProject({}, "vite-6-template");
     await npmInstall({ cwd });
-    const returns = await build({
+    const returns = build({
       cwd,
     });
     console.log(returns.stderr.toString());
+    expect((await stat(join(cwd, ".amplify-hosting", "deploy-manifest.json"))).isFile()).toBe(true);
     expect(
-      (
-        await stat(join(cwd, ".amplify-hosting", "deploy-manifest.json"))
-      ).isFile(),
+      (await stat(join(cwd, ".amplify-hosting", "compute", "default", "server.mjs"))).isFile(),
     ).toBe(true);
-    expect(
-      (
-        await stat(
-          join(cwd, ".amplify-hosting", "compute", "default", "server.mjs"),
-        )
-      ).isFile(),
-    ).toBe(true);
-    expect(
-      (
-        await stat(join(cwd, ".amplify-hosting", "static", "assets"))
-      ).isDirectory(),
-    ).toBe(true);
+    expect((await stat(join(cwd, ".amplify-hosting", "static", "assets"))).isDirectory()).toBe(
+      true,
+    );
   });
 
   test("vite 6 with v8_viteEnvironmentApi future flag", async () => {
@@ -76,53 +51,33 @@ describe("build test", () => {
       "vite-6-template",
     );
     await npmInstall({ cwd });
-    const returns = await build({
+    const returns = build({
       cwd,
     });
     console.log(returns.stderr.toString());
+    expect((await stat(join(cwd, ".amplify-hosting", "deploy-manifest.json"))).isFile()).toBe(true);
     expect(
-      (
-        await stat(join(cwd, ".amplify-hosting", "deploy-manifest.json"))
-      ).isFile(),
+      (await stat(join(cwd, ".amplify-hosting", "compute", "default", "server.mjs"))).isFile(),
     ).toBe(true);
-    expect(
-      (
-        await stat(
-          join(cwd, ".amplify-hosting", "compute", "default", "server.mjs"),
-        )
-      ).isFile(),
-    ).toBe(true);
-    expect(
-      (
-        await stat(join(cwd, ".amplify-hosting", "static", "assets"))
-      ).isDirectory(),
-    ).toBe(true);
+    expect((await stat(join(cwd, ".amplify-hosting", "static", "assets"))).isDirectory()).toBe(
+      true,
+    );
   });
 
   test("vite 7", async () => {
     cwd = await createProject({}, "vite-7-template");
     await npmInstall({ cwd });
-    const returns = await build({
+    const returns = build({
       cwd,
     });
     console.log(returns.stderr.toString());
+    expect((await stat(join(cwd, ".amplify-hosting", "deploy-manifest.json"))).isFile()).toBe(true);
     expect(
-      (
-        await stat(join(cwd, ".amplify-hosting", "deploy-manifest.json"))
-      ).isFile(),
+      (await stat(join(cwd, ".amplify-hosting", "compute", "default", "server.mjs"))).isFile(),
     ).toBe(true);
-    expect(
-      (
-        await stat(
-          join(cwd, ".amplify-hosting", "compute", "default", "server.mjs"),
-        )
-      ).isFile(),
-    ).toBe(true);
-    expect(
-      (
-        await stat(join(cwd, ".amplify-hosting", "static", "assets"))
-      ).isDirectory(),
-    ).toBe(true);
+    expect((await stat(join(cwd, ".amplify-hosting", "static", "assets"))).isDirectory()).toBe(
+      true,
+    );
   });
 
   test("vite 7 with v8_viteEnvironmentApi future flag", async () => {
@@ -136,27 +91,17 @@ describe("build test", () => {
       "vite-7-template",
     );
     await npmInstall({ cwd });
-    const returns = await build({
+    const returns = build({
       cwd,
     });
     console.log(returns.stderr.toString());
+    expect((await stat(join(cwd, ".amplify-hosting", "deploy-manifest.json"))).isFile()).toBe(true);
     expect(
-      (
-        await stat(join(cwd, ".amplify-hosting", "deploy-manifest.json"))
-      ).isFile(),
+      (await stat(join(cwd, ".amplify-hosting", "compute", "default", "server.mjs"))).isFile(),
     ).toBe(true);
-    expect(
-      (
-        await stat(
-          join(cwd, ".amplify-hosting", "compute", "default", "server.mjs"),
-        )
-      ).isFile(),
-    ).toBe(true);
-    expect(
-      (
-        await stat(join(cwd, ".amplify-hosting", "static", "assets"))
-      ).isDirectory(),
-    ).toBe(true);
+    expect((await stat(join(cwd, ".amplify-hosting", "static", "assets"))).isDirectory()).toBe(
+      true,
+    );
   });
 
   afterEach(async () => {

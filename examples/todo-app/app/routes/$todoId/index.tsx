@@ -5,9 +5,7 @@ import { redirect } from "react-router";
 
 export async function action({ request, params }: Route.ActionArgs) {
   if (request.method === "DELETE") {
-    const {
-      todoId,
-    } = params;
+    const { todoId } = params;
     if (typeof todoId !== "string") {
       throw new Error("Invalid todoId");
     }
@@ -24,4 +22,3 @@ export async function action({ request, params }: Route.ActionArgs) {
     });
   }
 }
-
