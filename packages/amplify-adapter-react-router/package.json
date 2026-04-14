@@ -37,8 +37,7 @@
   },
   "scripts": {
     "dev": "vp dev",
-    "pack": "vp pack",
-    "build": "tsc && vp build"
+    "pack": "vp pack"
   },
   "devDependencies": {
     "@aws-amplify/core": "^6.10.5",
