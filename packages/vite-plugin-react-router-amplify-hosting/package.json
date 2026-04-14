@@ -33,8 +33,7 @@
   },
   "scripts": {
     "dev": "vp dev",
-    "pack": "vp pack",
-    "build": "tsc && vp build"
+    "pack": "vp pack"
   },
   "dependencies": {
     "semver": "^7.7.2"

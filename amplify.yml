@@ -17,10 +17,15 @@ applications:
             - pnpm exec ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
     frontend:
       phases:
+        preBuild:
+          commands:
+            - curl -fsSL https://viteplus.dev/install.sh | bash
+            - export PATH="$HOME/.vite-plus/bin:$PATH"
         build:
           commands:
             - node -v
-            - pnpm --workspace-root build
+            - vp run -r pack
+            - vp run build
       artifacts:
         baseDirectory: .amplify-hosting
         files:
