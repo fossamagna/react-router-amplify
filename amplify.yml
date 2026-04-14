@@ -20,7 +20,7 @@ applications:
         preBuild:
           commands:
             - curl -fsSL https://viteplus.dev/install.sh | bash
-            - export PATH="$HOME/.local/bin:$PATH"
+            - export PATH="$HOME/.vite-plus/bin:$PATH"
         build:
           commands:
             - node -v
