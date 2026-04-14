@@ -24,7 +24,7 @@ applications:
         build:
           commands:
             - node -v
-            - vp run pack
+            - vp run -r pack
             - vp run build
       artifacts:
         baseDirectory: .amplify-hosting
