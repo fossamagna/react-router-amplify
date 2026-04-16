@@ -36,7 +36,7 @@
   "packageManager": "pnpm@10.33.0",
   "pnpm": {
     "overrides": {
-      "@types/node": "^20.0.0"
+      "@types/node": "^24.0.0"
     }
   }
 }
