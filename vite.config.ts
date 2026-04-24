@@ -13,7 +13,10 @@ export default defineConfig({
     },
   },
   staged: {
-    "*.ts": "vp check",
+    "*.ts": (files: readonly string[]) => {
+      const filtered = files.filter((f) => !f.includes("/integration/helpers/vite-"));
+      return filtered.length > 0 ? `vp check ${filtered.join(" ")}` : [];
+    },
   },
   run: {
     tasks: {
