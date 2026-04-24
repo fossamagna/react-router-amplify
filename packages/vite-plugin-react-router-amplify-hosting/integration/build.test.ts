@@ -104,6 +104,46 @@ describe("build test", () => {
     );
   });
 
+  test("vite 8", async () => {
+    cwd = await createProject({}, "vite-8-template");
+    await npmInstall({ cwd });
+    const returns = build({
+      cwd,
+    });
+    console.log(returns.stderr.toString());
+    expect((await stat(join(cwd, ".amplify-hosting", "deploy-manifest.json"))).isFile()).toBe(true);
+    expect(
+      (await stat(join(cwd, ".amplify-hosting", "compute", "default", "server.mjs"))).isFile(),
+    ).toBe(true);
+    expect((await stat(join(cwd, ".amplify-hosting", "static", "assets"))).isDirectory()).toBe(
+      true,
+    );
+  });
+
+  test("vite 8 with v8_viteEnvironmentApi future flag", async () => {
+    cwd = await createProject(
+      {
+        "react-router.config.ts": reactRouterConfig({
+          viteEnvironmentApi: true,
+          ssr: true,
+        }),
+      },
+      "vite-8-template",
+    );
+    await npmInstall({ cwd });
+    const returns = build({
+      cwd,
+    });
+    console.log(returns.stderr.toString());
+    expect((await stat(join(cwd, ".amplify-hosting", "deploy-manifest.json"))).isFile()).toBe(true);
+    expect(
+      (await stat(join(cwd, ".amplify-hosting", "compute", "default", "server.mjs"))).isFile(),
+    ).toBe(true);
+    expect((await stat(join(cwd, ".amplify-hosting", "static", "assets"))).isDirectory()).toBe(
+      true,
+    );
+  });
+
   afterEach(async () => {
     await rm(cwd, { recursive: true, force: true });
   });
