@@ -18,6 +18,7 @@ catalogs:
 
 overrides:
   '@types/node': ^20.0.0
+  '@vitest/coverage-v8': 4.1.5
 
 importers:
 
@@ -30,7 +31,7 @@ importers:
         specifier: ^2.27.5
         version: 2.31.0(@types/node@20.19.39)
       '@vitest/coverage-v8':
-        specifier: ^4.0.0
+        specifier: 4.1.5
         version: 4.1.5(@voidzero-dev/vite-plus-test@0.1.19)
       vite:
         specifier: 'catalog:'
@@ -95,7 +96,7 @@ importers:
         version: link:../../packages/vite-plugin-react-router-amplify-hosting
       vite-plus:
         specifier: 'catalog:'
-        version: 0.1.19(@opentelemetry/api@1.9.0)(@types/node@20.19.39)(@vitest/coverage-v8@4.1.4)(@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)
+        version: 0.1.19(@opentelemetry/api@1.9.0)(@types/node@20.19.39)(@vitest/coverage-v8@4.1.5)(@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)
 
   examples/todo-app:
     dependencies:
@@ -186,7 +187,7 @@ importers:
         version: link:../../packages/vite-plugin-react-router-amplify-hosting
       vite-plus:
         specifier: 'catalog:'
-        version: 0.1.19(@opentelemetry/api@1.9.0)(@types/node@20.19.39)(@vitest/coverage-v8@4.1.4)(@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)
+        version: 0.1.19(@opentelemetry/api@1.9.0)(@types/node@20.19.39)(@vitest/coverage-v8@4.1.5)(@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)
       vite-tsconfig-paths:
         specifier: ^5.1.4
         version: 5.1.4(@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))(typescript@5.9.3)
@@ -214,13 +215,13 @@ importers:
         version: '@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)'
       vite-plus:
         specifier: 'catalog:'
-        version: 0.1.19(@opentelemetry/api@1.9.0)(@types/node@20.19.39)(@vitest/coverage-v8@4.1.4)(@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)
+        version: 0.1.19(@opentelemetry/api@1.9.0)(@types/node@20.19.39)(@vitest/coverage-v8@4.1.5)(@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)
 
   packages/vite-plugin-react-router-amplify-hosting:
     dependencies:
       '@react-router/dev':
         specifier: ^7.10.0
-        version: 7.10.1(@react-router/serve@7.10.1(react-router@7.10.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(typescript@5.9.3))(@types/node@20.19.35)(@vitejs/plugin-rsc@0.4.11(@voidzero-dev/vite-plus-core@0.1.14(@types/node@20.19.35)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(@voidzero-dev/vite-plus-core@0.1.14(@types/node@20.19.35)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))(babel-plugin-macros@3.1.0)(jiti@2.6.1)(lightningcss@1.32.0)(react-router@7.10.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)
+        version: 7.10.1(@react-router/serve@7.10.1(react-router@7.10.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(typescript@5.9.3))(@types/node@20.19.39)(@vitejs/plugin-rsc@0.4.11(@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))(babel-plugin-macros@3.1.0)(jiti@2.6.1)(lightningcss@1.32.0)(react-router@7.10.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)
       semver:
         specifier: ^7.7.2
         version: 7.7.4
@@ -245,7 +246,7 @@ importers:
         version: '@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)'
       vite-plus:
         specifier: 'catalog:'
-        version: 0.1.19(@opentelemetry/api@1.9.0)(@types/node@20.19.39)(@vitest/coverage-v8@4.1.4)(@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)
+        version: 0.1.19(@opentelemetry/api@1.9.0)(@types/node@20.19.39)(@vitest/coverage-v8@4.1.5)(@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)
 
 packages:
 
@@ -1467,14 +1468,12 @@ packages:
   '@babel/plugin-proposal-class-properties@7.18.6':
     resolution: {integrity: sha512-cumfXOF0+nzZrrN8Rf0t7M+tF6sZc7vhQwYQck9q1/5w2OExlD+b4v4RpMJFaV1Z7WcDRgO6FqvxqxGlwo+RHQ==}
     engines: {node: '>=6.9.0'}
-    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-class-properties instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
   '@babel/plugin-proposal-object-rest-spread@7.20.7':
     resolution: {integrity: sha512-d2S98yCiLxDVmBmE8UjGcfPvNEUbA1U5q5WxaWFUGRzJSVAZqm5W6MbPct0jxnegUZ0niLeNX+IOzEs7wYg9Dg==}
     engines: {node: '>=6.9.0'}
-    deprecated: This proposal has been merged to the ECMAScript standard and thus this plugin is no longer maintained. Please use @babel/plugin-transform-object-rest-spread instead.
     peerDependencies:
       '@babel/core': ^7.0.0-0
 
@@ -2452,16 +2451,9 @@ packages:
     resolution: {integrity: sha512-JD6DerIKdJGmRp4jQyX5FlrQjA4tjOw1cvfsPAZXfOOEErMUHjPcPSICS+6WnM0nB0efSFARh0KAZss+bvExOA==}
     engines: {node: '>=14'}
 
-  '@oxc-project/runtime@0.121.0':
-    resolution: {integrity: sha512-p0bQukD8OEHxzY4T9OlANBbEFGnOnjo1CYi50HES7OD36UO2yPh6T+uOJKLtlg06eclxroipRCpQGMpeH8EJ/g==}
-    engines: {node: ^20.19.0 || >=22.12.0}
-
   '@oxc-project/runtime@0.126.0':
     resolution: {integrity: sha512-oksjxfqDNmIYMGlIgLzYgnz5YjZax27RtQezsPpKEGo9AC5LOaIGHsivCCeaAWdCtPnRyjZXM/7svreCC8kZVQ==}
     engines: {node: ^20.19.0 || >=22.12.0}
-
-  '@oxc-project/types@0.122.0':
-    resolution: {integrity: sha512-oLAl5kBpV4w69UtFZ9xqcmTi+GENWOcPF7FCrczTiBbmC0ibXxCwyvZGbO39rCVEuLGAZM84DH0pUIyyv/YJzA==}
 
   '@oxc-project/types@0.126.0':
     resolution: {integrity: sha512-oGfVtjAgwQVVpfBrbtk4e1XDyWHRFta6BS3GWVzrF8xYBT2VGQAk39yJS/wFSMrZqoiCU4oghT3Ch0HaHGIHcQ==}
@@ -4076,9 +4068,6 @@ packages:
   '@types/lodash@4.17.20':
     resolution: {integrity: sha512-H3MHACvFUEiujabxhaI/ImO6gUrd8oOurg7LQtS7mbwIXA/cUqWrvBsaeJ23aZEPk1TAYkurjfMbSELfoCXlGA==}
 
-  '@types/node@20.19.35':
-    resolution: {integrity: sha512-Uarfe6J91b9HAUXxjvSOdiO2UPOKLm07Q1oh0JHxoZ1y8HoqxDAu3gVrsrOHeiio0kSsoVBt4wFrKOm0dKxVPQ==}
-
   '@types/node@20.19.39':
     resolution: {integrity: sha512-orrrD74MBUyK8jOAD/r0+lfa1I2MO6I+vAkmAWzMYbCcgrN4lCrmK52gRFQq/JRxfYPfonkr4b0jcY7Olqdqbw==}
 
@@ -4114,15 +4103,6 @@ packages:
       react-dom: '*'
       vite: '*'
 
-  '@vitest/coverage-v8@4.1.4':
-    resolution: {integrity: sha512-x7FptB5oDruxNPDNY2+S8tCh0pcq7ymCe1gTHcsp733jYjrJl8V1gMUlVysuCD9Kz46Xz9t1akkv08dPcYDs1w==}
-    peerDependencies:
-      '@vitest/browser': 4.1.4
-      vitest: 4.1.4
-    peerDependenciesMeta:
-      '@vitest/browser':
-        optional: true
-
   '@vitest/coverage-v8@4.1.5':
     resolution: {integrity: sha512-38C0/Ddb7HcRG0Z4/DUem8x57d2p9jYgp18mkaYswEOQBGsI1CG4f/hjm0ZCeaJfWhSZ4k7jgs29V1Zom7Ki9A==}
     peerDependencies:
@@ -4132,77 +4112,11 @@ packages:
       '@vitest/browser':
         optional: true
 
-  '@vitest/pretty-format@4.1.4':
-    resolution: {integrity: sha512-ddmDHU0gjEUyEVLxtZa7xamrpIefdEETu3nZjWtHeZX4QxqJ7tRxSteHVXJOcr8jhiLoGAhkK4WJ3WqBpjx42A==}
-
   '@vitest/pretty-format@4.1.5':
     resolution: {integrity: sha512-7I3q6l5qr03dVfMX2wCo9FxwSJbPdwKjy2uu/YPpU3wfHvIL4QHwVRp57OfGrDFeUJ8/8QdfBKIV12FTtLn00g==}
 
-  '@vitest/utils@4.1.4':
-    resolution: {integrity: sha512-13QMT+eysM5uVGa1rG4kegGYNp6cnQcsTc67ELFbhNLQO+vgsygtYJx2khvdt4gVQqSSpC/KT5FZZxUpP3Oatw==}
-
   '@vitest/utils@4.1.5':
     resolution: {integrity: sha512-76wdkrmfXfqGjueGgnb45ITPyUi1ycZ4IHgC2bhPDUfWHklY/q3MdLOAB+TF1e6xfl8NxNY0ZYaPCFNWSsw3Ug==}
-
-  '@voidzero-dev/vite-plus-core@0.1.14':
-    resolution: {integrity: sha512-CCWzdkfW0fo0cQNlIsYp5fOuH2IwKuPZEb2UY2Z8gXcp5pG74A82H2Pthj0heAuvYTAnfT7kEC6zM+RbiBgQbg==}
-    engines: {node: ^20.19.0 || >=22.12.0}
-    peerDependencies:
-      '@arethetypeswrong/core': ^0.18.1
-      '@tsdown/css': 0.21.4
-      '@tsdown/exe': 0.21.4
-      '@types/node': ^20.0.0
-      '@vitejs/devtools': ^0.1.0
-      esbuild: ^0.27.0
-      jiti: '>=1.21.0'
-      less: ^4.0.0
-      publint: ^0.3.0
-      sass: ^1.70.0
-      sass-embedded: ^1.70.0
-      stylus: '>=0.54.8'
-      sugarss: ^5.0.0
-      terser: ^5.16.0
-      tsx: ^4.8.1
-      typescript: ^5.0.0
-      unplugin-unused: ^0.5.0
-      yaml: ^2.4.2
-    peerDependenciesMeta:
-      '@arethetypeswrong/core':
-        optional: true
-      '@tsdown/css':
-        optional: true
-      '@tsdown/exe':
-        optional: true
-      '@types/node':
-        optional: true
-      '@vitejs/devtools':
-        optional: true
-      esbuild:
-        optional: true
-      jiti:
-        optional: true
-      less:
-        optional: true
-      publint:
-        optional: true
-      sass:
-        optional: true
-      sass-embedded:
-        optional: true
-      stylus:
-        optional: true
-      sugarss:
-        optional: true
-      terser:
-        optional: true
-      tsx:
-        optional: true
-      typescript:
-        optional: true
-      unplugin-unused:
-        optional: true
-      yaml:
-        optional: true
 
   '@voidzero-dev/vite-plus-core@0.1.19':
     resolution: {integrity: sha512-BTmz50juSDolIN4Vtu5iVaPONV1XSrMB5V+9IoBhhxdogfvp7PBhaHuAcPjTN2RTVowhLZXoo8mn+aHjq//bkw==}
@@ -4312,7 +4226,7 @@ packages:
       '@opentelemetry/api': ^1.9.0
       '@types/node': ^20.0.0
       '@vitest/coverage-istanbul': 4.1.4
-      '@vitest/coverage-v8': 4.1.4
+      '@vitest/coverage-v8': 4.1.5
       '@vitest/ui': 4.1.4
       happy-dom: '*'
       jsdom: '*'
@@ -4877,7 +4791,6 @@ packages:
 
   core-js@2.6.12:
     resolution: {integrity: sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==}
-    deprecated: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
 
   core-js@3.45.1:
     resolution: {integrity: sha512-L4NPsJlCfZsPeXukyzHFlg/i7IIVwHSItR0wg0FLNqYClJ4MQYTYLbC7EkjKYRLZF2iof2MUgN0EGy7MdQFChg==}
@@ -5522,18 +5435,15 @@ packages:
 
   glob@10.4.5:
     resolution: {integrity: sha512-7Bv8RF0k6xjo7d4A/PxYLbUCfb6c+Vpd2/mB2yRDlew7Jb5hEXiCD9ibfO7wpk8i4sevK6DFny9h7EYbM3/sHg==}
-    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
     hasBin: true
 
   glob@11.0.3:
     resolution: {integrity: sha512-2Nim7dha1KVkaiF4q6Dj+ngPPMdfvLJEOpZk/jKiUAkqKebpGAWQXAq9z1xu9HKu5lWfqw/FASuccEjyznjPaA==}
     engines: {node: 20 || >=22}
-    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
     hasBin: true
 
   glob@7.2.3:
     resolution: {integrity: sha512-nFR0zLpU2YCaRxwoCJvL6UvCH2JFyFVIvwTLsIf21AuHlMskA1hhTdk+LlYJtOlYt9v6dvszD2BGRqBL+iQK9Q==}
-    deprecated: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   globalthis@1.0.4:
     resolution: {integrity: sha512-DpLKbNU4WylpxJykQujfCcwYWiV/Jhm50Goo0wrVILAv5jOr9d+H+UR3PhSCD2rCCEIg0uc+G+muBTwD54JhDQ==}
@@ -5694,7 +5604,6 @@ packages:
 
   inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
-    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
 
   inherits@2.0.4:
     resolution: {integrity: sha512-k/vGaX4/Yla3WzyMCvTQOXYeIHvqOKtnqBduzTHpzpQZzAskKMhZ2K+EnBiSM9zGSoIFeMpXKxa4dYeZIQqewQ==}
@@ -6461,7 +6370,6 @@ packages:
   node-domexception@1.0.0:
     resolution: {integrity: sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ==}
     engines: {node: '>=10.5.0'}
-    deprecated: Use your platform's native DOMException instead
 
   node-fetch@2.7.0:
     resolution: {integrity: sha512-c4FRfUm/dbcWZ7U+1Wq0AwCyFL+3nt2bEw05wfxSz+DWpWsitgmSgYmy2dQdWyKC1694ELPqMs/YzUSNozLt8A==}
@@ -6711,9 +6619,6 @@ packages:
 
   pathe@2.0.3:
     resolution: {integrity: sha512-WUjGcAqP1gQacoQe+OBJsFA7Ld4DyXuUIjZ5cc75cLHvJ7dtNsTugphxIADwspS+AraAUePCKrSVtPLFj/F88w==}
-
-  periscopic@4.0.2:
-    resolution: {integrity: sha512-sqpQDUy8vgB7ycLkendSKS6HnVz1Rneoc3Rc+ZBUCe2pbqlVuCC5vF52l0NJ1aiMg/r1qfYF9/myz8CZeI2rjA==}
 
   periscopic@4.0.3:
     resolution: {integrity: sha512-iD/CnjEI6TJYwqLXmEVByEbT1RwUGSW3W51t/uWf+2Ag7FMHLqJ1XNhawGaXBf9/gZr+DhF3bTGLOw+03GJnzg==}
@@ -7082,7 +6987,6 @@ packages:
 
   rimraf@3.0.2:
     resolution: {integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==}
-    deprecated: Rimraf versions prior to v4 are no longer supported
     hasBin: true
 
   rollup@4.52.5:
@@ -7400,7 +7304,6 @@ packages:
   tar@7.5.1:
     resolution: {integrity: sha512-nlGpxf+hv0v7GkWBK2V9spgactGOp0qvfWRxUMjqHyzrt3SgwE48DIv/FhqPHJYLHpgW1opq3nERbz5Anq7n1g==}
     engines: {node: '>=18'}
-    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
 
   tarn@3.0.2:
     resolution: {integrity: sha512-51LAVKUSZSVfI05vjPESNc5vwqqZpbXCsU+/+wxlOrUjk2SnFTt97v9ZgQrD4YmxYW1Px6w2KjaDitCfkvgxMQ==}
@@ -7753,14 +7656,6 @@ packages:
       tsx:
         optional: true
       yaml:
-        optional: true
-
-  vitefu@1.1.2:
-    resolution: {integrity: sha512-zpKATdUbzbsycPFBN71nS2uzBUQiVnFoOrr2rvqv34S1lcAgMKKkjWleLGeiJlZ8lwCXvtWaRn7R3ZC16SYRuw==}
-    peerDependencies:
-      vite: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-beta.0
-    peerDependenciesMeta:
-      vite:
         optional: true
 
   vitefu@1.1.3:
@@ -9420,7 +9315,7 @@ snapshots:
       '@aws-sdk/client-sso-oidc': 3.621.0(@aws-sdk/client-sts@3.879.0)
       '@aws-sdk/client-sts': 3.621.0
       '@aws-sdk/core': 3.621.0
-      '@aws-sdk/credential-provider-node': 3.621.0(@aws-sdk/client-sso-oidc@3.621.0(@aws-sdk/client-sts@3.621.0))(@aws-sdk/client-sts@3.621.0)
+      '@aws-sdk/credential-provider-node': 3.621.0(@aws-sdk/client-sso-oidc@3.621.0(@aws-sdk/client-sts@3.621.0))(@aws-sdk/client-sts@3.879.0)
       '@aws-sdk/middleware-host-header': 3.620.0
       '@aws-sdk/middleware-logger': 3.609.0
       '@aws-sdk/middleware-recursion-detection': 3.620.0
@@ -9558,7 +9453,7 @@ snapshots:
       '@aws-sdk/client-sso-oidc': 3.621.0(@aws-sdk/client-sts@3.621.0)
       '@aws-sdk/client-sts': 3.621.0
       '@aws-sdk/core': 3.621.0
-      '@aws-sdk/credential-provider-node': 3.621.0(@aws-sdk/client-sso-oidc@3.621.0(@aws-sdk/client-sts@3.621.0))(@aws-sdk/client-sts@3.621.0)
+      '@aws-sdk/credential-provider-node': 3.621.0(@aws-sdk/client-sso-oidc@3.621.0(@aws-sdk/client-sts@3.621.0))(@aws-sdk/client-sts@3.879.0)
       '@aws-sdk/middleware-host-header': 3.620.0
       '@aws-sdk/middleware-logger': 3.609.0
       '@aws-sdk/middleware-recursion-detection': 3.620.0
@@ -9752,7 +9647,7 @@ snapshots:
       '@aws-sdk/client-sso-oidc': 3.621.0(@aws-sdk/client-sts@3.621.0)
       '@aws-sdk/client-sts': 3.621.0
       '@aws-sdk/core': 3.621.0
-      '@aws-sdk/credential-provider-node': 3.621.0(@aws-sdk/client-sso-oidc@3.621.0(@aws-sdk/client-sts@3.621.0))(@aws-sdk/client-sts@3.621.0)
+      '@aws-sdk/credential-provider-node': 3.621.0(@aws-sdk/client-sso-oidc@3.621.0(@aws-sdk/client-sts@3.621.0))(@aws-sdk/client-sts@3.879.0)
       '@aws-sdk/middleware-host-header': 3.620.0
       '@aws-sdk/middleware-logger': 3.609.0
       '@aws-sdk/middleware-recursion-detection': 3.620.0
@@ -10090,7 +9985,7 @@ snapshots:
       '@aws-crypto/sha256-js': 5.2.0
       '@aws-sdk/client-sts': 3.621.0
       '@aws-sdk/core': 3.621.0
-      '@aws-sdk/credential-provider-node': 3.621.0(@aws-sdk/client-sso-oidc@3.621.0(@aws-sdk/client-sts@3.621.0))(@aws-sdk/client-sts@3.621.0)
+      '@aws-sdk/credential-provider-node': 3.621.0(@aws-sdk/client-sso-oidc@3.621.0(@aws-sdk/client-sts@3.621.0))(@aws-sdk/client-sts@3.879.0)
       '@aws-sdk/middleware-host-header': 3.620.0
       '@aws-sdk/middleware-logger': 3.609.0
       '@aws-sdk/middleware-recursion-detection': 3.620.0
@@ -10397,7 +10292,7 @@ snapshots:
       '@aws-crypto/sha256-js': 5.2.0
       '@aws-sdk/client-sso-oidc': 3.621.0(@aws-sdk/client-sts@3.621.0)
       '@aws-sdk/core': 3.621.0
-      '@aws-sdk/credential-provider-node': 3.621.0(@aws-sdk/client-sso-oidc@3.621.0(@aws-sdk/client-sts@3.621.0))(@aws-sdk/client-sts@3.621.0)
+      '@aws-sdk/credential-provider-node': 3.621.0(@aws-sdk/client-sso-oidc@3.621.0(@aws-sdk/client-sts@3.621.0))(@aws-sdk/client-sts@3.879.0)
       '@aws-sdk/middleware-host-header': 3.620.0
       '@aws-sdk/middleware-logger': 3.609.0
       '@aws-sdk/middleware-recursion-detection': 3.620.0
@@ -10666,24 +10561,6 @@ snapshots:
       '@smithy/util-stream': 4.4.0
       tslib: 2.8.1
 
-  '@aws-sdk/credential-provider-ini@3.621.0(@aws-sdk/client-sso-oidc@3.621.0(@aws-sdk/client-sts@3.621.0))(@aws-sdk/client-sts@3.621.0)':
-    dependencies:
-      '@aws-sdk/client-sts': 3.621.0
-      '@aws-sdk/credential-provider-env': 3.620.1
-      '@aws-sdk/credential-provider-http': 3.621.0
-      '@aws-sdk/credential-provider-process': 3.620.1
-      '@aws-sdk/credential-provider-sso': 3.621.0(@aws-sdk/client-sso-oidc@3.621.0(@aws-sdk/client-sts@3.621.0))
-      '@aws-sdk/credential-provider-web-identity': 3.621.0(@aws-sdk/client-sts@3.621.0)
-      '@aws-sdk/types': 3.609.0
-      '@smithy/credential-provider-imds': 3.2.8
-      '@smithy/property-provider': 3.1.11
-      '@smithy/shared-ini-file-loader': 3.1.12
-      '@smithy/types': 3.7.2
-      tslib: 2.8.1
-    transitivePeerDependencies:
-      - '@aws-sdk/client-sso-oidc'
-      - aws-crt
-
   '@aws-sdk/credential-provider-ini@3.621.0(@aws-sdk/client-sso-oidc@3.621.0(@aws-sdk/client-sts@3.621.0))(@aws-sdk/client-sts@3.879.0)':
     dependencies:
       '@aws-sdk/client-sts': 3.879.0
@@ -10754,25 +10631,6 @@ snapshots:
       '@smithy/types': 4.6.0
       tslib: 2.8.1
     transitivePeerDependencies:
-      - aws-crt
-
-  '@aws-sdk/credential-provider-node@3.621.0(@aws-sdk/client-sso-oidc@3.621.0(@aws-sdk/client-sts@3.621.0))(@aws-sdk/client-sts@3.621.0)':
-    dependencies:
-      '@aws-sdk/credential-provider-env': 3.620.1
-      '@aws-sdk/credential-provider-http': 3.621.0
-      '@aws-sdk/credential-provider-ini': 3.621.0(@aws-sdk/client-sso-oidc@3.621.0(@aws-sdk/client-sts@3.621.0))(@aws-sdk/client-sts@3.621.0)
-      '@aws-sdk/credential-provider-process': 3.620.1
-      '@aws-sdk/credential-provider-sso': 3.621.0(@aws-sdk/client-sso-oidc@3.621.0(@aws-sdk/client-sts@3.621.0))
-      '@aws-sdk/credential-provider-web-identity': 3.621.0(@aws-sdk/client-sts@3.621.0)
-      '@aws-sdk/types': 3.609.0
-      '@smithy/credential-provider-imds': 3.2.8
-      '@smithy/property-provider': 3.1.11
-      '@smithy/shared-ini-file-loader': 3.1.12
-      '@smithy/types': 3.7.2
-      tslib: 2.8.1
-    transitivePeerDependencies:
-      - '@aws-sdk/client-sso-oidc'
-      - '@aws-sdk/client-sts'
       - aws-crt
 
   '@aws-sdk/credential-provider-node@3.621.0(@aws-sdk/client-sso-oidc@3.621.0(@aws-sdk/client-sts@3.621.0))(@aws-sdk/client-sts@3.879.0)':
@@ -10924,14 +10782,6 @@ snapshots:
       tslib: 2.8.1
     transitivePeerDependencies:
       - aws-crt
-
-  '@aws-sdk/credential-provider-web-identity@3.621.0(@aws-sdk/client-sts@3.621.0)':
-    dependencies:
-      '@aws-sdk/client-sts': 3.621.0
-      '@aws-sdk/types': 3.609.0
-      '@smithy/property-provider': 3.1.11
-      '@smithy/types': 3.7.2
-      tslib: 2.8.1
 
   '@aws-sdk/credential-provider-web-identity@3.621.0(@aws-sdk/client-sts@3.624.0)':
     dependencies:
@@ -11576,7 +11426,7 @@ snapshots:
   '@babel/helper-member-expression-to-functions@7.27.1':
     dependencies:
       '@babel/traverse': 7.28.4
-      '@babel/types': 7.28.5
+      '@babel/types': 7.29.0
     transitivePeerDependencies:
       - supports-color
 
@@ -11598,7 +11448,7 @@ snapshots:
 
   '@babel/helper-optimise-call-expression@7.27.1':
     dependencies:
-      '@babel/types': 7.28.5
+      '@babel/types': 7.29.0
 
   '@babel/helper-plugin-utils@7.27.1': {}
 
@@ -12716,11 +12566,7 @@ snapshots:
 
   '@opentelemetry/semantic-conventions@1.37.0': {}
 
-  '@oxc-project/runtime@0.121.0': {}
-
   '@oxc-project/runtime@0.126.0': {}
-
-  '@oxc-project/types@0.122.0': {}
 
   '@oxc-project/types@0.126.0': {}
 
@@ -13258,57 +13104,6 @@ snapshots:
       '@types/react-dom': 19.2.1(@types/react@19.2.2)
 
   '@radix-ui/rect@1.1.1': {}
-
-  '@react-router/dev@7.10.1(@react-router/serve@7.10.1(react-router@7.10.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(typescript@5.9.3))(@types/node@20.19.35)(@vitejs/plugin-rsc@0.4.11(@voidzero-dev/vite-plus-core@0.1.14(@types/node@20.19.35)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(@voidzero-dev/vite-plus-core@0.1.14(@types/node@20.19.35)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))(babel-plugin-macros@3.1.0)(jiti@2.6.1)(lightningcss@1.32.0)(react-router@7.10.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)':
-    dependencies:
-      '@babel/core': 7.28.3
-      '@babel/generator': 7.28.3
-      '@babel/parser': 7.28.5
-      '@babel/plugin-syntax-jsx': 7.27.1(@babel/core@7.28.3)
-      '@babel/preset-typescript': 7.27.1(@babel/core@7.28.3)
-      '@babel/traverse': 7.28.4
-      '@babel/types': 7.28.5
-      '@react-router/node': 7.10.1(react-router@7.10.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(typescript@5.9.3)
-      '@remix-run/node-fetch-server': 0.9.0
-      arg: 5.0.2
-      babel-dead-code-elimination: 1.0.10
-      chokidar: 4.0.3
-      dedent: 1.7.0(babel-plugin-macros@3.1.0)
-      es-module-lexer: 1.7.0
-      exit-hook: 2.2.1
-      isbot: 5.1.30
-      jsesc: 3.0.2
-      lodash: 4.17.21
-      p-map: 7.0.4
-      pathe: 1.1.2
-      picocolors: 1.1.1
-      pkg-types: 2.3.0
-      prettier: 3.6.2
-      react-refresh: 0.14.2
-      react-router: 7.10.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      semver: 7.7.3
-      tinyglobby: 0.2.15
-      valibot: 1.2.0(typescript@5.9.3)
-      vite: '@voidzero-dev/vite-plus-core@0.1.14(@types/node@20.19.35)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)'
-      vite-node: 3.2.4(@types/node@20.19.35)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.20.5)(yaml@2.8.1)
-    optionalDependencies:
-      '@react-router/serve': 7.10.1(react-router@7.10.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(typescript@5.9.3)
-      '@vitejs/plugin-rsc': 0.4.11(@voidzero-dev/vite-plus-core@0.1.14(@types/node@20.19.35)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      typescript: 5.9.3
-    transitivePeerDependencies:
-      - '@types/node'
-      - babel-plugin-macros
-      - jiti
-      - less
-      - lightningcss
-      - sass
-      - sass-embedded
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-      - tsx
-      - yaml
 
   '@react-router/dev@7.10.1(@react-router/serve@7.10.1(react-router@7.10.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(typescript@5.9.3))(@types/node@20.19.39)(@vitejs/plugin-rsc@0.4.11(@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))(babel-plugin-macros@3.1.0)(jiti@2.6.1)(lightningcss@1.32.0)(react-router@7.10.1(react-dom@19.1.1(react@19.1.1))(react@19.1.1))(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)':
     dependencies:
@@ -14510,11 +14305,6 @@ snapshots:
 
   '@types/lodash@4.17.20': {}
 
-  '@types/node@20.19.35':
-    dependencies:
-      undici-types: 6.21.0
-    optional: true
-
   '@types/node@20.19.39':
     dependencies:
       undici-types: 6.21.0
@@ -14543,20 +14333,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitejs/plugin-rsc@0.4.11(@voidzero-dev/vite-plus-core@0.1.14(@types/node@20.19.35)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
-    dependencies:
-      '@mjackson/node-fetch-server': 0.7.0
-      es-module-lexer: 1.7.0
-      estree-walker: 3.0.3
-      magic-string: 0.30.21
-      periscopic: 4.0.2
-      react: 19.1.1
-      react-dom: 19.1.1(react@19.1.1)
-      turbo-stream: 3.2.0
-      vite: '@voidzero-dev/vite-plus-core@0.1.14(@types/node@20.19.35)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)'
-      vitefu: 1.1.2(@voidzero-dev/vite-plus-core@0.1.14(@types/node@20.19.35)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))
-    optional: true
-
   '@vitejs/plugin-rsc@0.4.11(@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:
       '@mjackson/node-fetch-server': 0.7.0
@@ -14569,21 +14345,6 @@ snapshots:
       turbo-stream: 3.2.0
       vite: '@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)'
       vitefu: 1.1.3(@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))
-    optional: true
-
-  '@vitest/coverage-v8@4.1.4(@voidzero-dev/vite-plus-test@0.1.19)':
-    dependencies:
-      '@bcoe/v8-coverage': 1.0.2
-      '@vitest/utils': 4.1.4
-      ast-v8-to-istanbul: 1.0.0
-      istanbul-lib-coverage: 3.2.2
-      istanbul-lib-report: 3.0.1
-      istanbul-reports: 3.2.0
-      magicast: 0.5.2
-      obug: 2.1.1
-      std-env: 4.1.0
-      tinyrainbow: 3.1.0
-      vitest: '@voidzero-dev/vite-plus-test@0.1.19(@opentelemetry/api@1.9.0)(@types/node@20.19.39)(@vitest/coverage-v8@4.1.4)(@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)'
     optional: true
 
   '@vitest/coverage-v8@4.1.5(@voidzero-dev/vite-plus-test@0.1.19)':
@@ -14600,42 +14361,15 @@ snapshots:
       tinyrainbow: 3.1.0
       vitest: '@voidzero-dev/vite-plus-test@0.1.19(@opentelemetry/api@1.9.0)(@types/node@20.19.39)(@vitest/coverage-v8@4.1.5)(@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)'
 
-  '@vitest/pretty-format@4.1.4':
-    dependencies:
-      tinyrainbow: 3.1.0
-    optional: true
-
   '@vitest/pretty-format@4.1.5':
     dependencies:
       tinyrainbow: 3.1.0
-
-  '@vitest/utils@4.1.4':
-    dependencies:
-      '@vitest/pretty-format': 4.1.4
-      convert-source-map: 2.0.0
-      tinyrainbow: 3.1.0
-    optional: true
 
   '@vitest/utils@4.1.5':
     dependencies:
       '@vitest/pretty-format': 4.1.5
       convert-source-map: 2.0.0
       tinyrainbow: 3.1.0
-
-  '@voidzero-dev/vite-plus-core@0.1.14(@types/node@20.19.35)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)':
-    dependencies:
-      '@oxc-project/runtime': 0.121.0
-      '@oxc-project/types': 0.122.0
-      lightningcss: 1.32.0
-      postcss: 8.5.8
-    optionalDependencies:
-      '@types/node': 20.19.35
-      esbuild: 0.27.4
-      fsevents: 2.3.3
-      jiti: 2.6.1
-      tsx: 4.20.5
-      typescript: 5.9.3
-      yaml: 2.8.1
 
   '@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)':
     dependencies:
@@ -14669,47 +14403,6 @@ snapshots:
 
   '@voidzero-dev/vite-plus-linux-x64-musl@0.1.19':
     optional: true
-
-  '@voidzero-dev/vite-plus-test@0.1.19(@opentelemetry/api@1.9.0)(@types/node@20.19.39)(@vitest/coverage-v8@4.1.4)(@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)':
-    dependencies:
-      '@standard-schema/spec': 1.1.0
-      '@types/chai': 5.2.3
-      '@voidzero-dev/vite-plus-core': 0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)
-      es-module-lexer: 1.7.0
-      obug: 2.1.1
-      pixelmatch: 7.1.0
-      pngjs: 7.0.0
-      sirv: 3.0.2
-      std-env: 4.0.0
-      tinybench: 2.9.0
-      tinyexec: 1.0.2
-      tinyglobby: 0.2.15
-      vite: '@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)'
-      ws: 8.20.0
-    optionalDependencies:
-      '@opentelemetry/api': 1.9.0
-      '@types/node': 20.19.39
-      '@vitest/coverage-v8': 4.1.4(@voidzero-dev/vite-plus-test@0.1.19)
-    transitivePeerDependencies:
-      - '@arethetypeswrong/core'
-      - '@tsdown/css'
-      - '@tsdown/exe'
-      - '@vitejs/devtools'
-      - bufferutil
-      - esbuild
-      - jiti
-      - less
-      - publint
-      - sass
-      - sass-embedded
-      - stylus
-      - sugarss
-      - terser
-      - tsx
-      - typescript
-      - unplugin-unused
-      - utf-8-validate
-      - yaml
 
   '@voidzero-dev/vite-plus-test@0.1.19(@opentelemetry/api@1.9.0)(@types/node@20.19.39)(@vitest/coverage-v8@4.1.5)(@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)':
     dependencies:
@@ -17263,13 +16956,6 @@ snapshots:
 
   pathe@2.0.3: {}
 
-  periscopic@4.0.2:
-    dependencies:
-      '@types/estree': 1.0.8
-      is-reference: 3.0.3
-      zimmerframe: 1.1.4
-    optional: true
-
   periscopic@4.0.3:
     dependencies:
       '@types/estree': 1.0.8
@@ -18301,27 +17987,6 @@ snapshots:
 
   vary@1.1.2: {}
 
-  vite-node@3.2.4(@types/node@20.19.35)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.20.5)(yaml@2.8.1):
-    dependencies:
-      cac: 6.7.14
-      debug: 4.4.3
-      es-module-lexer: 1.7.0
-      pathe: 2.0.3
-      vite: 7.3.2(@types/node@20.19.35)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.20.5)(yaml@2.8.1)
-    transitivePeerDependencies:
-      - '@types/node'
-      - jiti
-      - less
-      - lightningcss
-      - sass
-      - sass-embedded
-      - stylus
-      - sugarss
-      - supports-color
-      - terser
-      - tsx
-      - yaml
-
   vite-node@3.2.4(@types/node@20.19.39)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.20.5)(yaml@2.8.1):
     dependencies:
       cac: 6.7.14
@@ -18341,53 +18006,6 @@ snapshots:
       - supports-color
       - terser
       - tsx
-      - yaml
-
-  vite-plus@0.1.19(@opentelemetry/api@1.9.0)(@types/node@20.19.39)(@vitest/coverage-v8@4.1.4)(@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1):
-    dependencies:
-      '@oxc-project/types': 0.126.0
-      '@voidzero-dev/vite-plus-core': 0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)
-      '@voidzero-dev/vite-plus-test': 0.1.19(@opentelemetry/api@1.9.0)(@types/node@20.19.39)(@vitest/coverage-v8@4.1.4)(@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)
-      oxfmt: 0.45.0
-      oxlint: 1.60.0(oxlint-tsgolint@0.21.1)
-      oxlint-tsgolint: 0.21.1
-    optionalDependencies:
-      '@voidzero-dev/vite-plus-darwin-arm64': 0.1.19
-      '@voidzero-dev/vite-plus-darwin-x64': 0.1.19
-      '@voidzero-dev/vite-plus-linux-arm64-gnu': 0.1.19
-      '@voidzero-dev/vite-plus-linux-arm64-musl': 0.1.19
-      '@voidzero-dev/vite-plus-linux-x64-gnu': 0.1.19
-      '@voidzero-dev/vite-plus-linux-x64-musl': 0.1.19
-      '@voidzero-dev/vite-plus-win32-arm64-msvc': 0.1.19
-      '@voidzero-dev/vite-plus-win32-x64-msvc': 0.1.19
-    transitivePeerDependencies:
-      - '@arethetypeswrong/core'
-      - '@edge-runtime/vm'
-      - '@opentelemetry/api'
-      - '@tsdown/css'
-      - '@tsdown/exe'
-      - '@types/node'
-      - '@vitejs/devtools'
-      - '@vitest/coverage-istanbul'
-      - '@vitest/coverage-v8'
-      - '@vitest/ui'
-      - bufferutil
-      - esbuild
-      - happy-dom
-      - jiti
-      - jsdom
-      - less
-      - publint
-      - sass
-      - sass-embedded
-      - stylus
-      - sugarss
-      - terser
-      - tsx
-      - typescript
-      - unplugin-unused
-      - utf-8-validate
-      - vite
       - yaml
 
   vite-plus@0.1.19(@opentelemetry/api@1.9.0)(@types/node@20.19.39)(@vitest/coverage-v8@4.1.5)(@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1))(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1):
@@ -18448,22 +18066,6 @@ snapshots:
       - supports-color
       - typescript
 
-  vite@7.3.2(@types/node@20.19.35)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.20.5)(yaml@2.8.1):
-    dependencies:
-      esbuild: 0.27.4
-      fdir: 6.5.0(picomatch@4.0.3)
-      picomatch: 4.0.3
-      postcss: 8.5.8
-      rollup: 4.52.5
-      tinyglobby: 0.2.15
-    optionalDependencies:
-      '@types/node': 20.19.35
-      fsevents: 2.3.3
-      jiti: 2.6.1
-      lightningcss: 1.32.0
-      tsx: 4.20.5
-      yaml: 2.8.1
-
   vite@7.3.2(@types/node@20.19.39)(jiti@2.6.1)(lightningcss@1.32.0)(tsx@4.20.5)(yaml@2.8.1):
     dependencies:
       esbuild: 0.27.4
@@ -18479,11 +18081,6 @@ snapshots:
       lightningcss: 1.32.0
       tsx: 4.20.5
       yaml: 2.8.1
-
-  vitefu@1.1.2(@voidzero-dev/vite-plus-core@0.1.14(@types/node@20.19.35)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)):
-    optionalDependencies:
-      vite: '@voidzero-dev/vite-plus-core@0.1.14(@types/node@20.19.35)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)'
-    optional: true
 
   vitefu@1.1.3(@voidzero-dev/vite-plus-core@0.1.19(@types/node@20.19.39)(esbuild@0.27.4)(jiti@2.6.1)(tsx@4.20.5)(typescript@5.9.3)(yaml@2.8.1)):
     optionalDependencies:
