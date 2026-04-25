@@ -122,12 +122,17 @@ type ViteConfigArgs = (ViteConfigServerArgs | { [K in keyof ViteConfigServerArgs
 //   },
 // };
 
-export type TemplateName = "vite-5-template" | "vite-6-template" | "vite-7-template";
+export type TemplateName =
+  | "vite-5-template"
+  | "vite-6-template"
+  | "vite-7-template"
+  | "vite-8-template";
 
 export const viteMajorTemplates = [
   { templateName: "vite-5-template", templateDisplayName: "Vite 5" },
   { templateName: "vite-6-template", templateDisplayName: "Vite 6" },
   { templateName: "vite-7-template", templateDisplayName: "Vite 7" },
+  { templateName: "vite-8-template", templateDisplayName: "Vite 8" },
 ] as const satisfies Array<{
   templateName: TemplateName;
   templateDisplayName: string;
