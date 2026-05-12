@@ -37,7 +37,7 @@
   "pnpm": {
     "overrides": {
       "@types/node": "^20.0.0",
-      "@vitest/coverage-v8": "4.1.5"
+      "@vitest/coverage-v8": "4.1.6"
     }
   }
 }
