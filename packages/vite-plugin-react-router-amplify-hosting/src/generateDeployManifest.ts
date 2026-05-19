@@ -1,4 +1,4 @@
-export type ComputeRuntime = "nodejs20.x" | "nodejs22.x";
+export type ComputeRuntime = "nodejs20.x" | "nodejs22.x" | "nodejs24.x";
 
 export function generateDeployManifest({
   reactRouterVersion,

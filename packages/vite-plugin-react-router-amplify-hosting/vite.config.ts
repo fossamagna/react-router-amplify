@@ -1,5 +1,5 @@
-import { defineConfig } from "vite";
-import pkg from "./package.json";
+import { defineConfig } from "vite-plus";
+import pkg from "./package.json" with { type: "json" };
 
 export default defineConfig({
   pack: {
