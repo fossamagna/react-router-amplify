@@ -39,6 +39,9 @@ export function parseNodeVersion(nodeVersionSpec?: string): ComputeRuntime {
   const majorVersion = Number.parseInt(match[0], 10);
 
   // Map major version to ComputeRuntime
+  if (majorVersion >= 24) {
+    return "nodejs24.x";
+  }
   if (majorVersion >= 22) {
     return "nodejs22.x";
   }

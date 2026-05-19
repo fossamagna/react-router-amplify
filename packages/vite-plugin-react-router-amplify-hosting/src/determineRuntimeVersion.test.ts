@@ -9,7 +9,17 @@ import {
 } from "./determineRuntimeVersion";
 
 describe("parseNodeVersion", () => {
-  test("should return nodejs22.x for version >= 22", () => {
+  test("should return nodejs24.x for version >= 24", () => {
+    expect(parseNodeVersion("24")).toBe("nodejs24.x");
+    expect(parseNodeVersion("24.0.0")).toBe("nodejs24.x");
+    expect(parseNodeVersion(">=24.0.0")).toBe("nodejs24.x");
+    expect(parseNodeVersion("^24.0.0")).toBe("nodejs24.x");
+    expect(parseNodeVersion("~24.0.0")).toBe("nodejs24.x");
+    expect(parseNodeVersion("24.x")).toBe("nodejs24.x");
+    expect(parseNodeVersion("25.0.0")).toBe("nodejs24.x");
+  });
+
+  test("should return nodejs22.x for version >= 22 and < 24", () => {
     expect(parseNodeVersion("22")).toBe("nodejs22.x");
     expect(parseNodeVersion("22.0.0")).toBe("nodejs22.x");
     expect(parseNodeVersion(">=22.0.0")).toBe("nodejs22.x");
@@ -98,6 +108,19 @@ describe("determineRuntimeVersion", () => {
     await rm(testDir, { recursive: true, force: true });
   });
 
+  test("should return nodejs24.x when engines.node is >= 24", async () => {
+    await writeFile(
+      path.join(testDir, "package.json"),
+      JSON.stringify({
+        name: "test-app",
+        engines: { node: ">=24.0.0" },
+      }),
+    );
+
+    const result = await determineRuntimeVersion(testDir);
+    expect(result).toBe("nodejs24.x");
+  });
+
   test("should return nodejs22.x when engines.node is >= 22", async () => {
     await writeFile(
       path.join(testDir, "package.json"),
@@ -143,6 +166,10 @@ describe("determineRuntimeVersion", () => {
 
   test("should handle various version formats", async () => {
     const testCases = [
+      { version: "^24.0.0", expected: "nodejs24.x" },
+      { version: "~24.0.0", expected: "nodejs24.x" },
+      { version: "24.x", expected: "nodejs24.x" },
+      { version: "24", expected: "nodejs24.x" },
       { version: "^22.0.0", expected: "nodejs22.x" },
       { version: "~22.0.0", expected: "nodejs22.x" },
       { version: "22.x", expected: "nodejs22.x" },
