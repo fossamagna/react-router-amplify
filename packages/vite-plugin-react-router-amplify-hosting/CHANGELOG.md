@@ -1,5 +1,11 @@
 # vite-plugin-react-router-amplify-hosting
 
+## 0.8.0
+
+### Minor Changes
+
+- [#295](https://github.com/fossamagna/react-router-amplify/pull/295) [`667dffa`](https://github.com/fossamagna/react-router-amplify/commit/667dffab1d430b7bde744be1501e1e186819cd47) Thanks [@fossamagna](https://github.com/fossamagna)! - feat: add nodejs24.x support to ComputeRuntime
+
 ## 0.7.0
 
 ### Minor Changes
