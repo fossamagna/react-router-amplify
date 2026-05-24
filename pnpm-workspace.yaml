@@ -1,6 +1,11 @@
 packages:
   - packages/*
   - examples/*
+allowBuilds:
+  '@parcel/watcher': true
+  '@tailwindcss/oxide': true
+  core-js: true
+  esbuild: true
 catalog:
   vite: npm:@voidzero-dev/vite-plus-core@latest
   vitest: npm:@voidzero-dev/vite-plus-test@latest
@@ -8,6 +13,8 @@ catalog:
 overrides:
   vite: "catalog:"
   vitest: "catalog:"
+  "@types/node": "^20.0.0"
+  "@vitest/coverage-v8": "4.1.7"
 peerDependencyRules:
   allowAny:
     - vite
