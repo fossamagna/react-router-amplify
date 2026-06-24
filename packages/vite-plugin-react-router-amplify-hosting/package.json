@@ -39,7 +39,7 @@
     "semver": "^7.7.2"
   },
   "devDependencies": {
-    "@types/node": "^20.19.0",
+    "@types/node": "^24.0.0",
     "@types/semver": "^7.7.1",
     "dedent": "^1.5.3",
     "strip-indent": "^4.0.0",
