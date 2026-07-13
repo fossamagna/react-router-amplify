@@ -2,19 +2,20 @@ packages:
   - packages/*
   - examples/*
 allowBuilds:
-  '@parcel/watcher': true
-  '@tailwindcss/oxide': true
+  "@parcel/watcher": true
+  "@tailwindcss/oxide": true
   core-js: true
   esbuild: true
 catalog:
-  vite: npm:@voidzero-dev/vite-plus-core@latest
-  vitest: npm:@voidzero-dev/vite-plus-test@latest
-  vite-plus: latest
+  vite: npm:@voidzero-dev/vite-plus-core@0.2.4
+  vitest: 4.1.10
+  vite-plus: 0.2.4
+  "@vitest/coverage-v8": 4.1.10
 overrides:
   vite: "catalog:"
   vitest: "catalog:"
   "@types/node": "^20.0.0"
-  "@vitest/coverage-v8": "4.1.8"
+  "@vitest/coverage-v8": "4.1.10"
 peerDependencyRules:
   allowAny:
     - vite
