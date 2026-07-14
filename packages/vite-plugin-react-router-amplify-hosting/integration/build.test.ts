@@ -7,66 +7,10 @@ import { build, createProject, npmInstall, reactRouterConfig } from "./helpers/v
 describe("build test", () => {
   let cwd: string;
 
-  test("vite 5", async () => {
-    cwd = await createProject({}, "vite-5-template");
-    const installReturns = await npmInstall({ cwd });
-    console.log(installReturns.stderr.toString());
-    const returns = build({
-      cwd,
-    });
-    console.log(returns.stderr.toString());
-    expect((await stat(join(cwd, ".amplify-hosting", "deploy-manifest.json"))).isFile()).toBe(true);
-    expect(
-      (await stat(join(cwd, ".amplify-hosting", "compute", "default", "server.mjs"))).isFile(),
-    ).toBe(true);
-    expect((await stat(join(cwd, ".amplify-hosting", "static", "assets"))).isDirectory()).toBe(
-      true,
-    );
-  });
-
-  test("vite 6", async () => {
-    cwd = await createProject({}, "vite-6-template");
-    await npmInstall({ cwd });
-    const returns = build({
-      cwd,
-    });
-    console.log(returns.stderr.toString());
-    expect((await stat(join(cwd, ".amplify-hosting", "deploy-manifest.json"))).isFile()).toBe(true);
-    expect(
-      (await stat(join(cwd, ".amplify-hosting", "compute", "default", "server.mjs"))).isFile(),
-    ).toBe(true);
-    expect((await stat(join(cwd, ".amplify-hosting", "static", "assets"))).isDirectory()).toBe(
-      true,
-    );
-  });
-
-  test("vite 6 with v8_viteEnvironmentApi future flag", async () => {
-    cwd = await createProject(
-      {
-        "react-router.config.ts": reactRouterConfig({
-          viteEnvironmentApi: true,
-          ssr: true,
-        }),
-      },
-      "vite-6-template",
-    );
-    await npmInstall({ cwd });
-    const returns = build({
-      cwd,
-    });
-    console.log(returns.stderr.toString());
-    expect((await stat(join(cwd, ".amplify-hosting", "deploy-manifest.json"))).isFile()).toBe(true);
-    expect(
-      (await stat(join(cwd, ".amplify-hosting", "compute", "default", "server.mjs"))).isFile(),
-    ).toBe(true);
-    expect((await stat(join(cwd, ".amplify-hosting", "static", "assets"))).isDirectory()).toBe(
-      true,
-    );
-  });
-
   test("vite 7", async () => {
     cwd = await createProject({}, "vite-7-template");
-    await npmInstall({ cwd });
+    const installReturns = await npmInstall({ cwd });
+    console.log(installReturns.stderr.toString());
     const returns = build({
       cwd,
     });

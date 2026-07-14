@@ -122,15 +122,9 @@ type ViteConfigArgs = (ViteConfigServerArgs | { [K in keyof ViteConfigServerArgs
 //   },
 // };
 
-export type TemplateName =
-  | "vite-5-template"
-  | "vite-6-template"
-  | "vite-7-template"
-  | "vite-8-template";
+export type TemplateName = "vite-7-template" | "vite-8-template";
 
 export const viteMajorTemplates = [
-  { templateName: "vite-5-template", templateDisplayName: "Vite 5" },
-  { templateName: "vite-6-template", templateDisplayName: "Vite 6" },
   { templateName: "vite-7-template", templateDisplayName: "Vite 7" },
   { templateName: "vite-8-template", templateDisplayName: "Vite 8" },
 ] as const satisfies Array<{
@@ -140,7 +134,7 @@ export const viteMajorTemplates = [
 
 export async function createProject(
   files: Record<string, string> = {},
-  templateName: TemplateName = "vite-5-template",
+  templateName: TemplateName = "vite-7-template",
 ) {
   const projectName = `rr-${Math.random().toString(32).slice(2)}`;
   const projectDir = path.join(TMP_DIR, projectName);

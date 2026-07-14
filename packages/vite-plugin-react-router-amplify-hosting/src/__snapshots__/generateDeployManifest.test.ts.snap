@@ -35,7 +35,7 @@ exports[`generateDeployManifest > should generate a deploy manifest 1`] = `
   "computeResources": [
     {
       "name": "default",
-      "runtime": "nodejs20.x",
+      "runtime": "nodejs22.x",
       "entrypoint": "server.mjs"
     }
   ]

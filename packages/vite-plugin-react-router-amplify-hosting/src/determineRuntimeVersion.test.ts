@@ -29,30 +29,22 @@ describe("parseNodeVersion", () => {
     expect(parseNodeVersion("23.0.0")).toBe("nodejs22.x");
   });
 
-  test("should return nodejs20.x for version >= 20 and < 22", () => {
-    expect(parseNodeVersion("20")).toBe("nodejs20.x");
-    expect(parseNodeVersion("20.0.0")).toBe("nodejs20.x");
-    expect(parseNodeVersion(">=20.0.0")).toBe("nodejs20.x");
-    expect(parseNodeVersion("^20.0.0")).toBe("nodejs20.x");
-    expect(parseNodeVersion("~20.0.0")).toBe("nodejs20.x");
-    expect(parseNodeVersion("20.x")).toBe("nodejs20.x");
-    expect(parseNodeVersion("21.0.0")).toBe("nodejs20.x");
+  test("should return nodejs22.x for version < 22", () => {
+    expect(parseNodeVersion("20")).toBe("nodejs22.x");
+    expect(parseNodeVersion("20.0.0")).toBe("nodejs22.x");
+    expect(parseNodeVersion(">=20.0.0")).toBe("nodejs22.x");
+    expect(parseNodeVersion("18")).toBe("nodejs22.x");
+    expect(parseNodeVersion("16.0.0")).toBe("nodejs22.x");
   });
 
-  test("should return nodejs20.x for version < 20", () => {
-    expect(parseNodeVersion("18")).toBe("nodejs20.x");
-    expect(parseNodeVersion("18.0.0")).toBe("nodejs20.x");
-    expect(parseNodeVersion("16.0.0")).toBe("nodejs20.x");
+  test("should return nodejs22.x for undefined or empty version", () => {
+    expect(parseNodeVersion(undefined)).toBe("nodejs22.x");
+    expect(parseNodeVersion("")).toBe("nodejs22.x");
   });
 
-  test("should return nodejs20.x for undefined or empty version", () => {
-    expect(parseNodeVersion(undefined)).toBe("nodejs20.x");
-    expect(parseNodeVersion("")).toBe("nodejs20.x");
-  });
-
-  test("should return nodejs20.x for invalid version string", () => {
-    expect(parseNodeVersion("latest")).toBe("nodejs20.x");
-    expect(parseNodeVersion("lts")).toBe("nodejs20.x");
+  test("should return nodejs22.x for invalid version string", () => {
+    expect(parseNodeVersion("latest")).toBe("nodejs22.x");
+    expect(parseNodeVersion("lts")).toBe("nodejs22.x");
   });
 });
 
@@ -134,7 +126,7 @@ describe("determineRuntimeVersion", () => {
     expect(result).toBe("nodejs22.x");
   });
 
-  test("should return nodejs20.x when engines.node is >= 20", async () => {
+  test("should return nodejs22.x when engines.node is >= 20", async () => {
     await writeFile(
       path.join(testDir, "package.json"),
       JSON.stringify({
@@ -144,10 +136,10 @@ describe("determineRuntimeVersion", () => {
     );
 
     const result = await determineRuntimeVersion(testDir);
-    expect(result).toBe("nodejs20.x");
+    expect(result).toBe("nodejs22.x");
   });
 
-  test("should return nodejs20.x when engines.node is not specified", async () => {
+  test("should return nodejs22.x when engines.node is not specified", async () => {
     await writeFile(
       path.join(testDir, "package.json"),
       JSON.stringify({
@@ -156,12 +148,12 @@ describe("determineRuntimeVersion", () => {
     );
 
     const result = await determineRuntimeVersion(testDir);
-    expect(result).toBe("nodejs20.x");
+    expect(result).toBe("nodejs22.x");
   });
 
-  test("should return nodejs20.x when package.json does not exist", async () => {
+  test("should return nodejs22.x when package.json does not exist", async () => {
     const result = await determineRuntimeVersion(testDir);
-    expect(result).toBe("nodejs20.x");
+    expect(result).toBe("nodejs22.x");
   });
 
   test("should handle various version formats", async () => {
@@ -174,11 +166,11 @@ describe("determineRuntimeVersion", () => {
       { version: "~22.0.0", expected: "nodejs22.x" },
       { version: "22.x", expected: "nodejs22.x" },
       { version: "22", expected: "nodejs22.x" },
-      { version: "^20.0.0", expected: "nodejs20.x" },
-      { version: "~20.0.0", expected: "nodejs20.x" },
-      { version: "20.x", expected: "nodejs20.x" },
-      { version: "20", expected: "nodejs20.x" },
-      { version: "18", expected: "nodejs20.x" },
+      { version: "^20.0.0", expected: "nodejs22.x" },
+      { version: "~20.0.0", expected: "nodejs22.x" },
+      { version: "20.x", expected: "nodejs22.x" },
+      { version: "20", expected: "nodejs22.x" },
+      { version: "18", expected: "nodejs22.x" },
     ];
 
     for (const { version, expected } of testCases) {
