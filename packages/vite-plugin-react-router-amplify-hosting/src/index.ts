@@ -75,7 +75,7 @@ export type { PluginOption };
 
 export type PluginOptions = {
   expressVersion?: "5" | "4";
-  computeRuntime?: "nodejs20.x" | "nodejs22.x" | "nodejs24.x";
+  computeRuntime?: "nodejs22.x" | "nodejs24.x";
 };
 export function amplifyHosting(opts?: PluginOptions): Plugin {
   let resolvedConfig: ResolvedConfig;

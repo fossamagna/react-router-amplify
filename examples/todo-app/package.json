@@ -29,7 +29,7 @@
     "@aws-amplify/backend-cli": "1.8.2",
     "@react-router/dev": "^7.10.0",
     "@tailwindcss/vite": "^4.0.0",
-    "@types/node": "^20",
+    "@types/node": "^22",
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.1",
     "aws-cdk": "2.1122.0",
