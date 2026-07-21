@@ -14,7 +14,7 @@ catalog:
 overrides:
   vite: "catalog:"
   vitest: "catalog:"
-  "@types/node": "^22.0.0"
+  "@types/node": "^24.0.0"
   "@vitest/coverage-v8": "4.1.10"
 peerDependencyRules:
   allowAny:
