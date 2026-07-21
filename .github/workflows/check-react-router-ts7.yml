@@ -1,0 +1,49 @@
+name: Check react-router TypeScript 7 support
+
+on:
+  schedule:
+    - cron: "0 0 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check @react-router/dev typescript peer range
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_TITLE: "@react-router/dev now supports TypeScript 7"
+        run: |
+          RANGE=$(npm view @react-router/dev peerDependencies.typescript || true)
+          echo "peerDependencies.typescript: ${RANGE:-<none>}"
+          npm install --prefix "$RUNNER_TEMP/semver-check" --no-save semver@7 --silent
+          if [ -n "$RANGE" ] && ! node -e "
+            const semver = require(process.env.RUNNER_TEMP + '/semver-check/node_modules/semver');
+            process.exit(semver.satisfies('7.0.0', process.argv[1]) ? 0 : 1);
+          " "$RANGE"; then
+            echo "TypeScript 7 is not supported yet."
+            exit 0
+          fi
+          EXISTING=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open \
+            --search "\"$ISSUE_TITLE\" in:title" --json number --jq '.[].number')
+          if [ -n "$EXISTING" ]; then
+            echo "Issue #$EXISTING is already open; skipping."
+            exit 0
+          fi
+          BODY_FILE="$RUNNER_TEMP/issue-body.md"
+          {
+            echo "\`@react-router/dev\` の typescript peer range が TypeScript 7 を許容するようになりました(現在の range: \`${RANGE:-削除済み}\`)。"
+            echo ""
+            echo "次の後片付けをしてください:"
+            echo ""
+            echo '- [ ] `packages/vite-plugin-react-router-amplify-hosting/integration/helpers/vite-7-template/package.json` と `vite-8-template/package.json` の typescript を `^7.0.0` に上げる'
+            echo '- [ ] `.github/renovate.json` から fixture の typescript 除外ルール(packageRules)を削除する'
+            echo '- [ ] このワークフロー `.github/workflows/check-react-router-ts7.yml` を削除する'
+          } > "$BODY_FILE"
+          gh issue create --repo "$GITHUB_REPOSITORY" \
+            --title "$ISSUE_TITLE" \
+            --body-file "$BODY_FILE"

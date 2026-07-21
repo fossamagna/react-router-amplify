@@ -1,4 +1,14 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended"]
+  "extends": ["config:recommended"],
+  "packageRules": [
+    {
+      "description": "Integration fixture templates emulate user apps; @react-router/dev's typescript peer range is ^5.1.0 || ^6.0.0, so keep fixtures on typescript 6 until react-router supports 7 (tracked by .github/workflows/check-react-router-ts7.yml)",
+      "matchFileNames": [
+        "packages/vite-plugin-react-router-amplify-hosting/integration/helpers/**"
+      ],
+      "matchPackageNames": ["typescript"],
+      "enabled": false
+    }
+  ]
 }
