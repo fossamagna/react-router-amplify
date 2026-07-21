@@ -1,0 +1,49 @@
+name: Check react-router TypeScript 7 support
+
+on:
+  schedule:
+    - cron: "0 0 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check @react-router/dev typescript peer range
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_TITLE: "@react-router/dev now supports TypeScript 7"
+        run: |
+          RANGE=$(npm view @react-router/dev peerDependencies.typescript || true)
+          echo "peerDependencies.typescript: ${RANGE:-<none>}"
+          npm install --prefix "$RUNNER_TEMP/semver-check" --no-save semver@7 --silent
+          if [ -n "$RANGE" ] && ! node -e "
+            const semver = require(process.env.RUNNER_TEMP + '/semver-check/node_modules/semver');
+            process.exit(semver.satisfies('7.0.0', process.argv[1]) ? 0 : 1);
+          " "$RANGE"; then
+            echo "TypeScript 7 is not supported yet."
+            exit 0
+          fi
+          EXISTING=$(gh issue list --repo "$GITHUB_REPOSITORY" --state open \
+            --search "\"$ISSUE_TITLE\" in:title" --json number --jq '.[].number')
+          if [ -n "$EXISTING" ]; then
+            echo "Issue #$EXISTING is already open; skipping."
+            exit 0
+          fi
+          BODY_FILE="$RUNNER_TEMP/issue-body.md"
+          {
+            echo "The typescript peer range of \`@react-router/dev\` now allows TypeScript 7 (current range: \`${RANGE:-removed}\`)."
+            echo ""
+            echo "Follow-up tasks:"
+            echo ""
+            echo '- [ ] Bump typescript to `^7.0.0` in `packages/vite-plugin-react-router-amplify-hosting/integration/helpers/vite-7-template/package.json` and `vite-8-template/package.json`'
+            echo '- [ ] Remove the fixture typescript exclusion rule (packageRules) from `.github/renovate.json`'
+            echo '- [ ] Delete this workflow `.github/workflows/check-react-router-ts7.yml`'
+          } > "$BODY_FILE"
+          gh issue create --repo "$GITHUB_REPOSITORY" \
+            --title "$ISSUE_TITLE" \
+            --body-file "$BODY_FILE"
