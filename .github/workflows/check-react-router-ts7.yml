@@ -36,13 +36,13 @@ jobs:
           fi
           BODY_FILE="$RUNNER_TEMP/issue-body.md"
           {
-            echo "\`@react-router/dev\` の typescript peer range が TypeScript 7 を許容するようになりました(現在の range: \`${RANGE:-削除済み}\`)。"
+            echo "The typescript peer range of \`@react-router/dev\` now allows TypeScript 7 (current range: \`${RANGE:-removed}\`)."
             echo ""
-            echo "次の後片付けをしてください:"
+            echo "Follow-up tasks:"
             echo ""
-            echo '- [ ] `packages/vite-plugin-react-router-amplify-hosting/integration/helpers/vite-7-template/package.json` と `vite-8-template/package.json` の typescript を `^7.0.0` に上げる'
-            echo '- [ ] `.github/renovate.json` から fixture の typescript 除外ルール(packageRules)を削除する'
-            echo '- [ ] このワークフロー `.github/workflows/check-react-router-ts7.yml` を削除する'
+            echo '- [ ] Bump typescript to `^7.0.0` in `packages/vite-plugin-react-router-amplify-hosting/integration/helpers/vite-7-template/package.json` and `vite-8-template/package.json`'
+            echo '- [ ] Remove the fixture typescript exclusion rule (packageRules) from `.github/renovate.json`'
+            echo '- [ ] Delete this workflow `.github/workflows/check-react-router-ts7.yml`'
           } > "$BODY_FILE"
           gh issue create --repo "$GITHUB_REPOSITORY" \
             --title "$ISSUE_TITLE" \
