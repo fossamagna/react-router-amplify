@@ -88,6 +88,22 @@ describe("build test", () => {
     );
   });
 
+  test("react-router 8", async () => {
+    cwd = await createProject({}, "react-router-8-template");
+    await npmInstall({ cwd });
+    const returns = build({
+      cwd,
+    });
+    console.log(returns.stderr.toString());
+    expect((await stat(join(cwd, ".amplify-hosting", "deploy-manifest.json"))).isFile()).toBe(true);
+    expect(
+      (await stat(join(cwd, ".amplify-hosting", "compute", "default", "server.mjs"))).isFile(),
+    ).toBe(true);
+    expect((await stat(join(cwd, ".amplify-hosting", "static", "assets"))).isDirectory()).toBe(
+      true,
+    );
+  });
+
   afterEach(async () => {
     await rm(cwd, { recursive: true, force: true });
   });
