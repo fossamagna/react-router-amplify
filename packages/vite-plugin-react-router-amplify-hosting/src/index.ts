@@ -99,7 +99,7 @@ export function amplifyHosting(opts?: PluginOptions): Plugin {
         config.ssr.noExternal = true;
       }
 
-      if (pluginConfig.future.v8_viteEnvironmentApi) {
+      if (pluginConfig.viteEnvironmentApi) {
         return {
           ...config,
           ssr: {
@@ -154,10 +154,10 @@ export function amplifyHosting(opts?: PluginOptions): Plugin {
       if (!pluginConfig) {
         return;
       }
-      const isClientBuild = pluginConfig.future.v8_viteEnvironmentApi
+      const isClientBuild = pluginConfig.viteEnvironmentApi
         ? this.environment.name === "client"
         : !pluginConfig.isSsrBuild;
-      const isServerBuild = pluginConfig.future.v8_viteEnvironmentApi
+      const isServerBuild = pluginConfig.viteEnvironmentApi
         ? this.environment.name === "ssr"
         : pluginConfig.isSsrBuild;
 
@@ -236,14 +236,17 @@ function resolvePluginConfig(config: UserConfig) {
   const buildDirectory = path.relative(rootDirectory, reactRouterConfig.buildDirectory);
   const appDirectory = path.relative(rootDirectory, reactRouterConfig.appDirectory);
   const isSsrBuild = environmentBuildContext?.name === "ssr";
-  const future = reactRouterConfig.future;
+  const future: { v8_viteEnvironmentApi?: boolean } = reactRouterConfig.future;
+  // React Router v8 removed the `v8_viteEnvironmentApi` future flag because the
+  // Vite Environment API is always enabled there, so treat a missing flag as enabled.
+  const viteEnvironmentApi = future.v8_viteEnvironmentApi ?? true;
 
   return {
     rootDirectory,
     buildDirectory,
     appDirectory,
     isSsrBuild,
-    future,
+    viteEnvironmentApi,
   };
 }
 

@@ -1,12 +1,20 @@
 import { spawnSync } from "node:child_process";
 import path from "node:path";
 import fs from "node:fs/promises";
+import { readFileSync } from "node:fs";
 import url from "node:url";
 import stripIndent from "strip-indent";
 import dedent from "dedent";
 import type { Config } from "@react-router/dev/config";
 
-const reactRouterBin = "node_modules/@react-router/dev/bin.js";
+// The CLI entrypoint is "bin.js" in @react-router/dev v7 and "bin.cjs" in v8,
+// so resolve it from the installed package's "bin" field.
+const resolveReactRouterBin = (cwd: string) => {
+  const pkgDir = path.join(cwd, "node_modules", "@react-router", "dev");
+  const pkg = JSON.parse(readFileSync(path.join(pkgDir, "package.json"), "utf8"));
+  const bin = typeof pkg.bin === "string" ? pkg.bin : pkg.bin["react-router"];
+  return path.join(pkgDir, bin);
+};
 const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 const root = path.resolve(__dirname, "../..");
 const TMP_DIR = path.join(root, ".tmp/integration");
@@ -122,7 +130,7 @@ type ViteConfigArgs = (ViteConfigServerArgs | { [K in keyof ViteConfigServerArgs
 //   },
 // };
 
-export type TemplateName = "vite-7-template" | "vite-8-template";
+export type TemplateName = "vite-7-template" | "vite-8-template" | "react-router-8-template";
 
 export const viteMajorTemplates = [
   { templateName: "vite-7-template", templateDisplayName: "Vite 7" },
@@ -168,7 +176,7 @@ const colorEnv = {
 export const build = ({ cwd, env = {} }: { cwd: string; env?: Record<string, string> }) => {
   const nodeBin = process.argv[0];
 
-  return spawnSync(nodeBin, [reactRouterBin, "build"], {
+  return spawnSync(nodeBin, [resolveReactRouterBin(cwd), "build"], {
     cwd,
     env: {
       ...process.env,
