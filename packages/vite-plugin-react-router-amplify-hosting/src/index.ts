@@ -38,10 +38,7 @@ app.use(compression());
 app.use(express.static("build/client"));
 app.use(morgan("tiny"));
 
-app.all("*", createRequestHandler({
-  build,
-  getLoadContext: async (_req, ctx) => ctx,
-}));
+app.all("*", createRequestHandler({ build }));
 
 app.listen(3000, () => {
   console.log("App listening on http://localhost:3000");
@@ -61,10 +58,7 @@ app.use(compression());
 app.use(express.static("build/client"));
 app.use(morgan("tiny"));
 
-app.all("*splat", createRequestHandler({
-  build,
-  getLoadContext: async (_req, ctx) => ctx,
-}));
+app.all("*splat", createRequestHandler({ build }));
 
 app.listen(3000, () => {
   console.log("App listening on http://localhost:3000");

@@ -1,8 +1,31 @@
 import { afterEach, describe, expect, test } from "vite-plus/test";
+import { spawn } from "node:child_process";
 import { join } from "node:path";
 import { stat, rm } from "node:fs/promises";
+import { setTimeout as sleep } from "node:timers/promises";
 
 import { build, createProject, npmInstall, reactRouterConfig } from "./helpers/vite";
+
+// Start the generated server.mjs and return the response of `GET /`.
+async function fetchFromBuiltServer(cwd: string): Promise<Response | undefined> {
+  const server = spawn(
+    process.argv[0],
+    [join(cwd, ".amplify-hosting", "compute", "default", "server.mjs")],
+    { cwd },
+  );
+  try {
+    for (let i = 0; i < 50; i++) {
+      try {
+        return await fetch("http://localhost:3000/");
+      } catch {
+        await sleep(200);
+      }
+    }
+    return undefined;
+  } finally {
+    server.kill();
+  }
+}
 
 describe("build test", () => {
   let cwd: string;
@@ -102,6 +125,8 @@ describe("build test", () => {
     expect((await stat(join(cwd, ".amplify-hosting", "static", "assets"))).isDirectory()).toBe(
       true,
     );
+    const response = await fetchFromBuiltServer(cwd);
+    expect(response?.status).toBe(200);
   });
 
   afterEach(async () => {
