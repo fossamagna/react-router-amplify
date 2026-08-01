@@ -24,9 +24,8 @@ applications:
         build:
           commands:
             - node -v
-            - nproc && free -m
             - vp run -r pack
-            - RUST_BACKTRACE=full vp run build
+            - vp run build
       artifacts:
         baseDirectory: .amplify-hosting
         files:
