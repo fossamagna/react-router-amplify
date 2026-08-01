@@ -24,14 +24,12 @@ applications:
         build:
           commands:
             - node -v
+            - nproc && free -m
             - vp run -r pack
-            - vp run build
+            - RUST_BACKTRACE=full vp run build
       artifacts:
         baseDirectory: .amplify-hosting
         files:
           - "**/*"
-      cache:
-        paths:
-          - node_modules/**/*
       buildPath: examples/todo-app
     appRoot: examples/todo-app
