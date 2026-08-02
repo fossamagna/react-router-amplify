@@ -14,7 +14,9 @@ export default defineConfig({
   },
   staged: {
     "*.ts": (files: readonly string[]) => {
-      const filtered = files.filter((f) => !/\/integration\/helpers\/[^/]+-template\//.test(f));
+      const filtered = files.filter(
+        (f) => !/\/integration\/helpers\/[^/]+-template\/|\/examples\//.test(f),
+      );
       return filtered.length > 0 ? `vp check ${filtered.join(" ")}` : [];
     },
   },
