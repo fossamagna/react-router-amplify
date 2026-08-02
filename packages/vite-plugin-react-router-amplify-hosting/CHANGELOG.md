@@ -1,5 +1,15 @@
 # vite-plugin-react-router-amplify-hosting
 
+## 1.1.0
+
+### Minor Changes
+
+- [#336](https://github.com/fossamagna/react-router-amplify/pull/336) [`265901b`](https://github.com/fossamagna/react-router-amplify/commit/265901bd46ce015895780a5ca25901ed46762fa0) Thanks [@fossamagna](https://github.com/fossamagna)! - Support React Router v8. The `future.v8_viteEnvironmentApi` flag was removed in React Router v8 because the Vite Environment API is always enabled, which prevented the plugin from generating `deploy-manifest.json` and `server.mjs`. The plugin now treats a missing flag as enabled.
+
+### Patch Changes
+
+- [#338](https://github.com/fossamagna/react-router-amplify/pull/338) [`7d360d5`](https://github.com/fossamagna/react-router-amplify/commit/7d360d542e6f249c81fc521628259984075616c6) Thanks [@fossamagna](https://github.com/fossamagna)! - Omit `getLoadContext` from the generated Express server handler. It passed the Express `Response` object as the load context, which React Router v8 rejects at runtime ("You must return an instance of `RouterContextProvider` from your `getLoadContext` function"), causing every request to fail with a 500 error.
+
 ## 1.0.0
 
 ### Major Changes
