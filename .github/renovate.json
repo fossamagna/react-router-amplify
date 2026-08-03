@@ -4,9 +4,10 @@
   "minimumReleaseAge": "2 days",
   "packageRules": [
     {
-      "description": "Integration fixture templates emulate user apps; @react-router/dev's typescript peer range is ^5.1.0 || ^6.0.0, so keep fixtures on typescript 6 until react-router supports 7 (tracked by .github/workflows/check-react-router-ts7.yml)",
+      "description": "vite-7-template and vite-8-template pin @react-router/dev to the react-router 7.x line, whose typescript peer range is still ^5.1.0 || ^6.0.0, so keep these fixtures on typescript 6 until react-router 7.x supports typescript 7",
       "matchFileNames": [
-        "packages/vite-plugin-react-router-amplify-hosting/integration/helpers/**"
+        "packages/vite-plugin-react-router-amplify-hosting/integration/helpers/vite-7-template/**",
+        "packages/vite-plugin-react-router-amplify-hosting/integration/helpers/vite-8-template/**"
       ],
       "matchPackageNames": ["typescript"],
       "enabled": false
