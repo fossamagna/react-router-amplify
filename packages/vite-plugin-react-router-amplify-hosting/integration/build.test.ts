@@ -129,6 +129,35 @@ describe("build test", () => {
     expect(response?.status).toBe(200);
   });
 
+  // Regression test for https://github.com/fossamagna/react-router-amplify/issues/277
+  test("react-router 8 with prerender", async () => {
+    cwd = await createProject(
+      {
+        "react-router.config.ts": reactRouterConfig({
+          ssr: true,
+          prerender: true,
+        }),
+      },
+      "react-router-8-template",
+    );
+    await npmInstall({ cwd });
+    const returns = build({
+      cwd,
+    });
+    console.log(returns.stderr.toString());
+    expect(returns.status).toBe(0);
+    expect((await stat(join(cwd, ".amplify-hosting", "deploy-manifest.json"))).isFile()).toBe(true);
+    expect(
+      (await stat(join(cwd, ".amplify-hosting", "compute", "default", "server.mjs"))).isFile(),
+    ).toBe(true);
+    expect((await stat(join(cwd, ".amplify-hosting", "static", "assets"))).isDirectory()).toBe(
+      true,
+    );
+    // The prerendered page must be copied into the static output too, not
+    // just the client build's own assets.
+    expect((await stat(join(cwd, ".amplify-hosting", "static", "index.html"))).isFile()).toBe(true);
+  });
+
   afterEach(async () => {
     await rm(cwd, { recursive: true, force: true });
   });
