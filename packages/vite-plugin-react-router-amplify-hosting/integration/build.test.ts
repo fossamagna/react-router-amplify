@@ -23,7 +23,19 @@ async function fetchFromBuiltServer(cwd: string): Promise<Response | undefined> 
     }
     return undefined;
   } finally {
+    // `kill()` only sends the signal - it doesn't wait for the process to
+    // actually exit. On Windows, the immediately-following `afterEach` cleanup
+    // (`rm(cwd, { recursive: true })`) can then race the OS still releasing
+    // this process's file handles on files under `cwd`, failing with
+    // "EBUSY: resource busy or locked, rmdir ...". Wait for the process to
+    // fully exit (bounded, in case it never does) before returning.
     server.kill();
+    if (server.exitCode === null && server.signalCode === null) {
+      await Promise.race([
+        new Promise<void>((resolve) => server.once("exit", () => resolve())),
+        sleep(5000),
+      ]);
+    }
   }
 }
 
