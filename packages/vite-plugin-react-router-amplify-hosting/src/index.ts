@@ -1,4 +1,4 @@
-import { copyFile, cp, mkdir, readFile, writeFile } from "node:fs/promises";
+import { cp, mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import type { BuildManifest, Config as ReactRouterConfig } from "@react-router/dev/config";
 import semver from "semver";
@@ -188,14 +188,21 @@ export function amplifyHosting(opts?: PluginOptions): Plugin {
           await cp(dir, staticDir, { recursive: true });
         }
       } else if (isServerBuild) {
-        // copy server.mjs to the compute default directory
+        // Copy the whole server build output (not just server.mjs) to the
+        // compute default directory. Since React Router's own server-build
+        // entry is preserved alongside our handler entry (see
+        // `configureBuildEnvironmentOptions`), Rollup extracts their shared
+        // code into a separate chunk under `assets/` that `server.mjs`
+        // imports at runtime - copying only `server.mjs` left that chunk
+        // behind, so the deployed compute function crashed with
+        // `ERR_MODULE_NOT_FOUND` as soon as it was invoked.
         const computeDefaultDir = path.join(
           resolvedConfig.root,
           AMPLITY_HOSTING_COMPUTE_DEFAULT_DIR,
         );
         await mkdir(computeDefaultDir, { recursive: true });
         const dir = options.dir ?? "";
-        await copyFile(path.join(dir, "server.mjs"), path.join(computeDefaultDir, "server.mjs"));
+        await cp(dir, computeDefaultDir, { recursive: true });
         // write deploy-manifest.json
         const reactRouterVersion = await getPackageVersion("react-router", "0.0.0");
         const { computeRuntime } = pluginOptions;
