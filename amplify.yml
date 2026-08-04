@@ -32,3 +32,43 @@ applications:
           - "**/*"
       buildPath: examples/todo-app
     appRoot: examples/todo-app
+  - frontend:
+      phases:
+        preBuild:
+          commands:
+            - curl -fsSL https://viteplus.dev/install.sh | bash
+            - export PATH="$HOME/.vite-plus/bin:$PATH"
+            - echo "node-linker=hoisted" > ../../.npmrc
+            - corepack enable
+            - pnpm install --frozen-lockfile
+        build:
+          commands:
+            - node -v
+            - vp run -r pack
+            - vp run build
+      artifacts:
+        baseDirectory: .amplify-hosting
+        files:
+          - "**/*"
+      buildPath: examples/hello-world
+    appRoot: examples/hello-world
+  - frontend:
+      phases:
+        preBuild:
+          commands:
+            - curl -fsSL https://viteplus.dev/install.sh | bash
+            - export PATH="$HOME/.vite-plus/bin:$PATH"
+            - echo "node-linker=hoisted" > ../../.npmrc
+            - corepack enable
+            - pnpm install --frozen-lockfile
+        build:
+          commands:
+            - node -v
+            - vp run -r pack
+            - vp run build
+      artifacts:
+        baseDirectory: .amplify-hosting
+        files:
+          - "**/*"
+      buildPath: examples/prerender-app
+    appRoot: examples/prerender-app

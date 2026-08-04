@@ -1,32 +1,36 @@
 {
-  "name": "react-router-amplify-hosting-example-hello-world",
+  "name": "react-router-amplify-hosting-example-prerender-app",
   "private": true,
   "type": "module",
   "scripts": {
     "prebuild": "pnpm clean",
     "build": "react-router build",
+    "dev": "react-router dev",
     "typecheck": "react-router typegen && tsc",
     "clean": "rm -rf build && rm -rf .react-router && rm -rf .amplify-hosting"
   },
   "dependencies": {
-    "@react-router/dev": "^7.10.0",
-    "@react-router/express": "^7.10.0",
-    "@react-router/node": "^7.10.0",
+    "@react-router/dev": "^8.3.0",
+    "@react-router/express": "^8.3.0",
+    "@react-router/node": "^8.3.0",
     "compression": "^1.8.0",
-    "express": "^4.21.2",
+    "express": "^5.1.0",
     "isbot": "^5.1.17",
     "morgan": "^1.10.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-router": "^7.10.0"
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-router": "^8.3.0"
   },
   "devDependencies": {
     "@types/node": "^22.13.4",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
-    "typescript": "^5.7.3",
+    "typescript": "^5.8.2",
     "vite": "catalog:",
     "vite-plugin-react-router-amplify-hosting": "workspace:*",
     "vite-plus": "catalog:"
+  },
+  "engines": {
+    "node": ">=22.22.0"
   }
 }

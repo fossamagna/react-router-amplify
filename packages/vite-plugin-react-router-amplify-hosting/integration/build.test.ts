@@ -23,7 +23,19 @@ async function fetchFromBuiltServer(cwd: string): Promise<Response | undefined> 
     }
     return undefined;
   } finally {
+    // `kill()` only sends the signal - it doesn't wait for the process to
+    // actually exit. On Windows, the immediately-following `afterEach` cleanup
+    // (`rm(cwd, { recursive: true })`) can then race the OS still releasing
+    // this process's file handles on files under `cwd`, failing with
+    // "EBUSY: resource busy or locked, rmdir ...". Wait for the process to
+    // fully exit (bounded, in case it never does) before returning.
     server.kill();
+    if (server.exitCode === null && server.signalCode === null) {
+      await Promise.race([
+        new Promise<void>((resolve) => server.once("exit", () => resolve())),
+        sleep(5000),
+      ]);
+    }
   }
 }
 
@@ -45,6 +57,8 @@ describe("build test", () => {
     expect((await stat(join(cwd, ".amplify-hosting", "static", "assets"))).isDirectory()).toBe(
       true,
     );
+    const response = await fetchFromBuiltServer(cwd);
+    expect(response?.status).toBe(200);
   });
 
   test("vite 7 with v8_viteEnvironmentApi future flag", async () => {
@@ -69,6 +83,8 @@ describe("build test", () => {
     expect((await stat(join(cwd, ".amplify-hosting", "static", "assets"))).isDirectory()).toBe(
       true,
     );
+    const response = await fetchFromBuiltServer(cwd);
+    expect(response?.status).toBe(200);
   });
 
   test("vite 8", async () => {
@@ -85,6 +101,8 @@ describe("build test", () => {
     expect((await stat(join(cwd, ".amplify-hosting", "static", "assets"))).isDirectory()).toBe(
       true,
     );
+    const response = await fetchFromBuiltServer(cwd);
+    expect(response?.status).toBe(200);
   });
 
   test("vite 8 with v8_viteEnvironmentApi future flag", async () => {
@@ -109,6 +127,8 @@ describe("build test", () => {
     expect((await stat(join(cwd, ".amplify-hosting", "static", "assets"))).isDirectory()).toBe(
       true,
     );
+    const response = await fetchFromBuiltServer(cwd);
+    expect(response?.status).toBe(200);
   });
 
   test("react-router 8", async () => {
@@ -125,6 +145,41 @@ describe("build test", () => {
     expect((await stat(join(cwd, ".amplify-hosting", "static", "assets"))).isDirectory()).toBe(
       true,
     );
+    const response = await fetchFromBuiltServer(cwd);
+    expect(response?.status).toBe(200);
+  });
+
+  // Regression test for https://github.com/fossamagna/react-router-amplify/issues/277
+  test("react-router 8 with prerender", async () => {
+    cwd = await createProject(
+      {
+        "react-router.config.ts": reactRouterConfig({
+          ssr: true,
+          prerender: true,
+        }),
+      },
+      "react-router-8-template",
+    );
+    await npmInstall({ cwd });
+    const returns = build({
+      cwd,
+    });
+    console.log(returns.stderr.toString());
+    expect(returns.status).toBe(0);
+    expect((await stat(join(cwd, ".amplify-hosting", "deploy-manifest.json"))).isFile()).toBe(true);
+    expect(
+      (await stat(join(cwd, ".amplify-hosting", "compute", "default", "server.mjs"))).isFile(),
+    ).toBe(true);
+    expect((await stat(join(cwd, ".amplify-hosting", "static", "assets"))).isDirectory()).toBe(
+      true,
+    );
+    // The prerendered page must be copied into the static output too, not
+    // just the client build's own assets.
+    expect((await stat(join(cwd, ".amplify-hosting", "static", "index.html"))).isFile()).toBe(true);
+    // The compute function must actually be able to start: it previously
+    // crashed with ERR_MODULE_NOT_FOUND because the shared chunk that
+    // React Router's preserved server-build entry produces wasn't copied
+    // alongside server.mjs.
     const response = await fetchFromBuiltServer(cwd);
     expect(response?.status).toBe(200);
   });
