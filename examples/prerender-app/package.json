@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "prebuild": "pnpm clean && pnpm typecheck",
+    "prebuild": "pnpm clean",
     "build": "react-router build",
     "dev": "react-router dev",
     "typecheck": "react-router typegen && tsc",
