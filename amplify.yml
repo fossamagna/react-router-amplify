@@ -38,6 +38,9 @@ applications:
           commands:
             - curl -fsSL https://viteplus.dev/install.sh | bash
             - export PATH="$HOME/.vite-plus/bin:$PATH"
+            - echo "node-linker=hoisted" > ../../.npmrc
+            - corepack enable
+            - pnpm install --frozen-lockfile
         build:
           commands:
             - node -v
@@ -55,6 +58,9 @@ applications:
           commands:
             - curl -fsSL https://viteplus.dev/install.sh | bash
             - export PATH="$HOME/.vite-plus/bin:$PATH"
+            - echo "node-linker=hoisted" > ../../.npmrc
+            - corepack enable
+            - pnpm install --frozen-lockfile
         build:
           commands:
             - node -v
