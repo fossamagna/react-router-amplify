@@ -25,6 +25,6 @@ jobs:
         id: changesets
         uses: changesets/action@v2.1.0
         with:
-          publish: vp run release
+          publish-script: vp run release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
