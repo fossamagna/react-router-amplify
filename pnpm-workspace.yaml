@@ -8,14 +8,14 @@ allowBuilds:
   esbuild: true
 catalog:
   vite: npm:@voidzero-dev/vite-plus-core@0.2.9
-  vitest: 4.1.10
+  vitest: 4.1.11
   vite-plus: 0.2.9
-  "@vitest/coverage-v8": 4.1.10
+  "@vitest/coverage-v8": 4.1.11
 overrides:
   vite: "catalog:"
   vitest: "catalog:"
   "@types/node": "^22.0.0"
-  "@vitest/coverage-v8": "4.1.10"
+  "@vitest/coverage-v8": "4.1.11"
 peerDependencyRules:
   allowAny:
     - vite
