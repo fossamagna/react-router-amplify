@@ -11,7 +11,6 @@ applications:
           commands:
             - pwd
             - "ls -al"
-            - echo "node-linker=hoisted" > ../../.npmrc
             - corepack enable
             - pnpm install --frozen-lockfile
             - pnpm exec ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
@@ -46,7 +45,6 @@ applications:
             - export VP_HOME="$HOME/.vite-plus"
             - curl -fsSL https://viteplus.dev/install.sh | bash
             - export PATH="$VP_HOME/bin:$PATH"
-            - echo "node-linker=hoisted" > ../../.npmrc
             - corepack enable
             - pnpm install --frozen-lockfile
         build:
@@ -70,7 +68,6 @@ applications:
             - export VP_HOME="$HOME/.vite-plus"
             - curl -fsSL https://viteplus.dev/install.sh | bash
             - export PATH="$VP_HOME/bin:$PATH"
-            - echo "node-linker=hoisted" > ../../.npmrc
             - corepack enable
             - pnpm install --frozen-lockfile
         build:
