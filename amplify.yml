@@ -19,8 +19,12 @@ applications:
       phases:
         preBuild:
           commands:
+            # Pin the single-root layout so the bin directory does not depend on
+            # the installer default (it moved to ~/.local/share/vite-plus/bin) or
+            # on XDG_* variables.
+            - export VP_HOME="$HOME/.vite-plus"
             - curl -fsSL https://viteplus.dev/install.sh | bash
-            - export PATH="$HOME/.vite-plus/bin:$PATH"
+            - export PATH="$VP_HOME/bin:$PATH"
         build:
           commands:
             - node -v
@@ -36,8 +40,12 @@ applications:
       phases:
         preBuild:
           commands:
+            # Pin the single-root layout so the bin directory does not depend on
+            # the installer default (it moved to ~/.local/share/vite-plus/bin) or
+            # on XDG_* variables.
+            - export VP_HOME="$HOME/.vite-plus"
             - curl -fsSL https://viteplus.dev/install.sh | bash
-            - export PATH="$HOME/.vite-plus/bin:$PATH"
+            - export PATH="$VP_HOME/bin:$PATH"
             - echo "node-linker=hoisted" > ../../.npmrc
             - corepack enable
             - pnpm install --frozen-lockfile
@@ -56,8 +64,12 @@ applications:
       phases:
         preBuild:
           commands:
+            # Pin the single-root layout so the bin directory does not depend on
+            # the installer default (it moved to ~/.local/share/vite-plus/bin) or
+            # on XDG_* variables.
+            - export VP_HOME="$HOME/.vite-plus"
             - curl -fsSL https://viteplus.dev/install.sh | bash
-            - export PATH="$HOME/.vite-plus/bin:$PATH"
+            - export PATH="$VP_HOME/bin:$PATH"
             - echo "node-linker=hoisted" > ../../.npmrc
             - corepack enable
             - pnpm install --frozen-lockfile
