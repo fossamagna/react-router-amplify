@@ -11,6 +11,21 @@
       ],
       "matchPackageNames": ["typescript"],
       "enabled": false
+    },
+    {
+      "description": "vite-plus bundles an exact vitest version and hard-fails when the installed @vitest/coverage-* does not match it, so the whole Vite+ toolchain has to move in a single PR",
+      "groupName": "vite-plus toolchain",
+      "matchPackageNames": [
+        "vite-plus",
+        "@voidzero-dev/vite-plus-core",
+        "vitest",
+        "@vitest/coverage-v8"
+      ]
+    },
+    {
+      "description": "vite-plus 0.3.3 bundles vitest 4.1.11 as an exact dependency and asserts the coverage provider matches it, so vitest 5 breaks `vp test --coverage`. Raise this ceiling once a vite-plus release bundles vitest 5",
+      "matchPackageNames": ["vitest", "@vitest/coverage-v8"],
+      "allowedVersions": "<5"
     }
   ]
 }
